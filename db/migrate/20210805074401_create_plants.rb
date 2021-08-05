@@ -1,6 +1,7 @@
-class CreateNames < ActiveRecord::Migration[6.0]
+class CreatePlants < ActiveRecord::Migration[6.0]
   def change
-    create_table :names do |t|
+    create_table :plants do |t|
+      t.string :name
       t.string :description
       t.string :care
       t.string :cover_picture
