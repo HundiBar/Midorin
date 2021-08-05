@@ -10,18 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_05_073649) do
+ActiveRecord::Schema.define(version: 2021_08_05_075613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "names", force: :cascade do |t|
+  create_table "plants", force: :cascade do |t|
+    t.string "name"
     t.string "description"
     t.string "care"
     t.string "cover_picture"
     t.integer "watering_schedule"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pots", force: :cascade do |t|
+    t.string "nickname"
+    t.datetime "last_watered"
+    t.datetime "date"
+    t.bigint "plant_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["plant_id"], name: "index_pots_on_plant_id"
+    t.index ["user_id"], name: "index_pots_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -32,8 +45,11 @@ ActiveRecord::Schema.define(version: 2021_08_05_073649) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pots", "plants"
+  add_foreign_key "pots", "users"
 end
