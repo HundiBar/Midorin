@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Plant.create!(
-  common_name: "Coral Cactus",
+  name: "Coral Cactus",
   scientific_name: "Euphorbia Lactea Cristata",
   description: "I might look like a come from the sea, but I am actually a succulent hybrid. My tough steam gives way to a prickly fan, coloured either green or pink.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Coral_Cactus_pink_1200x1200.jpg?v=1563976389",
@@ -19,7 +19,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Croton Nervia",
+  name: "Croton Nervia",
   scientific_name: "Codiaeum variegatum Nervia",
   description: "I am one of the boldest houseplants around with rainbow-coloured foliage being my stand-out feature. Who needs flowers when you've got leaves like mine?",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Kroton_201807_1200x1200.jpg?v=1564340193",
@@ -31,7 +31,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Dark Green Beetle Radiator Plant",
+  name: "Dark Green Beetle Radiator Plant",
   scientific_name: "Peperomia angulata ‘Rocca Scuro’",
   description: "I am a lesser seen member of the Peperomia genus. I sport fine, neatly-traced  leaves on long hanging stems.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Peperomia-angulata-Dark-Green-Beetle-Radiator-Plant-Leaves-Detail_600x_117caf41-933c-4537-bcf5-71def1007769_1200x1200.jpg?v=1622203027",
@@ -43,7 +43,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Desert Rose",
+  name: "Desert Rose",
   scientific_name: "Adenium obesum",
   description: "My common name is misleading - I am in no way related to a rose, but am actually a succulent. You may also hear me referred to as Mock Azalea and Sabi Star.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Adenium_1200x1200.jpg?v=1582721954",
@@ -55,7 +55,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Mother-In-Law's Tongue",
+  name: "Mother-In-Law's Tongue",
   scientific_name: "Sansevieria trifasciata",
   description: "This hardy desert plant is also commonly known as the Snake Plant due to the shape of it's leaves or Viper's Bowstring Hemp, as its fibres are used to make bowstrings. In Africa it is often used to weave baskets too.
 The Sansevieria is also a great air purifier and humidity leveller - it extracts poisonous substances from the air and transforms them into oxygen.",
@@ -68,7 +68,7 @@ The Sansevieria is also a great air purifier and humidity leveller - it extracts
 )
 
 Plant.create!(
-  common_name: "Long Leaf Fig",
+  name: "Long Leaf Fig",
   scientific_name: "Ficus maclellandii 'Alii'",
   description: "I am a new-ish cultivar, tougher and less of a diva than my Ficus cousins, I won't drop my leaves easily! My slender leaves make me a stylish addition to any home, plus I'm a quick grower so will easily add a touch of drama and scale.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Ficus_Alii_1200x1200.jpg?v=1572873080",
@@ -80,7 +80,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Madagascar Jewel",
+  name: "Madagascar Jewel",
   scientific_name: "Euphorbia leuconeura",
   description: "I have attractive, dark green foliage, with white veins when young. These will fade a little as I age but by that point I'll be so impressively bushy you won't mind at all!",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Euphorbia-leuconeura_1200x1200.jpg?v=1564668674",
@@ -92,7 +92,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Mandarin Plant",
+  name: "Mandarin Plant",
   scientific_name: "Chlorophytum Orchidastrum 'Fire Flash'",
   description: "A member of the Spider Plant family, I am easy to care for and grow, but much more dramatic than my (slightly drab) cousins!",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Mandarin-Plant_1200x1200.jpg?v=1580299656",
@@ -104,7 +104,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Mandarin Plant",
+  name: "Mandarin Plant",
   scientific_name: "Chlorophytum Orchidastrum 'Fire Flash'",
   description: "A member of the Spider Plant family, I am easy to care for and grow, but much more dramatic than my (slightly drab) cousins!",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Mandarin-Plant_1200x1200.jpg?v=1580299656",
@@ -116,7 +116,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Lipstick Plant 'Mona Lisa'",
+  name: "Lipstick Plant 'Mona Lisa'",
   scientific_name: "Aeschynanthus 'Mona Lisa'",
   description: "Like my famous namesake, I will keep you mesmerised and contemplative. My flowers are surrounded by dark green leaves, as though coming out of a dark tube; hence the moniker Lipstick Plant.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Lipstick_Plant_Mona_Lisa_1200x1200.jpg?v=1564086422",
@@ -128,7 +128,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Japanese Sago Palm",
+  name: "Japanese Sago Palm",
   scientific_name: "Cycas Revoluta",
   description: "I'm not actually a palm at all, but a Cycad which date back to prehistoric times. I do have a palm-like trunk and feathery fronds.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Sago_palm_top_view_1200x1200.jpg?v=1564338303",
@@ -140,7 +140,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Jewel Orchid",
+  name: "Jewel Orchid",
   scientific_name: "Ludisia Discolor",
   description: "I have dark green oval shaped leaves, intricately decorated with fine white lines. When in bloom, I produce highly prized white flowers.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Jewel_Orchid_201809_1200x1200.jpg?v=1564671363",
@@ -152,7 +152,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Linear Hoya",
+  name: "Linear Hoya",
   scientific_name: "Hoya Linearis",
   description: "I have long, flowing locks that promise to trail down bookcases and hang from ceilings. I may also produce little white flowers, seasonally.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Hoya_Linearis_201807_1200x1200.jpg?v=1564071824",
@@ -258,7 +258,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Aechmea 'Blue Rain'",
+  name: "Aechmea 'Blue Rain'",
   scientific_name: "Blue Rain Bromeliad",
   description: "I am easily identified by my vibrant neon flowers. When this central bud fades, I will still have plums of glossy (but rough to touch) green foliage. You may also see little pups in my soil which can grow into new plants.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Aechmea_Blue_Rain_201807_1200x1200.jpg",
@@ -270,7 +270,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Calathea 'Dottie'",
+  name: "Calathea 'Dottie'",
   scientific_name: "Calathea Roseopicta 'Dottie'",
   description: "My deep purple leaves are marked with pink stripes: one down the middle, a single ring towards the edges and several connecting the two. Calathea 'Dottie' is almost identical to the Calathea Angela, genetically, but it has very different colours.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Purple_Calathea_201808_1200x1200.jpg",
@@ -282,7 +282,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Calathea 'Silvia'",
+  name: "Calathea 'Silvia'",
   scientific_name: "Calathea Roseopicta 'Silvia'",
   description: "You can tell I'm a Rosepicta because I have little lines coming out from the centre of my leaves. My leaves are purple underside, while on top, pale green bleeds into darker green, flecked with pink lines.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/thumbnail_Calathea_-_large_201810_1200x1200.jpg",
@@ -294,7 +294,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Shadow plant",
+  name: "Shadow plant",
   scientific_name: "Calathea Leopardina",
   description: "Roar. I'm a leopardina. They call me that because my regularly spaces markings are reminiscent of an animal print. The base colour of my leaves is a bright, luminous green, while the markings are matte and darker.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Calathea_leopardina_1200x1200.jpg",
@@ -306,7 +306,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Sensitive Plant",
+  name: "Sensitive Plant",
   scientific_name: "Mimosa Pudica",
   description: "I'm famous for my shy sensibility. If you run your fingers along my leaves, they'll clam up, bashfully. To look after me well, keep me in a warm, humid atmosphere with plenty of light. I like my soil to be moist, but I need this moisture to be paired with heat.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Mimosa-Pudica_1200x1200.jpg",
@@ -318,7 +318,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "String of Dolphins",
+  name: "String of Dolphins",
   scientific_name: "Senecio peregrinus",
   description: "I am a beautiful succulent with leaves that resemble dolphins jumping out of the water, hence my common name. I am also sometimes called Dolphin Necklace, Dolphin Plant or Flying Dolphins.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/TrendSpotter_detail4_d1a2edeb-210d-493e-8a69-c5eb9bc5619f_1200x1200.jpg",
@@ -330,7 +330,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "String of Turtles",
+  name: "String of Turtles",
   scientific_name: "Peperomia Prostrata",
   description: "I am a miniature member of the Peperomia family with delicate leaves that resemble the shell of a turtle, hence my common name. My delicately patterned leaves will keep you staring for ages!",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Peperomia_Prostrata_1200x1200.jpg",
@@ -342,7 +342,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Syngonium 'Trileaf Wonder'",
+  name: "Syngonium 'Trileaf Wonder'",
   scientific_name: "Syngonium Podophyllum",
   description: "I am an unusual Syngonium variety with leaves that start light green and develop into a deep, glossy green as they mature.",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Peperomia_Prostrata_1200x1200.jpg",
@@ -366,7 +366,7 @@ Plant.create!(
 )
 
 Plant.create!(
-  common_name: "Chinese Evergreen",
+  name: "Chinese Evergreen",
   scientific_name: "Aglaonema 'Diamond Bay'",
   description: "I am one of 21 members of the Chinese Evergreen family. We are all tough, good looking and the perfect combo of striking foliage and low maintenance.",
   cover_picture: "http://cdn.shopify.com/s/files/1/1780/8157/articles/Alaonema_First_Diamond_201808_1200x1200.jpg?v=1563896053",
