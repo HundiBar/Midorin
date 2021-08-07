@@ -1,0 +1,10 @@
+<ul>
+  <% @pots.each do |pot| %>
+    <%= link_to "#{pot.plant.name}", pot_path(pot) %>
+    <ol>
+  <%=  pot.plant.name %>
+  <%=  pot.plant.care %>
+    </ol>
+  <% end %>
+</ul>
+
