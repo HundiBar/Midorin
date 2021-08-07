@@ -8,8 +8,9 @@ class PotsController < ApplicationController
 
   def create
     @pot = Pot.new(pot_params)
-    @plant = Plant.find(params[:plant_id])
+    @plant = Plant.find(pot_params[:plant_id])
     @pot.plant = @plant
+    @pot.user = current_user
     @pot.save
     redirect_to pots_path
   end
@@ -17,7 +18,7 @@ class PotsController < ApplicationController
   private
 
   def pot_params
-    params.require(:pot)
+    params.require(:pot).permit(:plant_id)
   end
 
 end
