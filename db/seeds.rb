@@ -481,10 +481,10 @@ Plant.create!(
   watering_schedule: 1,
 )
 
-Pot.create!(
-  nickname: "toge",
-  user_id: 7,
-  plant_id: 38,
-)
+# Pot.create!(
+#   nickname: "toge",
+#   user_id: 7,
+#   plant_id: 38,
+# )
 
 puts "seeds created"

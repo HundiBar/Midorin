@@ -7,9 +7,10 @@ class PotsController < ApplicationController
   end
 
   def show; end
-  
+
   def create
-    @plant = Plant.find(params[:id])
+    @plant = Plant.find(params[:plant_id])
+    authorize @plant
     @pot = Pot.new(pot_params)
     @pot.plant = @plant
     @pot.user = current_user
@@ -17,7 +18,7 @@ class PotsController < ApplicationController
     @pot.save
     redirect_to pots_path
   end
-  
+
   def destroy
     @pot.destroy
     redirect_to plant_path
@@ -29,9 +30,9 @@ class PotsController < ApplicationController
     @pot = Pot.find(params[:id])
     authorize @pot
   end
-    
+
   def pot_params
-  params.require(:pot).permit(:plant_id)
+    params.require(:pot).permit(:plant_id)
   end
-  
+
 end
