@@ -9,7 +9,10 @@ class PlantsController < ApplicationController
       @plants = Plant.all
     end
   end
-  def show; end
+
+  def show
+    @pot = Pot.new
+  end
 
   private
 
