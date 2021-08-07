@@ -1,5 +1,6 @@
 class Plant < ApplicationRecord
   has_many :pots
+  enum light: { low: 0, medium: 1, high: 2 }
 
   # validates :name, :description, :cover_picture, :watering_schedule, :care, presence: true
 
