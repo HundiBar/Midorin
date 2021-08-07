@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container">
   <div class="top">
     <div class="left">
@@ -52,3 +53,12 @@
 
 </div>
 
+=======
+<h1><%= @plant.name %></h1>
+<p><strong>Botanical name:</strong> <%= @plant.scientific_name %></p>
+<%= image_tag @plant.cover_picture %>
+<%= simple_form_for @pot do |f| %>
+  <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
+  <%= f.submit "Add to garden", class: "btn btn-primary"%>
+<% end %>
+>>>>>>> master
