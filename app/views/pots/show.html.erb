@@ -17,4 +17,9 @@
         <div class="d-flex justify-content-center align-items-center mt-18 mb-12">
             <%= link_to "Back to garden", pots_path, class:'btn btn-primary'%>
         </div>
+        <div class="delete-icon">
+            <%= link_to pot_path(pot), method: :delete, data: { confirm: "Are you sure?"} do %>
+            <i class="fas fa-trash"></i>
+            <% end %>
+        </div>
 </div>

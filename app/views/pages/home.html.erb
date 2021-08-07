@@ -1,2 +1,26 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container">
+    <div class="title my-3" >
+        <h1>Helping your plants live healthy and happy lives.</h1>
+        <h2><bold><u>Midorin</u></bold></h2>
+    </div>
+    
+    <div class="details my mx-5" >
+        <h4>🔎 Find the right plant for you</h4>
+        <h4>🌱 Learn about plant care</h4>
+        <h4>🗓 Get a schedule</h4>
+        <h4>📸 Identify plants</h4>
+        <h4>🤓 Get tips and advice</h4>
+        <h4>🤘Become a plant master</h4> 
+    </div>
+
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <%= link_to "Sign Up", new_user_registration_path, class:'btn btn-outline-success'%>
+    </div>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <%= link_to "Login", user_session_path, class:'btn btn-outline-secondary'%>
+    </div>
+</div>
+
+
+
+
