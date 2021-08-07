@@ -1,7 +1,7 @@
 class Plant < ApplicationRecord
   has_many :pots
 
-  validates :name, :description, :cover_picture, :watering_schedule, :care, presence: true
+  # validates :name, :description, :cover_picture, :watering_schedule, :care, presence: true
 
   include PgSearch::Model
   pg_search_scope :search_by_name,

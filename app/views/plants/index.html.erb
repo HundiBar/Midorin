@@ -11,7 +11,9 @@
   <% end %>
 <% end %>
 <% @plants.each do |plant|  %>
-  <div>
-    <p><%= plant.name %></p>
-  </div>
+  <%= link_to plant_path(plant) do  %>
+    <div>
+      <p><%= plant.name %></p>
+    </div>
+  <% end %>
 <% end %>
