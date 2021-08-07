@@ -9,9 +9,8 @@ class PotsController < ApplicationController
   def show; end
 
   def create
-    @plant = Plant.find(params[:plant_id])
-    authorize @plant
     @pot = Pot.new(pot_params)
+    @plant = Plant.find(params[:pot][:plant_id])
     @pot.plant = @plant
     @pot.user = current_user
     authorize @pot
