@@ -5,6 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "Destroying plants && users"
+Plant.destroy_all
+User.destroy_all
+
+
+puts "creating seeds"
+
+mylene = User.create!(
+  name: "Mylene",
+  email: "mylene@me.org",
+  password: "mylenelife",
+)
+
+troy = User.create!(
+  name: "Troy",
+  email: "troy@me.org",
+  password: "troylife",
+
+)
+
+spencer = User.create!(
+  name: "Spencer",
+  email: "spencer@me.org",
+  password: "spencerlife",
+)
+
+dean = User.create!(
+  name: "Dean",
+  email: "dean@me.org",
+  password: "deanlife",
+)
+
 
 Plant.create!(
   name: "Coral Cactus",
@@ -448,3 +480,5 @@ Plant.create!(
   toxicity: "Good news: I'm considered non-toxic so should be okay around pets, as long as they don't eat me whole!",
   watering_schedule: 1,
 )
+
+puts "seeds created"
