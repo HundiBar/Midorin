@@ -1,0 +1,15 @@
+<ul>
+  <% @pots.each do |pot| %>
+    <ol>
+      pot.name
+      pot.scientific_name
+      pot.description
+      pot.cover_picture
+      pot.care
+      pot.temperature
+      pot.light
+      pot.toxicity
+      pot.watering_schedule
+    </ol>
+  <% end %>
+</ul>
