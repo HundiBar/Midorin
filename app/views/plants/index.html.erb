@@ -16,27 +16,24 @@
 
 
 
-  <div class="plants-list">
+  <div class="plants-list justify-content-center">
     <% @plants.each do |plant|  %>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
-              <%# <%= image_tag plant.cover_picture %> 
-            <%# <img src="..." class="img-fluid rounded-start" alt="..."> %>
+               <%= image_tag plant.cover_picture, style: 'height:100%;width:100%;'%> 
           </div>
-
           <div class="col-md-8">
             <div class="card-body">
               <%= link_to plant_path(plant) do  %>
-                <h5 class="card-title"><%= plant.name %></h5>
+                <h3 class="card-title"><%= plant.name %></h3>
                 <p class="card-text"><%= plant.description %></p>
               <% end %>
             </div>
-             
           </div>
         </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
 
 </div>
