@@ -20,7 +20,7 @@ class PotsController < ApplicationController
 
   def destroy
     @pot.destroy
-    redirect_to plant_path
+    redirect_to pots_path
   end
 
   private
