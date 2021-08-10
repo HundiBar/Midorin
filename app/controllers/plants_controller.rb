@@ -7,7 +7,7 @@ class PlantsController < ApplicationController
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
     else
-      @plants = policy_scope(Plant).order(created_at: :desc)
+      @plants = policy_scope(Plant).order(name: :asc)
     end
   end
 
