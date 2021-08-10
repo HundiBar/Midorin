@@ -4,14 +4,13 @@
   <%= link_to pots_path, class: "nav-link" do %>
     <% if current_page?(controller: 'pots', action: 'index') %>
       <%= image_tag 'pots_icon/active.svg', width: "56", height: "56", alt: "My garden icon" %>
-    <% else %>
+      <% else %>
       <%= image_tag 'pots_icon/inactive.svg', width: "56", height: "56", alt: "My garden icon" %>
     <% end %>
   <% end %>
 
   <%= link_to plants_path, class: "nav-link" do %>
-      <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
-    <% end %>
+    <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
   <% end %>
 
   <%= link_to chatrooms_path, class: "nav-link" do %>
