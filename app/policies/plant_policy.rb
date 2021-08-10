@@ -9,4 +9,12 @@ class PlantPolicy < ApplicationPolicy
     true
   end
 
+  def search?
+    true
+  end
+
+  def search_results?
+    true
+  end
+
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/dashboards', to: 'user#dashboard'
   get '/plants/search', to: 'plants#search'
   get '/plants/filter', to: 'plants#filter'
+  post '/plants', to: 'plants#search_results'
+
 
   resources :plants, only: [:index, :show]
   resources :pots, only: [:index, :new, :create, :show]
