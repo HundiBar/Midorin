@@ -1,0 +1,33 @@
+$header_size: 16px;
+$header_weight: 600;
+
+body {
+  background-color: $light;
+}
+
+
+.top {
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+}
+
+.header {
+  font-weight: $header_weight;
+  font-size: $header_size;
+  align-items: flex-start;
+}
+
+.plant_image {
+  width: 300px;
+  height: auto;
+  border: 3px solid red;
+}
+
+img {
+  width: 100px;
+}
+
+.category {
+  margin-top: 1.5rem;
+}
