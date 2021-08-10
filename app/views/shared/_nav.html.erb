@@ -1,0 +1,31 @@
+<nav class="nav">
+  <%#= link_to(image_path("../../assets/images/pots_icon/active.svg", width: "54", height: "54", alt: "My garden icon"), plants_path, class: "nav-link") %>
+
+  <%= link_to pots_path, class: "nav-link" do %>
+    <% if current_page?(controller: 'pots', action: 'index') %>
+      <%= image_tag 'pots_icon/active.svg', width: "56", height: "56", alt: "My garden icon" %>
+    <% else %>
+      <%= image_tag 'pots_icon/inactive.svg', width: "56", height: "56", alt: "My garden icon" %>
+    <% end %>
+  <% end %>
+
+  <%= link_to plants_path, class: "nav-link" do %>
+      <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
+    <% end %>
+  <% end %>
+
+  <%= link_to chatrooms_path, class: "nav-link" do %>
+    <%= image_tag 'chat_icon/inactive.svg', width: "56", height: "56", alt: "Chat icon" %>
+  <% end %>
+
+  <%= link_to plants_path, class: "nav-link" do %>
+    <%= image_tag 'profile_icon/inactive.svg', width: "56", height: "56", alt: "Profile icon" %>
+  <% end %>
+</nav>
+
+<%#= link_to "", pots_path, class:'button-primary justify-content-center'%>
+
+ <!-- <img src="../../assets/images/pots_icon/inactive.svg" alt="My garden icon inactive"> -->
+
+
+<%#= link_to(image_path("../../assets/images/pots_icon/active.svg", width: "54", height: "54", alt: "My garden icon"), plants_path, class: "nav-link") %>
