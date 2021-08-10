@@ -11,7 +11,6 @@ Pot.destroy_all
 Plant.destroy_all
 User.destroy_all
 
-
 puts "creating seeds"
 
 mylene = User.create!(
@@ -482,11 +481,5 @@ Plant.create!(
   toxicity: "Good news: I'm considered non-toxic so should be okay around pets, as long as they don't eat me whole!",
   watering_schedule: 1,
 )
-
-# Pot.create!(
-#   nickname: "toge",
-#   user_id: 7,
-#   plant_id: 38,
-# )
 
 puts "seeds created"
