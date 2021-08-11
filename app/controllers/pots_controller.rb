@@ -13,6 +13,7 @@ class PotsController < ApplicationController
     @plant = Plant.find(params[:pot][:plant_id])
     @pot.plant = @plant
     @pot.user = current_user
+    @pot.last_watered = Time.now
     authorize @pot
     @pot.save
     redirect_to pots_path
@@ -20,7 +21,7 @@ class PotsController < ApplicationController
 
   def destroy
     @pot.destroy
-    redirect_to plant_path
+    redirect_to pots_path
   end
 
   private

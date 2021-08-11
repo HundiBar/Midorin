@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/plants/filter', to: 'plants#filter'
 
   resources :plants, only: [:index, :show]
-  resources :pots, only: [:index, :new, :create, :show]
+  resources :pots, only: [:index, :new, :create, :show, :destroy]
   resources :chatrooms do
     resources :messages, only: [:index]
   end
