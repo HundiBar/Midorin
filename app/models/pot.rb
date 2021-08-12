@@ -8,7 +8,7 @@ class Pot < ApplicationRecord
 
 
   def water_in_days
-    plant.watering_schedule - (Date.today - last_watered.to_date).to_i
+    plant.days_until_water - (Date.today - last_watered.to_date).to_i
   end
 
 end
