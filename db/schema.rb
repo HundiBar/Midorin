@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_07_072000) do
+ActiveRecord::Schema.define(version: 2021_08_12_022733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_08_07_072000) do
     t.string "temperature"
     t.string "light"
     t.string "toxicity"
+    t.integer "days_until_water"
   end
 
   create_table "pots", force: :cascade do |t|

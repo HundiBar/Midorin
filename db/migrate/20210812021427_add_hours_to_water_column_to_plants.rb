@@ -1,5 +1,5 @@
-class AddHoursToWaterColumnToPlants < ActiveRecord::Migration[6.0]
+class AddDaysToWaterColumnToPlants < ActiveRecord::Migration[6.0]
   def change
-        add_column :plants, :hours_to_water, :integer
+    add_column :plants, :days_to_water, :integer
   end
 end
