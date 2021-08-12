@@ -12,6 +12,12 @@
         <i class="fas fa-search"></i>
       <% end %>
     <% end %>
+    <div>
+      <%= simple_form_for @plant, method: :index do |f| %>
+        <%= f.input :image, as: :file %>
+        <%= f.submit "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
   <div class="plants-list">
     <% @plants.each do |plant|  %>
