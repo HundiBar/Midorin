@@ -14,6 +14,7 @@ class PotsController < ApplicationController
     @pot.plant = @plant
     @pot.user = current_user
     @pot.last_watered = Time.now
+    @pot.nickname = "Nickname"
     authorize @pot
     @pot.save
     redirect_to pots_path

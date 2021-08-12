@@ -12,9 +12,13 @@ class PotPolicy < ApplicationPolicy
   def create?
     true
   end
-  
+
   def destroy?
     true
   end
-  
+
+  def search?
+    true
+  end
+
 end
