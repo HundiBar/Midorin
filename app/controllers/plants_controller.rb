@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
   def index
     # COMMupload img to cloudinary to create a url that can be called
     @plant = Plant.new
-    if params[:query].nil? && params.dig(:plant, :image).nil?
+    if params[:query].nil? || params[:query].empty? && params.dig(:plant, :image).nil?
       @plants = policy_scope(Plant).order(created_at: :desc)
 
     elsif params[:query].present?
