@@ -132,7 +132,7 @@ Plant.create!(
 
 Plant.create!(
   name: "Mandarin Plant",
-  scientific_name: "Chlorophytum Orchidastrum 'Fire Flash'",
+  scientific_name: "Chlorophytum Orchidastrum",
   description: "A member of the Spider Plant family, I am easy to care for and grow, but much more dramatic than my (slightly drab) cousins!",
   cover_picture: "https://cdn.shopify.com/s/files/1/1780/8157/articles/Mandarin-Plant_1200x1200.jpg",
   care: "If you notice brown spots or edges on my leaves, it could be a sensitivity to chlorine and fluoride in tapwater. To combat this, collect rainwater or leave tap water in an open container overnight before giving me a drink.",
