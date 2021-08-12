@@ -1,7 +1,8 @@
 <nav class="nav">
 
   <%= link_to pots_path, class: "nav-link" do %>
-    <% if current_page?(controller: 'pots', action: 'index') %>
+  <!-- if the current page isn't plants index and is either pots show or index, the active my garden icon will show -->
+    <% if !current_page?(controller: 'plants', action: 'index') && (current_page?(controller: 'pots', action: 'index') || current_page?(controller: 'pots', action: 'show')) %>
       <%= image_tag 'pots_icon/active.svg', width: "56", height: "56", alt: "My garden icon" %>
     <% else %>
       <%= image_tag 'pots_icon/inactive.svg', width: "56", height: "56", alt: "My garden icon" %>
@@ -9,8 +10,12 @@
   <% end %>
 
   <%= link_to plants_path, class: "nav-link" do %>
+    <% if !current_page?(controller: 'pots', action: 'index') && (current_page?(controller: 'plants', action: 'index') || current_page?(controller: 'plants', action: 'show')) %>
+      <%= image_tag 'scan_icon/active.svg', width: "56", height: "56", alt: "Scan icon" %>
+    <% else %>
       <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
     <% end %>
+  <% end %>
 
   <%= link_to chatrooms_path, class: "nav-link" do %>
     <%= image_tag 'chat_icon/inactive.svg', width: "56", height: "56", alt: "Chat icon" %>
@@ -20,4 +25,3 @@
     <%= image_tag 'profile_icon/inactive.svg', width: "56", height: "56", alt: "Profile icon" %>
   <% end %>
 </nav>
-
