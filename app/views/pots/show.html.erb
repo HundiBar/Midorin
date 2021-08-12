@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="plant_image">
+    <%= image_tag @pot.plant.cover_picture %>
+  </div>
+  <div class="edit">
+    <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
+  </div>
   <div class="top">
     <div class="left">
       <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname %></span></h1>
@@ -8,10 +14,9 @@
         <div class="text"><%= @pot.plant.scientific_name %></div>
       </div>
     </div>
-    <div class="plant_image">
-      <%= image_tag @pot.plant.cover_picture %>
-    </div>
+   
   </div>
+  
 
   <div class="category description">
     <div class="header">Description:</div>
