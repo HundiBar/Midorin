@@ -1,0 +1,57 @@
+/*Card pick*/
+
+.card-pick {
+    /*fixed*/
+    display: flex;
+    flex-direction: column;
+    /*customizable*/
+    height: 300px;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 0px 16px rgb(168, 166, 166);
+    border-radius: 5px;
+}
+
+.card-pick img {
+    /*fixed*/
+    width: 100%;
+    min-height: 100px;
+    flex-grow: 0;
+    object-fit: cover;
+    /*customizable*/
+    object-position: 50% 50%;
+    border-radius: 4px 4px 0 0;
+}
+
+.card-pick-info {
+    /*customizable*/
+    padding: 16px;
+    color: $text;
+}
+
+.card-pick-info h3 {
+    /*customizable*/
+    font-size: 15px;
+    line-height: 1.4;
+    opacity: 0.7;
+    margin-bottom: 0;
+    margin-top: 8px;
+    margin: 16px 0;
+    color: $primary;
+}
+
+.card-pick-info p {
+    /*customizable*/
+    margin: 16px 0;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.card-pick:hover {
+    /*customizable*/
+    transition: 0.2s ease-out;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgb(209, 236, 201);
+}

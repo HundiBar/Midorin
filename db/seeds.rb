@@ -49,6 +49,7 @@ Plant.create!(
   light: "high",
   toxicity: "Best keep me away from children and pets, because I am spikey.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -61,6 +62,7 @@ Plant.create!(
   light: "high",
   toxicity: "I can make you sick if you eat me so best to keep me away from pets and kids.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -73,6 +75,7 @@ Plant.create!(
   light: "low",
   toxicity: "Perfectly safe for all.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -85,6 +88,7 @@ Plant.create!(
   light: "high",
   toxicity: "All parts of me are poisonous if ingested, so keep me away from nibbly pets and kids.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -97,6 +101,7 @@ Plant.create!(
   light: "low",
   toxicity: "I can't imagine many pets would want to chew on my tough spikes, but if they do, they might get digestive discomfort.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -109,6 +114,7 @@ Plant.create!(
   light: "low",
   toxicity: "I ooze latex which can be an irritant and my leaves are poisonous if ingested.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -121,6 +127,7 @@ Plant.create!(
   light: "low",
   toxicity: "I am a toxic plant, not to touch, but if my leaves or stems are damaged the sap can be an irritant. Keep me away from pets and children.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -133,6 +140,7 @@ Plant.create!(
   light: "medium",
   toxicity: "I am toxic so please don't eat me.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -145,6 +153,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet-safe!",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -157,6 +166,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Best to keep me away from pets and young children as I am quite toxic.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -169,6 +179,7 @@ Plant.create!(
   light: "low",
   toxicity: "Good news, I'm not toxic.",
   watering_schedule: 3,
+  days_until_water: 2,
 )
 
 Plant.create!(
@@ -181,6 +192,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet-safe!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -193,6 +205,7 @@ Plant.create!(
   light: "low",
   toxicity: "Keep me away from pets and children as I am toxic",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -205,6 +218,7 @@ Plant.create!(
   light: "high",
   toxicity: "Keep me away from pets and children.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -217,6 +231,7 @@ Plant.create!(
   light: "low",
   toxicity: "I am toxic so please don't eat me.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -230,6 +245,7 @@ I am prized for my compact symmetry and paddle shaped leaves. Though I can grow 
   light: "medium",
   toxicity: "I am perfectly pet-friendly!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -242,6 +258,7 @@ Plant.create!(
   light: "high",
   toxicity: "Don't eat me, this could cause severe discomfort!",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -254,6 +271,7 @@ Plant.create!(
   light: "medium",
   toxicity: "I am not known to be toxic.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -266,6 +284,7 @@ Plant.create!(
   light: "medium",
   toxicity: "As a rare plant, little information is available but its orchid relatives are listed as non-toxic.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -278,6 +297,7 @@ Plant.create!(
   light: "low",
   toxicity: "Keep me away from pets and children as I am toxic.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -290,6 +310,7 @@ Plant.create!(
   light: "low",
   toxicity: "Good news: I am pet friendly!",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -302,6 +323,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet friendly!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -314,6 +336,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet friendly!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -326,6 +349,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet friendly!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -338,7 +362,9 @@ Plant.create!(
   light: "high",
   toxicity: "I'm best kept away from children and pets.",
   watering_schedule: 3,
+  days_until_water: 2,
 )
+
 
 Plant.create!(
   name: "String of Dolphins",
@@ -350,6 +376,7 @@ Plant.create!(
   light: "medium",
   toxicity: "I am toxic so please don't eat me.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -362,6 +389,7 @@ Plant.create!(
   light: "high",
   toxicity: "Good news: I am pet-safe!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -374,6 +402,7 @@ Plant.create!(
   light: "medium",
   toxicity: "I am toxic like other Syngonium plants, so please don't eat me.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -386,6 +415,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Good news: I am pet friendly!",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -398,6 +428,7 @@ Plant.create!(
   light: "low",
   toxicity: "My leaves contain insoluble calcium oxalates which are poisonous to pets and children if ingested, so best to keep me away from nibblers.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -410,6 +441,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Keep me away from pets and children as I am toxic.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -422,6 +454,7 @@ Plant.create!(
   light: "low",
   toxicity: "My leaves contain insoluble calcium oxalates which are poisonous to pets and children if ingested, so best to keep me away from nibblers.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -434,6 +467,7 @@ Plant.create!(
   light: "medium",
   toxicity: "Keep me away from pets and children.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -446,6 +480,7 @@ Plant.create!(
   light: "high",
   toxicity: "My sap/milk is very poisonous, so keep me away from pets and kids and wash your hands if it gets on your skin.",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 Plant.create!(
@@ -458,6 +493,7 @@ Plant.create!(
   light: "medium",
   toxicity: "I am toxic so please don't eat me.",
   watering_schedule: 2,
+  days_until_water: 7,
 )
 
 Plant.create!(
@@ -470,6 +506,7 @@ Plant.create!(
   light: "high",
   toxicity: "Good news: I'm considered non-toxic so should be okay around pets, as long as they don't eat me whole!",
   watering_schedule: 1,
+  days_until_water: 14,
 )
 
 puts "seeds created"
