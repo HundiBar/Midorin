@@ -1,46 +1,46 @@
 $hover-clr: #08e6a3;
-
 .button-primary {
-  background-color: $primary;
-  color: $light;
-  padding: 1rem 0;
-  width: 90vw;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 0 1em 0;
-  cursor: pointer;
-  border-radius: 2rem;
-  transition-property: background-color, transform;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
-  &:hover {
-    text-decoration: none;
+    background-color: $primary;
     color: $light;
-    background-color: $hover-clr;
-    // transform: scale(1.01);
-  }
+    padding: 1rem 0;
+    width: 90vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 0 1em 0;
+    cursor: pointer;
+    border-radius: 2rem;
+    border-style: none;
+    transition-property: background-color, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+    &:hover {
+        text-decoration: none;
+        color: $light;
+        background-color: $hover-clr;
+        // transform: scale(1.01);
+    }
 }
 
 .button-secondary {
-  background-color: $light;
-  box-shadow: inset 0px 0px 0px 2px $primary;
-  color: $primary;
-  padding: 1rem 0;
-  width: 90vw;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 0 0 1em 0;
-  cursor: pointer;
-  border-radius: 2rem;
-  transition-property: box-shadow, color;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
-  &:hover {
+    background-color: $light;
+    box-shadow: inset 0px 0px 0px 2px $primary;
+    color: $primary;
+    padding: 1rem 0;
+    width: 90vw;
+    text-align: center;
     text-decoration: none;
-    color: $hover-clr;
-    box-shadow: inset 0px 0px 0px 2px $hover-clr;
-    // transform: scale(1.01);
-  }
+    display: inline-block;
+    margin: 0 0 1em 0;
+    cursor: pointer;
+    border-radius: 2rem;
+    transition-property: box-shadow, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+    &:hover {
+        text-decoration: none;
+        color: $hover-clr;
+        box-shadow: inset 0px 0px 0px 2px $hover-clr;
+        // transform: scale(1.01);
+    }
 }
