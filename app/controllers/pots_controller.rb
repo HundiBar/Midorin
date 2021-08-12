@@ -1,6 +1,6 @@
 class PotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_pot, only: [:show, :destroy, :edit, :update]
+  before_action :set_pot, only: [:show,:edit, :update, :destroy, ]
 
   def index
     @pots = policy_scope(Pot).order(created_at: :desc)
@@ -14,7 +14,7 @@ class PotsController < ApplicationController
     @pot.plant = @plant
     @pot.user = current_user
     @pot.last_watered = Time.now
-    @pot.nickname = "Nickname"
+    @pot.nickname = "Nickname" if params[:query].nil
     authorize @pot
     @pot.save
     redirect_to pots_path

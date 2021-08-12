@@ -3,12 +3,14 @@
     <%= image_tag @pot.plant.cover_picture %>
   </div>
   <div class="edit">
+    <%= link_to edit_pot_path do %>
     <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
+     <% end %>
   </div>
   <div class="top">
     <div class="left">
       <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname %></span></h1>
-      <h3>I'm DATE old</h3>
+      <h3>I'm <%= @pot.birthday %> old</h3>
        <div class="botanical_name">
         <div class="header">Botanical name:</div>
         <div class="text"><%= @pot.plant.scientific_name %></div>

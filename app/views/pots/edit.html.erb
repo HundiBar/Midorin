@@ -1,0 +1,12 @@
+<div class="container mx my-5">
+  <h2>Edit your plant's profile</h2>
+
+  <%= simple_form_for [@plants, @pot] do |f| %>
+    <div class="form-inputs">
+        <%= f.input :nickname, placeholder: 'What is my name?' %>
+        <%= f.input :birthday, placeholder: 'How old am I?' %>
+        <%= f.submit "Edit your plant", class: "button-primary" %>
+    </div>
+  <% end %>
+</div>
+
