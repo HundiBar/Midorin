@@ -1,13 +1,13 @@
-<div class="container mx my-5">
-
-<% @pots.each do |pot| %>
-      <%= link_to "#{pot.plant.name}", pot_path(pot) %>
-      <ol>
-    <%=  pot.plant.name %>
-    <%=  pot.plant.care %>
-      </ol>
-    <% end %>
 
 
+<ul>
+  <% @pots.each do |pot| %>
+    <%= link_to "#{pot.plant.name}", pot_path(pot) %>
+    <ol>
+  <%=  pot.plant.name %>
+  <%=  pot.plant.care %>
+  <%=  pot.water_in_days %>
+    </ol>
+  <% end %>
+</ul>
 
-</div>
