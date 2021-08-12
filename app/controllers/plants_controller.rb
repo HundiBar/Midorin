@@ -2,6 +2,7 @@ require 'base64'
 require 'uri'
 require 'net/http'
 require 'json'
+require 'open-uri'
 
 # require_relative "test_hash.rb"
 # require_relative "api_call.rb"
@@ -13,14 +14,16 @@ class PlantsController < ApplicationController
 
   def index
     # COMMupload img to cloudinary to create a url that can be called
-    if params[:query].nil? && params[:plant][:image].nil?
+    @plant = Plant.new
+    if params[:query].nil? && params.dig(:plant, :image).nil?
       @plants = policy_scope(Plant).order(created_at: :desc)
+
 
     elsif params[:query].present?
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
 
-    elsif params[:plant][:image].present?
+    elsif params.dig(:plant, :image).present?
       cloudinary_upload = Cloudinary::Uploader.upload(params[:plant][:image], options = {})
       upload_check = cloudinary_upload["secure_url"]
       file = URI.open(upload_check)
@@ -29,7 +32,7 @@ class PlantsController < ApplicationController
       base64_image = Base64.strict_encode64(file.read)
 
       # COMMmake api post request
-      api_key = "KCkFk49ZTFNrQTwEcAnHeGDkD5UB7oPNbCBVdzpCeCOCXRf1Ph"
+      api_key = ENV["PLANT_API_KEY"]
       images = [base64_image]
       modifiers = ["crops_fast", "similar_images"]
       plant_language = "en"
@@ -57,7 +60,7 @@ class PlantsController < ApplicationController
       p json_raw = response.body
       p json_parse = JSON.parse(json_raw)
       plant_search_name = json_parse["suggestions"].first["plant_name"]
-      @plant = policy_scope(Plant).search_by_name(plant_search_name).first
+      @plants = policy_scope(Plant).search_by_name(plant_search_name)
     end
   end
 
