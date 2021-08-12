@@ -13,18 +13,14 @@
       <% end %>
     <% end %>
   </div>
-
-
-
   <div class="plants-list">
     <% @plants.each do |plant|  %>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row g-0">
           <div class="col-md-4">
-              <%# <%= image_tag plant.cover_picture %> 
+            <%# <%= image_tag plant.cover_picture %>
             <%# <img src="..." class="img-fluid rounded-start" alt="..."> %>
           </div>
-
           <div class="col-md-8">
             <div class="card-body">
               <%= link_to plant_path(plant) do  %>
@@ -32,12 +28,9 @@
                 <p class="card-text"><%= plant.description %></p>
               <% end %>
             </div>
-             
           </div>
         </div>
       </div>
-      <% end %>
+    <% end %>
   </div>
-
 </div>
-
