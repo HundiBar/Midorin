@@ -18,7 +18,6 @@ class PlantsController < ApplicationController
     if params[:query].nil? && params.dig(:plant, :image).nil?
       @plants = policy_scope(Plant).order(created_at: :desc)
 
-
     elsif params[:query].present?
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
@@ -68,16 +67,6 @@ class PlantsController < ApplicationController
     @pot = Pot.new
   end
 
-  # def search
-  #   @plant = Plant.new
-  #   # @pot = Pot.new
-  #   authorize @plant
-  # end
-
-  # def search_results
-
-
-  # end
 
   private
 

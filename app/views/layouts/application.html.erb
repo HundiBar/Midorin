@@ -9,6 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
+
     <div class="page-frame-content">
       <div class="page-frame-header">
         <%#= render 'shared/navbar' %>
@@ -18,13 +19,15 @@
         <%= render 'shared/flashes' %>
         <%= yield %>
       </div>
+      <% if  current_user %>
+      <div>
+        <%= render 'shared/nav' %>
+      </div>
+      <% end %>
       
       <div class="page-frame-footer">
       </div>
     </div>
+
   </body>
 </html>
-
-  
-  
-  

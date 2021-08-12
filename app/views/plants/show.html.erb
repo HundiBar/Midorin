@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 <div class="container">
   <div class="top">
     <div class="left">
-      <h1><%= @plant.name %></h1>
+      <h1 class="plant_name"><%= @plant.name %></h1>
 
        <div class="botanical_name">
         <div class="header">Botanical name:</div>
@@ -21,12 +20,22 @@
 
   <div class="category watering">
     <div class="header">Watering schedule:</div>
-    <div class="text"><%= @plant.watering_schedule %></div>
+    <div class="text">
+      <% if @plant.watering_schedule == 1 %>
+        <%= "Once every two weeks" %>
+      <% elsif @plant.watering_schedule == 2 %>
+        <%= "Once a week" %>
+        <% elsif %>
+        <%= "Once every two days" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
-    <div class="text"><%= @plant.light %></div>
+    <div class="text">
+      <%= @plant.light %>
+    </div>
   </div>
 
   <div class="category temperature">
@@ -44,21 +53,14 @@
     <div class="text"><%= @plant.toxicity %></div>
   </div>
 
-  <div>
-    <%= link_to "Add to garden", plants_path, class: "button-primary"%>
-  </div>
-  <div>
-    <%= link_to "Add to garden", plants_path, class: "button-primary"%>
+  <div class="button-group">
+    <%= simple_form_for @pot do |f| %>
+      <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
+      <%= f.submit "Add to garden", class: "button-primary"%>
+    <% end %>
+    <%= link_to "Back", :back, class: "button-secondary"%>
   </div>
 
 </div>
 
-=======
-<h1><%= @plant.name %></h1>
-<p><strong>Botanical name:</strong> <%= @plant.scientific_name %></p>
-<%= image_tag @plant.cover_picture %>
-<%= simple_form_for @pot do |f| %>
-  <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
-  <%= f.submit "Add to garden", class: "btn btn-primary"%>
-<% end %>
->>>>>>> master
+
