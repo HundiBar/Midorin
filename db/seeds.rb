@@ -11,7 +11,6 @@ Pot.destroy_all
 Plant.destroy_all
 User.destroy_all
 
-
 puts "creating seeds"
 
 mylene = User.create!(
@@ -509,11 +508,5 @@ Plant.create!(
   watering_schedule: 1,
   days_until_water: 14,
 )
-
-# Pot.create!(
-#   nickname: "toge",
-#   user_id: 7,
-#   plant_id: 38,
-# )
 
 puts "seeds created"

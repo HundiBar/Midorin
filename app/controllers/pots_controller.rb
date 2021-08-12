@@ -13,6 +13,7 @@ class PotsController < ApplicationController
     @pot = Pot.new(pot_params)
     @pot.plant = @plant
     @pot.user = current_user
+    @pot.last_watered = Time.now
     authorize @pot
     @pot.save
     redirect_to pots_path
