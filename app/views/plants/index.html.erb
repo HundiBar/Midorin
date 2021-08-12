@@ -1,23 +1,10 @@
 <div class="container mx my-5">
-  <div class="search-bar row justify-content-center align-items-center mb-5">
-    <%= form_tag plants_path, method: :get, class: "form-inline" do %>
-      <div class="form-group mb-0">
-        <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control",
-                    placeholder: "Search the name of your plant..."
-                    %>
-      </div>
-      <%= button_tag "", class: "btn btn-outline-info" do %>
-        <i class="fas fa-search"></i>
-      <% end %>
-    <% end %>
-  </div>
-
+  <%= render 'shared/search-bar' %>
+  
   <div class="plants-list justify-content-center ">
     <% @plants.each do |plant|  %>
       <div class="card-product mb-3">
-        <%= image_tag plant.cover_picture%>
+        <%= image_tag plant.cover_picture %>
         <div class="card-product-infos">
           <%= link_to plant_path(plant) do  %>
             <h1><%= plant.name %></h1>

@@ -1,13 +1,25 @@
+<div class="container mx my-5">
+  <%= render 'shared/search-bar' %>
+  <h1><b>My Garden</b></h1>
+
+  <div class="pots-show row mt-5">
+    <% @pots.each do |pot|  %>
+      <div class="col-6 col-lg-4">
+        <%= link_to pot_path(pot) do %>
+          <div class="card-pick mb-4"> 
+          <%= image_tag pot.plant.cover_picture %>
+            <div class="card-pick-info">
+              <p><%= pot.plant.name %></p>
+              <h3>Nickname</h3>
+              <p><%= pot.date %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
 
 
-<ul>
-  <% @pots.each do |pot| %>
-    <%= link_to "#{pot.plant.name}", pot_path(pot) %>
-    <ol>
-  <%=  pot.plant.name %>
-  <%=  pot.plant.care %>
-  <%=  pot.water_in_days %>
-    </ol>
-  <% end %>
-</ul>
 
