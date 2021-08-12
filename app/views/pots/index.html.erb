@@ -6,8 +6,17 @@
   <div class="pots-show row mt-5">
     <% @pots.each do |pot|  %>
       <div class="col-6 col-lg-4">
+        <div>
+          <% if pot.water_in_days == 0 %>
+                      <%= image_tag "watering_icon/Water_needed.svg"  %>
+
+          <% else %>
+                        <%= image_tag "watering_icon/Water_not_needed.svg"  %>
+
+          <% end %>
+        </div>
         <%= link_to pot_path(pot) do %>
-          <div class="card-pick mb-4"> 
+        <div class="card-pick mb-4">
           <%= image_tag pot.plant.cover_picture %>
             <div class="card-pick-info">
               <p><%= pot.plant.name %></p>
