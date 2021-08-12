@@ -13,10 +13,27 @@
       <% end %>
     <% end %>
     <div>
-      <%= simple_form_for @plant, method: :index do |f| %>
+      <%= simple_form_for @plant do |f| %>
         <%= f.input :image, as: :file %>
         <%= f.submit "Search", class: "btn btn-primary" %>
       <% end %>
+    </div>
+  </div>
+  <div class="plants-list">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= image_tag @plant.cover_picture %>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <%= link_to plant_path(@plant) do  %>
+              <h5 class="card-title"><%= @plant.name %></h5>
+              <p class="card-text"><%= @plant.description %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="plants-list">
