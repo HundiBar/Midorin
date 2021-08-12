@@ -6,15 +6,6 @@
     <% end %>
   </div>
   <%= render 'shared/search-bar' %>
-
-  <div class="results justify-content-center align-items-center ">
-    <% if @query %>
-      <h2>Results for <span style="color:#05ce91"><%= @query %></span></h2>
-      <h4>We found <%= @plants.count == 1 ? "a plant" : "#{@plants.count} plants" %></h4>
-    <% else %>
-      <h1>All <%= Plant.count %> plants</h1>
-    <% end %>
-  </div>
   
   <div class="plants-list justify-content-center ">
     <% @plants.each do |plant|  %>
