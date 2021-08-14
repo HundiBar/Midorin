@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_132437) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "birthday"
+    t.date "birthday"
     t.index ["plant_id"], name: "index_pots_on_plant_id"
     t.index ["user_id"], name: "index_pots_on_user_id"
   end

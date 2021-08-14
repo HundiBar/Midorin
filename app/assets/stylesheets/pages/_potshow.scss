@@ -3,7 +3,8 @@
 }
 
 .plant_image {
-    width: 100%;
+    width: 100vw;
+    object-fit: cover;
     height: auto;
     // border: 3px solid red;
     img {
