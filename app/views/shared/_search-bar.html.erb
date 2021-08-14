@@ -9,6 +9,7 @@
     <% end %>
     <%= simple_form_for @plant do |f| %>
       <%= f.input :image, label: false, as: :file, wrapper_html: {class: "search-button"} %>
+      <%= f.submit %>
     <% end %>
   </div>
 </div>

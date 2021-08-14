@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
   def index
     # COMMupload img to cloudinary to create a url that can be called
     @plant = Plant.new
-    if params[:query].nil? || params[:query].empty? && params.dig(:plant, :image).nil?
+    if params[:query].blank? && params.dig(:plant, :image).nil?
       @plants = policy_scope(Plant).order(created_at: :desc)
 
     elsif params[:query].present?
@@ -58,6 +58,7 @@ class PlantsController < ApplicationController
       response = https.request(request)
       p json_raw = response.body
       p json_parse = JSON.parse(json_raw)
+      # binding.pry
       plant_search_name = json_parse["suggestions"].first["plant_name"]
       @plants = policy_scope(Plant).search_by_name(plant_search_name)
     end
