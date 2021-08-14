@@ -2,7 +2,6 @@
   <div class="top">
     <div class="left">
       <h1 class="plant_name"><%= @plant.name %></h1>
-
        <div class="botanical_name">
         <div class="header">Botanical name:</div>
         <div class="text"><%= @plant.scientific_name %></div>
@@ -18,15 +17,22 @@
     <div class="text"><%= @plant.description %></div>
   </div>
 
+
   <div class="category watering">
     <div class="header">Watering schedule:</div>
     <div class="text">
-      <% if @plant.watering_schedule == 1 %>
+      <% if @plant.biweekly? %>
         <%= "Once every two weeks" %>
-      <% elsif @plant.watering_schedule == 2 %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
+      <% elsif @plant.weekly? %>
         <%= "Once a week" %>
-        <% elsif %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
+      <% elsif %>
         <%= "Once every two days" %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
+        <%= image_tag "watering_icon/water_icon.svg" %>
       <% end %>
     </div>
   </div>
@@ -34,7 +40,19 @@
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
     <div class="text">
-      <%= @plant.light %>
+      <% if @plant.low? %>
+        <%= @plant.light %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+      <% elsif @plant.weekly? %>
+        <%= @plant.light %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+      <% elsif %>
+        <%= @plant.light %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+        <%= image_tag "sun_icon/full_sun.svg" %>
+      <% end %>
     </div>
   </div>
 

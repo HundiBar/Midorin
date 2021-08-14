@@ -1,6 +1,8 @@
 class Plant < ApplicationRecord
   has_many :pots
   enum light: { low: "low", medium: "medium", high: "high" }
+  enum watering_schedule: { biweekly: 1, weekly: 2, daily: 3 }
+
 
   # validates :name, :description, :cover_picture, :watering_schedule, :care, presence: true
 
