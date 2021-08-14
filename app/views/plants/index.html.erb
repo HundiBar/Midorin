@@ -1,12 +1,5 @@
 <div class="container mx my-5">
-  <div>
-    <%= simple_form_for @plant do |f| %>
-      <%= f.input :image, as: :file %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
   <%= render 'shared/search-bar' %>
-  
   <div class="plants-list justify-content-center ">
     <% @plants.each do |plant|  %>
       <div class="card-product mb-3">
@@ -15,12 +8,12 @@
           <%= link_to plant_path(plant) do  %>
             <h1><%= plant.name %></h1>
             <h4><%= plant.scientific_name %></h4>
-            <i><p>water and light icons</p></i>
+            <i>
+              <p>water and light icons</p>
+            </i>
           <% end %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
-
