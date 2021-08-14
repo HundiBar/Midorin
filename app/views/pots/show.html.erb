@@ -1,25 +1,58 @@
 <div class="container">
-    <h1>It's me, <%= @pot.nickname %> </h1>
-    <h3>I'm DATE old</h3>
-        <div class="info section">
-            <p class="general info">
-                <%= image_tag @pot.plant.cover_picture %>
-                Name: <%= @pot.plant.name %>
-                Scientic name: <%= @pot.plant.scientific_name %>
-                Description: <%= @pot.plant.description %>
-                Care: <%= @pot.plant.care %>
-                Temperature: <%= @pot.plant.temperature %>
-                Light : <%= @pot.plant.light %>
-                Toxicity: <%= @pot.plant.toxicity %>
-                Water: <%= @pot.plant.watering_schedule %>
-            </p>
-        </div>
-        <div class="d-flex justify-content-center align-items-center mt-18 mb-12">
-            <%= link_to "Back to garden", pots_path, class:'btn btn-primary'%>
-        </div>
-        <div class="delete-icon">
-            <%= link_to pot_path(@pot), method: :delete, data: { confirm: "Are you sure?"} do %>
-            <i class="fas fa-trash"></i>
-            <% end %>
-        </div>
-</div>
+  <div class="top">
+    <div class="left">
+      <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname %></span></h1>
+      <h3>I'm DATE old</h3>
+       <div class="botanical_name">
+        <div class="header">Botanical name:</div>
+        <div class="text"><%= @pot.plant.scientific_name %></div>
+      </div>
+    </div>
+    <div class="plant_image">
+      <%= image_tag @pot.plant.cover_picture %>
+    </div>
+  </div>
+
+  <div class="category description">
+    <div class="header">Description:</div>
+    <div class="text"><%= @pot.plant.description %></div>
+  </div>
+
+  <div class="category watering">
+    <div class="header">Watering schedule:</div>
+    <div class="text">
+      <% if @pot.plant.watering_schedule == 1 %>
+        <%= "Once every two weeks" %>
+      <% elsif @pot.plant.watering_schedule == 2 %>
+        <%= "Once a week" %>
+        <% elsif %>
+        <%= "Once every two days" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="category sunlight">
+    <div class="header">Sunlight:</div>
+    <div class="text">
+      <%= @pot.plant.light %>
+    </div>
+  </div>
+
+  <div class="category temperature">
+    <div class="header">Temperature:</div>
+    <div class="text"><%= @pot.plant.temperature %></div>
+  </div>
+
+  <div class="category care">
+    <div class="header">Care tips:</div>
+    <div class="text"><%= @pot.plant.care %></div>
+  </div>
+
+  <div class="category toxicity">
+    <div class="header">Toxicity:</div>
+    <div class="text"><%= @pot.plant.toxicity %></div>
+  </div>
+
+  <div class="button-group">
+    <%= link_to "Remove from garden", pot_path(@pot), class: "button-secondary", method: :delete, data: { confirm: "Are you sure?"} %>
+  </div>

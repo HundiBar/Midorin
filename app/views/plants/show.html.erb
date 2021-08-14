@@ -72,14 +72,13 @@
   </div>
 
   <div class="button-group">
-    <%= link_to "Add to garden", pots_path(@plant), class: "button-primary", method: "post" %>
+    <%= simple_form_for @pot do |f| %>
+      <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
+      <%= f.submit "Add to garden", class: "button-primary"%>
+    <% end %>
     <%= link_to "Back", :back, class: "button-secondary"%>
   </div>
 
 </div>
 
-<%= simple_form_for @pot do |f| %>
-  <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
-  <%= f.submit "Add to garden", class: "btn btn-primary"%>
-<% end %>
 

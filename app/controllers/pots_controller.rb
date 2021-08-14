@@ -9,11 +9,12 @@ class PotsController < ApplicationController
   def show; end
 
   def create
-    @plant = Plant.find(params[:pot][:plant_id])
     @pot = Pot.new(pot_params)
+    @plant = Plant.find(params[:pot][:plant_id])
     @pot.plant = @plant
     @pot.user = current_user
     @pot.last_watered = Time.now
+    @pot.nickname = "Nickname"
     authorize @pot
     @pot.save
     redirect_to pots_path
