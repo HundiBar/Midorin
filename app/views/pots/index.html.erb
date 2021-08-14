@@ -9,8 +9,12 @@
         <div>
           <% if pot.water_in_days == 0 %>
             <%= image_tag "watering_icon/Water_needed.svg"  %>
-          <% else %>
-            <%= image_tag "watering_icon/Water_not_needed.svg"  %>
+              <h3>Needs water.</h3>
+            <% elsif pot.water_in_days < 0 %>
+              <%= image_tag "watering_icon/Water_overdue.svg"  %>
+              <h3>Watering overdue by <%= (pot.water_in_days) * -1 %> days.</h3>
+            <% else %>
+              <h3>Water in <%= pot.water_in_days %> days.</h3>
           <% end %>
         </div>
         <%= link_to pot_path(pot) do %>
