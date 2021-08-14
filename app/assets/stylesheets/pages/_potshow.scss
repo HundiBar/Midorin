@@ -1,3 +1,17 @@
 .pot_name {
-  color: $primary;
+    color: $primary;
+}
+
+.plant_image {
+    width: 100vw;
+    object-fit: cover;
+    height: auto;
+    // border: 3px solid red;
+    img {
+        width: 100px;
+        max-width: 100%;
+        max-height: auto;
+        width: auto;
+        height: auto;
+    }
 }
