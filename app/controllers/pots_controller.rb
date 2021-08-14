@@ -1,6 +1,6 @@
 class PotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_pot, only: [:show, :edit, :update, :destroy]
+  before_action :set_pot, only: [:show, :edit, :update, :destroy, :water]
 
   def index
     @pots = policy_scope(Pot).order(created_at: :desc)
@@ -8,7 +8,7 @@ class PotsController < ApplicationController
 
   def show; end
 
-  def update
+  def water
     @pot.update(pot_params)
     redirect_to pots_path
   end
@@ -27,9 +27,9 @@ class PotsController < ApplicationController
   def edit
   end
 
-  def update   
+  def update
     @pot.update(pot_params)
-    redirect_to pot_path(@pot)
+    redirect_to pots_path
   end
 
   def destroy
