@@ -6,14 +6,15 @@
     <% @pots.each do |pot|  %>
       <div class="col-6 col-lg-4">
         <div>
-          <% if pot.water_in_days == 0 %>
-            <%= image_tag "watering_icon/Water_needed.svg"  %>
-              <h3>Needs water.</h3>
-            <% elsif pot.water_in_days < 0 %>
-              <%= image_tag "watering_icon/Water_overdue.svg"  %>
-              <h3>Watering overdue by <%= (pot.water_in_days) * -1 %> days.</h3>
-            <% else %>
-              <h3>Water in <%= pot.water_in_days %> days.</h3>
+          <% if pot.water_in_days <= 0 %>
+            <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg" %>
+            <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * -1} days." %></h3>
+            <%= simple_form_for pot do |f| %>
+              <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
+              <%= f.submit 'water plant' %>
+            <% end %>
+          <% else %>
+            <h3>Water in <%= pot.water_in_days %> days.</h3>
           <% end %>
         </div>
         <%= link_to pot_path(pot) do %>
