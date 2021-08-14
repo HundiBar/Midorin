@@ -14,7 +14,6 @@ class PotsController < ApplicationController
     @pot.plant = @plant
     @pot.user = current_user
     @pot.last_watered = Time.now
-    @pot.nickname = "Nickname" if params[:query].nil
     authorize @pot
     @pot.save
     redirect_to pots_path
@@ -23,9 +22,9 @@ class PotsController < ApplicationController
   def edit
   end
 
-  def update
-      @pot.update(pot_params)
-      redirect_to pot_path(@pot)
+  def update   
+    @pot.update(pot_params)
+    redirect_to pot_path(@pot)
   end
 
   def destroy
@@ -41,7 +40,7 @@ class PotsController < ApplicationController
   end
 
   def pot_params
-    params.require(:pot).permit(:plant_id)
+    params.require(:pot).permit(:plant_id, :nickname, :birthday)
   end
 
 end
