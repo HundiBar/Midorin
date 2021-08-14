@@ -1,29 +1,26 @@
-<div class="plant_image">
+<div class="plant-image">
   <%= image_tag @pot.plant.cover_picture %>
 </div>
 <div class="container">
   <div class="edit">
     <%= link_to edit_pot_path do %>
-    <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
-     <% end %>
+      <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
+    <% end %>
   </div>
   <div class="top">
     <div class="left">
       <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname || "name?"%></span></h1>
-      <h5>Birthday: <%= @pot.birthday || "birthday?" %></h5> 
-       <div class="botanical_name">
+      <h5>Birthday: <%= @pot.birthday || "birthday?" %></h5>
+      <div class="botanical_name">
         <div class="header">Botanical name:</div>
         <div class="text"><%= @pot.plant.scientific_name %></div>
       </div>
     </div>
   </div>
-  
-
   <div class="category description">
     <div class="header">Description:</div>
     <div class="text"><%= @pot.plant.description %></div>
   </div>
-
   <div class="category watering">
     <div class="header">Watering schedule:</div>
     <div class="text">
@@ -42,7 +39,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
     <div class="text">
@@ -61,24 +57,18 @@
       <% end %>
     </div>
   </div>
-
   <div class="category temperature">
     <div class="header">Temperature:</div>
     <div class="text"><%= @pot.plant.temperature %></div>
   </div>
-
   <div class="category care">
     <div class="header">Care tips:</div>
     <div class="text"><%= @pot.plant.care %></div>
   </div>
-
   <div class="category toxicity">
     <div class="header">Toxicity:</div>
     <div class="text"><%= @pot.plant.toxicity %></div>
   </div>
-
   <div class="button-group">
     <%= link_to "Remove from garden", pot_path(@pot), class: "button-secondary", method: :delete, data: { confirm: "Are you sure?"} %>
   </div>
-
-
