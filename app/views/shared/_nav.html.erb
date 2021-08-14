@@ -2,7 +2,9 @@
 
   <%= link_to pots_path, class: "nav-link" do %>
   <!-- if the current page isn't plants index and is either pots show or index, the active my garden icon will show -->
-    <% if !current_page?(controller: 'plants', action: 'index') && (current_page?(controller: 'pots', action: 'index') || current_page?(controller: 'pots', action: 'show')) %>
+    <% if current_page == 'pots_index' %>
+      <%= image_tag 'pots_icon/active.svg', width: "56", height: "56", alt: "My garden icon" %>
+    <% elsif  current_page == 'pots_show' %>
       <%= image_tag 'pots_icon/active.svg', width: "56", height: "56", alt: "My garden icon" %>
     <% else %>
       <%= image_tag 'pots_icon/inactive.svg', width: "56", height: "56", alt: "My garden icon" %>
@@ -10,7 +12,9 @@
   <% end %>
 
   <%= link_to plants_path, class: "nav-link" do %>
-    <% if !current_page?(controller: 'pots', action: 'index') && (current_page?(controller: 'plants', action: 'index') || current_page?(controller: 'plants', action: 'show')) %>
+    <% if current_page == 'plants_index'  %>
+      <%= image_tag 'scan_icon/active.svg', width: "56", height: "56", alt: "Scan icon" %>
+    <% elsif current_page == 'plants_show' %>
       <%= image_tag 'scan_icon/active.svg', width: "56", height: "56", alt: "Scan icon" %>
     <% else %>
       <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
