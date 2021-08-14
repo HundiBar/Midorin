@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
 
   resources :plants, only: [:index, :show]
-  resources :pots, only: [:index, :new, :create, :show, :destroy]
+  resources :pots, only: [:index, :new, :create, :show, :destroy, :update]
   resources :chatrooms do
     resources :messages, only: [:index]
   end
