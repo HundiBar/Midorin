@@ -1,10 +1,4 @@
 <div class="container mx my-5">
-  <div>
-    <%= simple_form_for @plant do |f| %>
-      <%= f.input :image, as: :file, input_html: {class: "search-button"} %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-    <% end %>
-  </div>
   <%= render 'shared/search-bar' %>
   <div class="plants-list justify-content-center ">
     <% @plants.each do |plant|  %>

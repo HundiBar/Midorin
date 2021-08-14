@@ -1,14 +1,14 @@
 <div class="search-bar row justify-content-center align-items-center mb-5">
-    <%= form_tag plants_path, method: :get, class: "form-inline" do %>
-      <div class="form-group mb-0">
-        <%= text_field_tag :query,
+  <div class="form-inline">
+    <%= form_tag plants_path, method: :get do %>
+      <%= text_field_tag :query,
                     params[:query],
                     class: "form-control",
                     placeholder: "Search the name of your plant..."
                     %>
-      </div>
-      <%= button_tag "", class: "btn btn-outline-info" do %>
-        <i class="fas fa-search"></i>
-      <% end %>
+    <% end %>
+    <%= simple_form_for @plant do |f| %>
+      <%= f.input :image, label: false, as: :file, wrapper_html: {class: "search-button"} %>
     <% end %>
   </div>
+</div>

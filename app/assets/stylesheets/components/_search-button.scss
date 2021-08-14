@@ -1,14 +1,19 @@
 
 .search-button {
   /*  style your btn here  */
-  background-image: url("http://localhost:3000/assets/scan_icon/inactive-4e3217599efe1db2d0f0e99e64b239792a9d367c841b9c0259ac49a8260fa7f2.svg");
+  background-image: url("http://localhost:3000/assets/scan_icon/scan_search.svg");
   background-size: cover;
-  height: 120px;
-  width: 120px;
+  height: 32px;
+  width: 32px;
   color: white;
   cursor: pointer;
+  margin-bottom: 0px;
 }
 
 .search-button input[type="file" ] {
-  display: none;
+  opacity: 0;
+  font-size: 60px;
+  line-height: 1em;
 }
+
+

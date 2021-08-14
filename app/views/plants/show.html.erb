@@ -2,22 +2,19 @@
   <div class="top">
     <div class="left">
       <h1 class="plant_name"><%= @plant.name %></h1>
-
-       <div class="botanical_name">
+      <div class="botanical_name">
         <div class="header">Botanical name:</div>
         <div class="text"><%= @plant.scientific_name %></div>
       </div>
     </div>
-    <div class="plant_image">
+    <div class="plant-image">
       <%= image_tag @plant.cover_picture %>
     </div>
   </div>
-
   <div class="category description">
     <div class="header">Description:</div>
     <div class="text"><%= @plant.description %></div>
   </div>
-
   <div class="category watering">
     <div class="header">Watering schedule:</div>
     <div class="text">
@@ -25,34 +22,29 @@
         <%= "Once every two weeks" %>
       <% elsif @plant.watering_schedule == 2 %>
         <%= "Once a week" %>
-        <% elsif %>
+      <% elsif %>
         <%= "Once every two days" %>
       <% end %>
     </div>
   </div>
-
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
     <div class="text">
       <%= @plant.light %>
     </div>
   </div>
-
   <div class="category temperature">
     <div class="header">Temperature:</div>
     <div class="text"><%= @plant.temperature %></div>
   </div>
-
   <div class="category care">
     <div class="header">Care tips:</div>
     <div class="text"><%= @plant.care %></div>
   </div>
-
   <div class="category toxicity">
     <div class="header">Toxicity:</div>
     <div class="text"><%= @plant.toxicity %></div>
   </div>
-
   <div class="button-group">
     <%= simple_form_for @pot do |f| %>
       <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
@@ -60,7 +52,4 @@
     <% end %>
     <%= link_to "Back", :back, class: "button-secondary"%>
   </div>
-
 </div>
-
-
