@@ -8,11 +8,9 @@
       <div class="col-6 col-lg-4">
         <div>
           <% if pot.water_in_days == 0 %>
-                      <%= image_tag "watering_icon/Water_needed.svg"  %>
-
+            <%= image_tag "watering_icon/Water_needed.svg"  %>
           <% else %>
-                        <%= image_tag "watering_icon/Water_not_needed.svg"  %>
-
+            <%= image_tag "watering_icon/Water_not_needed.svg"  %>
           <% end %>
         </div>
         <%= link_to pot_path(pot) do %>
