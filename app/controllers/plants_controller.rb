@@ -9,7 +9,6 @@ require_relative "../../test_hash.rb"
 
 
 class PlantsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
   before_action :set_plant, only: [:show]
 
   def index
