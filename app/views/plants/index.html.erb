@@ -3,6 +3,13 @@
   <%= render 'shared/search-bar' %>
   <%= render 'shared/spinner' %>
   <div class="plants-list justify-content-center ">
+    <div class="px-3 justify-content-center">
+      <% if @api_scan %>
+        <h5>We identified <span style="color:#08e6a3;"> <%= @plants.first.name %><br>
+          </span></h5>
+        <p><span class="px-4" style="color:#08e6a3; opacity:0.7;">(<%= @plants.first.scientific_name %>)</span></p>
+      <% end %>
+    </div>
     <% @plants.each do |plant|  %>
       <div class="card-product mb-3">
         <%= image_tag plant.cover_picture %>

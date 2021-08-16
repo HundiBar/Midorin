@@ -15,6 +15,7 @@ class PlantsController < ApplicationController
   def index
     # COMMupload img to cloudinary to create a url that can be called
     @plant = Plant.new
+    @api_scan = params.dig(:plant, :image).present?
     if params[:query].blank? && params.dig(:plant, :image).nil?
       @plants = policy_scope(Plant).order(created_at: :desc)
 
@@ -22,7 +23,7 @@ class PlantsController < ApplicationController
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
 
-    elsif params.dig(:plant, :image).present?
+    elsif @api_scan
       # cloudinary_upload = Cloudinary::Uploader.upload(params[:plant][:image], options = {})
       # upload_check = cloudinary_upload["secure_url"]
       # file = URI.open(upload_check)
