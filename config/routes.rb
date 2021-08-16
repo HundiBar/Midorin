@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/dashboards', to: 'user#dashboard'
   # get '/plants/search', to: 'plants#search'
   get '/plants/filter', to: 'plants#filter'
-  post '/pots/picture', to: 'pots#picture'
+  patch '/pots', to: 'pots#picture'
 
 
 

@@ -17,7 +17,7 @@
   </div>
 </div>
 <div>
-  <%= simple_form_for @pot do |f| %>
+  <%= simple_form_for @pot, url: pots_path(@pot), method: :patch do |f| %>
     <%= f.input :photo, as: :file, input_html: { multiple: true } %>
     <%= f.submit %>
   <% end %>
