@@ -1,6 +1,6 @@
 class PotsController < ApplicationController
 
-  before_action :set_pot, only: [:show, :edit, :update, :destroy, :water]
+  before_action :set_pot, only: [:show, :edit, :update, :destroy, :water, :picture]
 
   def index
     @pots = policy_scope(Pot).order(created_at: :desc)
@@ -10,6 +10,12 @@ class PotsController < ApplicationController
 
   def water
     @pot.update(pot_params)
+    redirect_to pot_path
+  end
+
+  def picture
+    @pot.update(pot_params)
+    raise
     redirect_to pots_path
   end
 
@@ -45,7 +51,7 @@ class PotsController < ApplicationController
   end
 
   def pot_params
-    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, :photo)
+    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, :photos)
   end
 
 end
