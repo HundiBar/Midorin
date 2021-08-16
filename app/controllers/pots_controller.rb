@@ -45,7 +45,7 @@ class PotsController < ApplicationController
   end
 
   def pot_params
-    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered)
+    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, :photo)
   end
 
 end

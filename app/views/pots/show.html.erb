@@ -1,6 +1,26 @@
 <% content_for :current_page, 'pots_show' %>
-<div class="plant-image">
-  <%= image_tag @pot.plant.cover_picture %>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <% if @pot.photos.present? %>
+      <% @pot.photos.each do |photo| %>
+        <div class="carousel-item active">
+          style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path photo.key, height: 300, crop: :fill %>')"
+        <% end %>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  <% else %>
+    <div class="plant-image">
+      <%= image_tag @pot.plant.cover_picture %>
+    </div>
+  <% end %>
 </div>
 <div class="container">
   <div class="edit">
@@ -73,3 +93,7 @@
   <div class="button-group">
     <%= link_to "Remove from garden", pot_path(@pot), class: "button-secondary", method: :delete, data: { confirm: "Are you sure?"} %>
   </div>
+  <%= simple_form_for @pot do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+  <% end %>
