@@ -6,8 +6,9 @@ const searchFire = () => {
     const fire =  document.querySelector('#new_plant');
     console.log(input.files);
     const submit = document.querySelector("#new_plant input[type=submit]")
-    // remove spinner display:none
+    document.querySelector("#wifi-loader").style.opacity = '1';
     submit.click()
+
 
   });
 }
