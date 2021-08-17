@@ -14,11 +14,6 @@ class PotsController < ApplicationController
     redirect_to pot_path
   end
 
-  # def picture
-  #   @pot.update(pot_params)
-  #   raise
-  #   redirect_to pots_path
-  # end
 
   def create
     @pot = Pot.new(pot_params)
@@ -36,7 +31,7 @@ class PotsController < ApplicationController
 
   def update
     @pot.update(pot_params)
-    redirect_to pots_path
+    redirect_to pot_path(@pot)
   end
 
   def destroy
@@ -52,7 +47,7 @@ class PotsController < ApplicationController
   end
 
   def pot_params
-    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, photos_attributes: [:photos])
+    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, photos: [])
   end
 
 end

@@ -18,11 +18,9 @@
 </div>
 <div>
   <!-- url: pots_path(@pot), method: :patch -->
-  <%= form_for @pot do |f| %>
-    <%= f.fields :photos do |ff| %>
-      <%= ff.file_field :photos, input_html: { multiple: true } %>
-      <%= ff.submit %>
-    <% end %>
+  <%= simple_form_for @pot do |f| %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit %>
   <% end %>
 </div>
 <div class="container">
