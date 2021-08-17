@@ -10,7 +10,9 @@
             <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * (-1) } days." %></h3>
             <%= simple_form_for pot do |f| %>
               <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
-              <%= f.submit 'water plant' %>
+              <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+                <i class=""></i>
+              <% end %>
             <% end %>
           <% else %>
             <h3>Water in <%= pot.water_in_days %> days.</h3>
