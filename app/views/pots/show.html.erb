@@ -2,8 +2,8 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <% @pot.photos.each do |photo| %>
-      <div class="carousel-item active">
-        <%= cl_image_path photo.key, height: 300, crop: :fill %>
+      <div class="carousel-item">
+        <%= cl_image_path photo.key, height: 100, crop: :fill %>
       <% end %>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -17,9 +17,12 @@
   </div>
 </div>
 <div>
-  <%= simple_form_for @pot, url: pots_path(@pot), method: :patch do |f| %>
-    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
-    <%= f.submit %>
+  <!-- url: pots_path(@pot), method: :patch -->
+  <%= form_for @pot do |f| %>
+    <%= f.fields :photos do |ff| %>
+      <%= ff.file_field :photos, input_html: { multiple: true } %>
+      <%= ff.submit %>
+    <% end %>
   <% end %>
 </div>
 <div class="container">

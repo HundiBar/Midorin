@@ -6,6 +6,7 @@ class Pot < ApplicationRecord
   validates :plant_id, presence: true
 
   has_many_attached :photos
+  accepts_nested_attributes_for :photos
 
   def water_in_days
     plant.days_until_water - (Date.today - last_watered.to_date).to_i
