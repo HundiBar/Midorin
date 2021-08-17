@@ -31,6 +31,7 @@ class PotsController < ApplicationController
 
   def update
     @pot.update(pot_params)
+    # raise
     redirect_to pot_path(@pot)
   end
 
