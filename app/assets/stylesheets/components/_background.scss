@@ -1,5 +1,7 @@
 .background {
     background-image: asset_url("landing");
+    background-attachment: fixed;
+    overflow-y: hidden;
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -13,10 +15,20 @@
     }
 }
 
-#midorin-style {
-    font-family: $headers-font;
-    text-underline-offset: -2px;
-    text-decoration-color: red;
+.wraper {
+    position: relative;
+    #dot {
+        left: 85px;
+        position: absolute;
+        top: 33px;
+    }
+    #midorin-style {
+        font-family: "Poppins", "Helvetica", "sans-serif";
+        font-size: 30px;
+        border-bottom: 2px solid red;
+        display: inline-block;
+        line-height: 0.3;
+    }
 }
 
 @media (min-width: 600px) {
