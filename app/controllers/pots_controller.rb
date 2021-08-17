@@ -31,7 +31,7 @@ class PotsController < ApplicationController
 
   def update
     @pot.update(pot_params)
-    # raise
+    @pot.photos.attach(photos_params["photos"]) if photos_params["photos"]
     redirect_to pot_path(@pot)
   end
 
@@ -48,7 +48,11 @@ class PotsController < ApplicationController
   end
 
   def pot_params
-    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered, photos: [])
+    params.require(:pot).permit(:plant_id, :nickname, :birthday, :last_watered)
+  end
+
+  def photos_params
+    params.require(:pot).permit(photos: [])
   end
 
 end
