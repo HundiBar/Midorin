@@ -1,6 +1,14 @@
 .background {
-    background-image: url("https://images.unsplash.com/photo-1483794344563-d27a8d18014e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-image: asset_url("landing");
     background-size: cover;
     background-position: center;
-    padding: 150px 0;
+    height: 100vh;
+    padding: 80px 0;
+}
+
+@media (min-width: 600px) {
+    .background {
+        height: 100vh;
+        padding: 80px 0;
+    }
 }
