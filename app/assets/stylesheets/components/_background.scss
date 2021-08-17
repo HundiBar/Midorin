@@ -22,7 +22,7 @@ body {
     #dot {
         left: 85px;
         position: absolute;
-        top: 33px;
+        top: 34px;
     }
     #midorin-style {
         font-family: "Poppins", "Helvetica", "sans-serif";
@@ -34,5 +34,12 @@ body {
 }
 
 @media (min-width: 640px) {
-    .background {}
+    .background {
+        h1 {
+            font-size: 2rem;
+        }
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
 }
