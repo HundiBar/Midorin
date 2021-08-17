@@ -14,11 +14,7 @@ class PotPolicy < ApplicationPolicy
   end
 
   def edit?
-    true
-  end
-
-  def update?
-    true
+    record.user == user
   end
 
   def destroy?
