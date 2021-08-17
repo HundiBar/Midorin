@@ -24,7 +24,7 @@ class PlantsController < ApplicationController
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
 
     elsif @api_scan
-      api_call = ApiCall.new(params.dig(:plant, :image))
+      api_call = ApiCall.new(params[:plant][:image])
       # plant_search_name = TestHash["suggestions"].first["plant_name"]
       plant_search_name = api_call.call_api
       @plants = policy_scope(Plant).search_by_name(plant_search_name)

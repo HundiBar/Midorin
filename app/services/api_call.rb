@@ -1,12 +1,10 @@
 class ApiCall
-
   def initialize(api_params)
     @api_params = api_params
   end
 
   def call_api
-
-    cloudinary_upload = Cloudinary::Uploader.upload(@api_params[:plant][:image], options = {})
+    cloudinary_upload = Cloudinary::Uploader.upload(@api_params, options = {})
     upload_check = cloudinary_upload["secure_url"]
     file = URI.open(upload_check)
 
@@ -41,6 +39,6 @@ class ApiCall
     response = https.request(request)
     p json_raw = response.body
     p json_parse = JSON.parse(json_raw)
-    plant_search_name = json_parse["suggestions"].first["plant_name"]
+    json_parse["suggestions"].first["plant_name"]
   end
 end
