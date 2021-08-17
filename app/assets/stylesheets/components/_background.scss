@@ -4,6 +4,19 @@
     background-position: center;
     height: 100vh;
     padding: 80px 0;
+    h1 {
+        font-family: $headers-font;
+    }
+    h4 {
+        font-family: $body-font;
+        line-height: 1.6;
+    }
+}
+
+#midorin-style {
+    font-family: $headers-font;
+    text-underline-offset: -2px;
+    text-decoration-color: red;
 }
 
 @media (min-width: 600px) {
