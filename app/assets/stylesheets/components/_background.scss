@@ -1,11 +1,13 @@
+body {
+    overflow-y: hidden;
+}
+
 .background {
     background-image: asset_url("landing");
     background-attachment: fixed;
-    overflow-y: hidden;
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    padding: 80px 0;
+    padding: 70px 0;
     h1 {
         font-family: $headers-font;
     }
@@ -31,9 +33,6 @@
     }
 }
 
-@media (min-width: 600px) {
-    .background {
-        height: 100vh;
-        padding: 80px 0;
-    }
+@media (min-width: 640px) {
+    .background {}
 }
