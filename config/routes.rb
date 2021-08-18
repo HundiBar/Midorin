@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/dashboards', to: 'user#dashboard'
   # get '/plants/search', to: 'plants#search'
   get '/plants/filter', to: 'plants#filter'
+  patch '/pots', to: 'pots#picture'
+
 
 
   resources :plants, only: [:index, :show]
