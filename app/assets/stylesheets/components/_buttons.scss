@@ -44,3 +44,10 @@ $hover-clr: #08e6a3;
         // transform: scale(1.01);
     }
 }
+
+@media (min-width: 600px) {
+    .button-secondary,
+    .button-primary {
+        width: 20vw;
+    }
+}
