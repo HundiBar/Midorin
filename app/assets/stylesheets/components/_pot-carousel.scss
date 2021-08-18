@@ -8,3 +8,27 @@
     background-color: #F3F6F8;
     padding: 0px;
 }
+
+.picture-button {
+  background-image: asset_url("camera_icon/camera.svg");
+  background-size: cover;
+  height: 32px;
+  width: 32px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-left: 90%;
+  opacity: 0.7;
+  margin-top: -15px;
+
+}
+
+.picture-button input[type="file" ] {
+  opacity: 0;
+  font-size: 60px;
+  line-height: 1em;
+}
+
+.simple_form.edit_pot input[type="submit" ] {
+  display: none;
+}
