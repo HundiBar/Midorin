@@ -1,7 +1,9 @@
 #pot-caro-img img {
-  margin-top: none;
+  margin-top: 0px;
   width: 100%;
-  object-fit: cover;
+  height: 400px;
+  object-fit: contain;
+  object-position: 50% 50%;
 }
 
 .page-frame-header {
