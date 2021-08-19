@@ -1,0 +1,9 @@
+#chat-display {
+  display: grid;
+  height: calc(100% - 88px);
+  grid-template-rows: 75px 1fr 1px;
+}
+
+#messages {
+  overflow-y: scroll;
+}
