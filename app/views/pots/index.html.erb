@@ -6,12 +6,11 @@
       <div class="col-6 col-lg-4">
           <% if pot.water_in_days <= 0 %>
             <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * (-1) } days." %></h3>
-                     <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
+            <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
             <%= simple_form_for pot do |f| %>
               <%= f.input :last_watered, input_html: {value: Time.now }, wrapper_html: {class: "water-button"}, as: :hidden %>
               <%= f.submit %>
             <% end %>
-
           <% else %>
             <h3>Water in <%= pot.water_in_days %> days.</h3>
           <% end %>

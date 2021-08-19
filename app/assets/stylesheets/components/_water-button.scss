@@ -1,22 +1,32 @@
+// css for simple form
 .edit_pot {
-  // background-image: asset_url("watering_icon/Water_needed.svg");
   background-size: cover;
   height: 32px;
   width: 32px;
   color: white;
   cursor: pointer;
-  margin-bottom: 0px;
+  // margin-bottom: 0px;
+  right: 0px;
+  position: absolute;
+  margin-top: 16px;
+  margin-right: 40px;
 }
 
 .edit_pot input[type="submit" ] {
   opacity: 0;
-  font-size: 20px;
+  font-size: 40px;
   line-height: 1em;
-  width: 40px
+  width: 56px
 }
 
+//css for water image
 .water-button {
   position: absolute;
+  right: 0px;
+  margin-top: 16px;
+  margin-right: 24px;
 }
+
+
 
 
