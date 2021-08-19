@@ -1,20 +1,16 @@
 <% content_for :current_page, 'pots_index' %>
 <div class="container mx my-5">
   <h1><b>My Garden</b></h1>
-
   <% if !@pots.nil? && @pots.count == 0 %>
- 
-
-  <div class="card-trip">
-    <img src="https://images.unsplash.com/photo-1538506392157-218c11f95129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=651&q=80" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>It seems youd don't have any plants yet</h2>
-        <p>Use the search function or the scanner to add some!</p>
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1538506392157-218c11f95129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=651&q=80" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>It seems youd don't have any plants yet</h2>
+          <p>Use the search function or the scanner to add some!</p>
+        </div>
       </div>
     </div>
-  </div>
-
   <% else %>
     <div class="pots-show row mt-5">
       <% @pots.each do |pot|  %>
