@@ -12,7 +12,7 @@
 // }
 .page-frame-body {
     flex-grow: 1;
-    overflow: scroll;
+    // overflow: scroll;
     // background-color: blue;
 }
 
@@ -20,3 +20,7 @@
 //     background-color: $accent;
 //     padding: 16px;
 // }
+
+.plants-list {
+  margin-bottom: 110px;
+}

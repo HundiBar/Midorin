@@ -17,9 +17,9 @@
         <div class="col-6 col-lg-4">
           <div>
             <% if pot.water_in_days <= 0 %>
-              <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg" %>
               <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * (-1) } days." %></h3>
-              <%= simple_form_for pot do |f| %>
+              <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
+              <%= simple_form_for pot, html: {id: "water_pot"} do |f| %>
                 <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
                 <%= f.submit 'water plant' %>
               <% end %>
@@ -42,5 +42,3 @@
     </div>
   <% end %>
 </div>
-
-
