@@ -1,0 +1,78 @@
+<div class="detailed-info-group details-hidden">
+  <div class="container">
+    <div class="details-card">
+      <div class="emoji emoji-padding">🌱</div>
+      <div class="card-text">
+        <div class="details-header">Description</div>
+        <div class="details-text"><%= @plant.description %></div>
+      </div>
+    </div>
+    <div class="details-card">
+      <div class="emoji emoji-padding">🌡</div>
+      <div class="card-text">
+        <div class="details-header">Temperature</div>
+        <div class="details-text"><%= @plant.temperature %></div>
+      </div>
+    </div>
+    <div class="details-card">
+      <% if @plant.biweekly? %>
+        <div class="emoji emoji-padding"><%= "💧" %></div>
+        <div class="card-text">
+          <div class="details-header"><%= "Watering schedule" %></div>
+          <div class="details-text"><%= "I only need to be watered once every two weeks. This #{@plant.name} is pretty chill like that." %></div>
+        </div>
+      <% elsif @plant.weekly? %>
+        <%= content_tag(:div, "💦", class: "emoji emoji-padding") %>
+        <div class="card-text">
+          <div class="details-header"><%= "Watering schedule" %></div>
+          <div class="details-text"><%= "I need to be watered once a week. Not too bad, right?" %></div>
+        </div>
+      <% elsif %>
+        <div class="emoji emoji-padding"><%= "🌊" %></div>
+        <div class="card-text">
+          <div class="details-header"><%= "Watering schedule" %></div>
+          <div class="details-text"><%= "I need to be watered once every two days. This #{@plant.name} is thirsty!" %></div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="details-card">
+      <% if @plant.low? %>
+        <div class="emoji emoji-padding"><%= "⛅️" %></div>
+        <div class="card-text">
+          <div class="details-header"><%= "Sunlight" %></div>
+          <div class="details-text"><%= "A #{@plant.name} like me needs low sunlight." %></div>
+        </div>
+      <% elsif @plant.medium? %>
+        <%= content_tag(:div, "🌤", class: "emoji emoji-padding") %>
+        <div class="card-text">
+          <div class="details-header"><%= "Sunlight" %></div>
+          <div class="details-text"><%= "A #{@plant.name} like me needs medium sunlight." %></div>
+        </div>
+      <% elsif %>
+        <div class="emoji emoji-padding"><%= "☀️" %></div>
+        <div class="card-text">
+          <div class="details-header"><%= "Sunlight" %></div>
+          <div class="details-text"><%= "A #{@plant.name} like me needs full sunlight." %></div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="details-card">
+      <div class="emoji emoji-padding">💁‍♀️</div>
+      <div class="card-text">
+        <div class="details-header">Care tips</div>
+        <div class="details-text"><%= @plant.care %></div>
+      </div>
+    </div>
+
+    <div class="details-card">
+      <div class="emoji emoji-padding">☢️</div>
+      <div class="card-text">
+        <div class="details-header">Toxicity</div>
+        <div class="details-text"><%= @plant.toxicity %></div>
+      </div>
+    </div>
+
+  </div>
+</div>
