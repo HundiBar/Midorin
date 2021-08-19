@@ -1,0 +1,32 @@
+<div class="basic-info-group">
+  <div class="basic-card">
+    <% if @plant.biweekly? %>
+      <div class="emoji"><%= "💧" %></div>
+      <div class="title"><%= "Water" %></div>
+      <div class="text"><%= "Once every two weeks" %></div>
+    <% elsif @plant.weekly? %>
+      <%= content_tag(:div, "💦", class: "emoji") %>
+      <div class="title"><%= "Water" %></div>
+      <div class="text"><%= "Once a week" %></div>
+    <% elsif %>
+      <div class="emoji"><%= "🌊" %></div>
+      <div class="title"><%= "Water" %></div>
+      <div class="text"><%= "Once every two days" %></div>
+    <% end %>
+  </div>
+  <div class="basic-card">
+    <% if @plant.low? %>
+      <div class="emoji"><%= "⛅️" %></div>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Low sun" %></div>
+    <% elsif @plant.medium? %>
+      <%= content_tag(:div, "🌤", class: "emoji") %>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Medium sun" %></div>
+    <% elsif %>
+      <div class="emoji"><%= "☀️" %></div>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Full sun" %></div>
+    <% end %>
+  </div>
+</div>
