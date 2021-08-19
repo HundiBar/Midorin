@@ -1,6 +1,26 @@
 $header_size: 16px;
 $header_weight: 600;
 
+.backing-card {
+  // position: sticky;
+  margin-top: 82%;
+  height: 65vh;
+  min-height: 65vh;
+  width: 100vw;
+  background-color: $accent;
+  border-radius: 24px 24px 0 0;
+  box-shadow: 0 0 48px hsla(240, 10%, 59%, 0.5);
+  z-index: 0;
+}
+
+.backing-card-details {
+  height: auto;
+}
+
+.extra-margin {
+  margin-left: 4%; //NOGOOD!
+}
+
 @mixin word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
@@ -19,8 +39,17 @@ body {
 
 .plant_name {
   @include word-wrap;
-  width: 55vw;
   line-height: 1em;
+  font-weight: 600;
+  padding-top: 1em;
+  color: $text;
+  letter-spacing: -0.02em;
+}
+
+.scientific-name {
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 300;
 }
 
 .top {
@@ -36,12 +65,14 @@ body {
 }
 
 .plant-image {
-  width: 45vw;
+  width: 100vw;
   height: auto;
+  z-index: -3;
+  position: fixed;
   // border: 3px solid red;
   img {
-  width: 100px;
-  max-width: 100%;
+  // width: 100px;
+  // max-width: 100%;
   max-height: auto;
   width: auto;
   height: auto;
@@ -127,12 +158,36 @@ body {
 //   left: -0.6em;
 // }
 
-.toxicity {
-    margin-bottom: 1.5em;
-}
+// .toxicity {
+//     margin-bottom: 1.5em;
+// }
 
 .button-group {
+  // position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// .sticky {
+// position: -webkit-sticky; /* for Safari, iPhone demo day */
+// position: sticky;
+// bottom: 10vh;
+// }
+
+
+
+
+
+
+
+
+
+
+
