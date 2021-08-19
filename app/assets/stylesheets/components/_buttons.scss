@@ -3,7 +3,7 @@ $hover-clr: #08e6a3;
     background-color: $primary;
     color: $light;
     padding: 1rem 0;
-    width: 90vw;
+    width: 87vw; //NOGOOD!
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -27,7 +27,7 @@ $hover-clr: #08e6a3;
     box-shadow: inset 0px 0px 0px 2px $primary;
     color: $primary;
     padding: 1rem 0;
-    width: 90vw;
+    width: 87vw; //NOGOOD!
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -51,3 +51,4 @@ $hover-clr: #08e6a3;
         width: 20vw;
     }
 }
+
