@@ -29,7 +29,7 @@
   </div>
 <% end %>
 <div class="picture-button">
-  <%= simple_form_for @pot do |f| %>
+  <%= simple_form_for @pot, html: {id: "picture_upload"} do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
     <%= f.submit %>
   <% end %>
