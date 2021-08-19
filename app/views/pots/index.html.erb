@@ -1,31 +1,44 @@
 <% content_for :current_page, 'pots_index' %>
 <div class="container mx my-5">
   <h1><b>My Garden</b></h1>
-  <div class="pots-show row mt-5">
-    <% @pots.each do |pot|  %>
-      <div class="col-6 col-lg-4">
-          <% if pot.water_in_days <= 0 %>
-            <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * (-1) } days." %></h3>
-                     <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
-            <%= simple_form_for pot do |f| %>
-              <%= f.input :last_watered, input_html: {value: Time.now }, wrapper_html: {class: "water-button"}, as: :hidden %>
-              <%= f.submit %>
-            <% end %>
-
-          <% else %>
-            <h3>Water in <%= pot.water_in_days %> days.</h3>
-          <% end %>
-        <%= link_to pot_path(pot) do %>
-          <div class="card-pick mb-4">
-            <%= image_tag pot.plant.cover_picture %>
-            <div class="card-pick-info">
-              <p><%= pot.plant.name %></p>
-              <h3><%= pot.nickname %></h3>
-              <p><%= pot.date %></p>
-            </div>
-          </div>
-        <% end %>
+  <% if !@pots.nil? && @pots.count == 0 %>
+    <div class="card-trip">
+      <img src="https://images.unsplash.com/photo-1538506392157-218c11f95129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=651&q=80" />
+      <div class="card-trip-infos">
+        <div>
+          <h2>It seems youd don't have any plants yet</h2>
+          <p>Use the search function or the scanner to add some!</p>
+        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% else %>
+    <div class="pots-show row mt-5">
+      <% @pots.each do |pot|  %>
+        <div class="col-6 col-lg-4">
+          <div>
+            <% if pot.water_in_days <= 0 %>
+              <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg" %>
+              <h3><%= pot.water_in_days.zero? ? 'Needs water' : "Watering overdue by #{(pot.water_in_days) * (-1) } days." %></h3>
+              <%= simple_form_for pot, html:{id: water_pot} do |f| %>
+                <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
+                <%= f.submit 'water plant' %>
+              <% end %>
+            <% else %>
+              <h3>Water in <%= pot.water_in_days %> days.</h3>
+            <% end %>
+          </div>
+          <%= link_to pot_path(pot) do %>
+            <div class="card-pick mb-4">
+              <%= image_tag pot.plant.cover_picture %>
+              <div class="card-pick-info">
+                <p><%= pot.plant.name %></p>
+                <h3><%= pot.nickname %></h3>
+                <p><%= pot.date %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
