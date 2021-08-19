@@ -9,20 +9,27 @@
       <p><span class="px-4" style="color:#08e6a3; opacity:0.7;">(<%= @plants.first.scientific_name %>)</span></p>
     <% end %>
   </div>
-  <div class="plants-list justify-content-center ">
-    <% @plants.each do |plant|  %>
-      <div class="card-product mb-3">
-        <%= image_tag plant.cover_picture %>
-        <div class="card-product-infos">
-          <%= link_to plant_path(plant) do  %>
-            <h1><%= plant.name %></h1>
-            <h4><%= plant.scientific_name %></h4>
-            <i>
-              <p>water and light icons</p>
-            </i>
-          <% end %>
+  <div class="container ">
+    <div class="plants-list justify-content-center">
+      <div class="row g-5">
+        <% @plants.each do |plant|  %>
+        <div class="wraper mb-3 col-lg-6">
+          <div class="card-product">
+            <%= image_tag plant.cover_picture %>
+            <div class="card-product-infos">
+              <%= link_to plant_path(plant) do  %>
+                <h1><%= plant.name %></h1>
+                <h4><%= plant.scientific_name %></h4>
+                <i>
+                  <p>water and light icons</p>
+                </i>
+              <% end %>
+            </div>
+          </div>
         </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
+
 </div>
