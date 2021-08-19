@@ -41,19 +41,37 @@
         <div class="emoji emoji-padding"><%= "⛅️" %></div>
         <div class="card-text">
           <div class="details-header"><%= "Sunlight" %></div>
-          <div class="details-text"><%= "A #{@plant.name} like me needs low sunlight." %></div>
+          <div class="details-text">
+            <% if ['a', 'e', 'i', 'o', 'u'].include? @plant.name.first.downcase %>
+              <%= "An #{@plant.name} like me needs low sunlight." %>
+            <% else %>
+              <%= "A #{@plant.name} like me needs low sunlight." %>
+            <% end %>
+          </div>
         </div>
       <% elsif @plant.medium? %>
         <%= content_tag(:div, "🌤", class: "emoji emoji-padding") %>
         <div class="card-text">
           <div class="details-header"><%= "Sunlight" %></div>
-          <div class="details-text"><%= "A #{@plant.name} like me needs medium sunlight." %></div>
+          <div class="details-text">
+            <% if ['a', 'e', 'i', 'o', 'u'].include? @plant.name.first.downcase %>
+              <%= "An #{@plant.name} like me needs medium sunlight." %>
+            <% else %>
+              <%= "A #{@plant.name} like me needs medium sunlight." %>
+            <% end %>
+          </div>
         </div>
       <% elsif %>
         <div class="emoji emoji-padding"><%= "☀️" %></div>
         <div class="card-text">
           <div class="details-header"><%= "Sunlight" %></div>
-          <div class="details-text"><%= "A #{@plant.name} like me needs full sunlight." %></div>
+          <div class="details-text">
+            <% if ['a', 'e', 'i', 'o', 'u'].include? @plant.name.first.downcase %>
+              <%= "An #{@plant.name} like me needs full sunlight." %>
+            <% else %>
+              <%= "A #{@plant.name} like me needs full sunlight." %>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
