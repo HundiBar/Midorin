@@ -29,12 +29,14 @@ import { searchFire } from '../components/search_fire';
 import { picFire } from "../components/pic_upload";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleSwitch } from '../components/toggle_switch';
+import { confetti } from '../components/confetti';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   searchFire();
   picFire();
+  confetti();
   initChatroomCable();
   toggleSwitch();
 });
