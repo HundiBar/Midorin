@@ -103,8 +103,6 @@
     <div class="text"><%= @pot.plant.toxicity %></div>
   </div>
 
-
-
   <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Remove from garden
@@ -126,7 +124,6 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
         <%= link_to "Delete", pot_path(@pot), class: "btn btn-primary", method: :delete %>
-
       </div>
     </div>
   </div>
