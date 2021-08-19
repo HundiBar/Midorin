@@ -26,6 +26,8 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { searchFire } from '../components/search_fire';
+import { picFire } from "../components/pic_upload";
+
 
 import { toggleSwitch } from '../components/toggle_switch';
 
@@ -34,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   toggleSwitch();
   searchFire();
+  picFire();
 });

@@ -1,6 +1,14 @@
 <% content_for :current_page, 'plants_index' %>
 <div class="container mx my-5">
   <%= render 'shared/search-bar' %>
+  <%= render 'shared/spinner' %>
+  <div>
+    <% if @api_scan %>
+      <h5>We identified <span style="color:#08e6a3;"> <%= @plants.first.name %><br>
+        </span></h5>
+      <p><span class="px-4" style="color:#08e6a3; opacity:0.7;">(<%= @plants.first.scientific_name %>)</span></p>
+    <% end %>
+  </div>
   <div class="plants-list justify-content-center ">
     <% @plants.each do |plant|  %>
       <div class="card-product mb-3">
