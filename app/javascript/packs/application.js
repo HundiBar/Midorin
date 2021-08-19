@@ -27,9 +27,8 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { searchFire } from '../components/search_fire';
 import { picFire } from "../components/pic_upload";
-
-
 import { toggleSwitch } from '../components/toggle_switch';
+import { confetti } from '../components/confetti';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -37,4 +36,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleSwitch();
   searchFire();
   picFire();
+  confetti();
 });
