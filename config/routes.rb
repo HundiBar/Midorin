@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :plants, only: [:index, :show]
   resources :pots, only: [:index, :new, :create, :show, :destroy, :edit, :update, :water]
-  resources :chatrooms do
-    resources :messages, only: [:index]
+  resources :chatrooms, only:[:index, :show] do
+    resources :messages, only: [:create]
   end
 
 end
