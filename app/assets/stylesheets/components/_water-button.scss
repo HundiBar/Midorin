@@ -1,0 +1,22 @@
+.edit_pot {
+  // background-image: asset_url("watering_icon/Water_needed.svg");
+  background-size: cover;
+  height: 32px;
+  width: 32px;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 0px;
+}
+
+.edit_pot input[type="submit" ] {
+  opacity: 0;
+  font-size: 20px;
+  line-height: 1em;
+  width: 40px
+}
+
+.water-button {
+  position: absolute;
+}
+
+
