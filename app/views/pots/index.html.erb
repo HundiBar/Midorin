@@ -11,7 +11,6 @@
               <%= f.input :last_watered, input_html: {value: Time.now }, wrapper_html: {class: "water-button"}, as: :hidden %>
               <%= f.submit %>
             <% end %>
-
           <% else %>
             <h3>Water in <%= pot.water_in_days %> days.</h3>
           <% end %>

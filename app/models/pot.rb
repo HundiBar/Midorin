@@ -11,6 +11,10 @@ class Pot < ApplicationRecord
     plant.days_until_water - (Date.today - last_watered.to_date).to_i
   end
 
+  def self.pots_in_danger
+    Pot.where("last_watered < ?", Date.today - 2)
+  end
+
   def notification
     if water_in_days == 0
       puts "You need to water #{nickname} today."
