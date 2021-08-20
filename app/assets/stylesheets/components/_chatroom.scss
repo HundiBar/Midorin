@@ -1,0 +1,15 @@
+#chat-display {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 90vh;
+    position: sticky;
+    top: 0;
+
+}
+
+#messages {
+  overflow-y: scroll;
+  flex-grow: 1;
+
+}
