@@ -27,14 +27,16 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { searchFire } from '../components/search_fire';
 import { picFire } from "../components/pic_upload";
-
-
+import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleSwitch } from '../components/toggle_switch';
+import { confetti } from '../components/confetti';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  toggleSwitch();
   searchFire();
   picFire();
+  confetti();
+  initChatroomCable();
+  toggleSwitch();
 });

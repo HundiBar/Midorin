@@ -50,6 +50,11 @@
 <%# description of pot %>
   <div class="top">
     <div class="left">
+      <div class="cake">
+        <% if @pot.birthday == Date.today %>
+          <%= image_tag "cake_icon/cake_icon.svg" %>
+        <% end %>
+      </div>
       <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname || "name?"%></span></h1>
       <h5>Birthday: <%= @pot.birthday || "birthday?" %></h5>
       <div class="botanical_name">
@@ -118,7 +123,7 @@
 
   <%# remove from garden button %>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="button button-primary remove" data-toggle="modal" data-target="#exampleModal">
     Remove from garden
   </button>
   <!-- Modal -->
@@ -135,14 +140,9 @@
           Are you sure?
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <%= link_to "Delete", pot_path(@pot), class: "btn btn-primary", method: :delete %>
+          <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <%= link_to "Delete", pot_path(@pot), class: "button button-primary remove", method: :delete %>
         </div>
       </div>
     </div>
-</div>
-
-
-
-
-
+  </div>
