@@ -22,24 +22,3 @@
       <% end %>
     </div>
   </div>
-
-  <div class="category temperature">
-    <div class="header">Temperature:</div>
-    <div class="text"><%= @plant.temperature %></div>
-  </div>
-  <div class="category care">
-    <div class="header">Care tips:</div>
-    <div class="text"><%= @plant.care %></div>
-  </div>
-  <div class="category toxicity">
-    <div class="header">Toxicity:</div>
-    <div class="text"><%= @plant.toxicity %></div>
-  </div>
-  <div class="button-group">
-    <%= simple_form_for @pot do |f| %>
-      <%= f.input :plant_id, input_html: {value: @plant.id }, as: :hidden %>
-      <%= f.submit "Add to garden", class: "button-primary"%>
-    <% end %>
-    <%= link_to "Back", :back, class: "button-secondary"%>
-  </div>
-</div>
