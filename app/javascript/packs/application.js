@@ -36,7 +36,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   searchFire();
   picFire();
-  confetti();
   initChatroomCable();
   toggleSwitch();
+  confetti();
 });
