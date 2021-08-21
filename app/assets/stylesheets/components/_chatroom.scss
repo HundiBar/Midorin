@@ -11,5 +11,43 @@
 #messages {
   overflow-y: scroll;
   flex-grow: 1;
+  margin-left: 5px;
 
+}
+
+.chatroom-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+#chat-border {
+  border-bottom: solid black 2px;
+  opacity: 0.2;
+  padding-top: 10px;
+}
+#active-chat {
+  border: solid black 2px;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+#inactive-chat {
+  border: solid black 2px;
+  opacity: 0.5;
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+#message_content {
+  padding: 24px 5px;
+  border-radius: 5px;
 }
