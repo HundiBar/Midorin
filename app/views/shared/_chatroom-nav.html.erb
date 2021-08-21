@@ -1,0 +1,29 @@
+<div class="chatroom-nav">
+  <% if params[:id] == "1" %>
+    <div id="active-chat">
+      <%= link_to "General", chatroom_path(1) %>
+    </div>
+  <% else %>
+    <div id="inactive-chat">
+      <%= link_to "General", chatroom_path(1) %>
+    </div>
+  <% end %>
+  <% if params[:id] == "2" %>
+    <div id="active-chat">
+      <%= link_to "Advice", chatroom_path(2) %>
+    </div>
+  <% else %>
+    <div id="inactive-chat">
+      <%= link_to "Advice", chatroom_path(2) %>
+    </div>
+  <% end %><% if params[:id] == "3" %>
+    <div id="active-chat">
+      <%= link_to "Beginner", chatroom_path(3) %>
+    </div>
+  <% else %>
+    <div id="inactive-chat">
+      <%= link_to "Beginner", chatroom_path(3) %>
+    </div>
+  <% end %>
+</div>
+<div id="chat-border"></div>
