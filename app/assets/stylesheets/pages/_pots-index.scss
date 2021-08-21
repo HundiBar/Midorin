@@ -115,10 +115,18 @@
 // Media queries for Ipad/ Desktop
 @media (min-width: 640px) {
     .card-trip {
-        margin-top: 75px;
+        margin-top: 15px;
     }
     .card-trip .card-trip-infos {
-        padding: 16px;
-        background-color: red;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    .card-trip>img {
+        height: 300px;
+    }
+    .title {
+        font-size: 65px;
     }
 }
