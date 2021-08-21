@@ -1,8 +1,6 @@
 <% content_for :current_page, 'plants_show' %>
+<%= render 'plants/carousel.html.erb' %>
 
-<div class="plant-image">
-  <%= image_tag @plant.cover_picture %>
-</div>
 <div class="backing-card">
   <div class="container">
     <div class="extra-margin">
@@ -21,6 +19,4 @@
       <% end %>
     </div>
   </div>
- </div>
-  
-
+</div>

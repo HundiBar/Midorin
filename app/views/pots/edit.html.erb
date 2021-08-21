@@ -5,8 +5,34 @@
     <div class="form-inputs">
         <%= f.input :nickname, placeholder: 'What is my name?' %>
         <%= f.input :birthday, as: :date, html5: true, placeholder: 'How old am I?' %>
-        <%= f.submit "Edit your plant", class: "button-primary" %>
+        <div class="button-group" style="margin-bottom: 0">
+          <%= f.submit "Edit your plant", class: "button-primary" %>
+              <!-- Button trigger modal -->
+  <button type="button" class="button button-delete-secondary remove" data-toggle="modal" data-target="#exampleModal">
+    Remove from garden
+  </button>
+        </div>
     </div>
   <% end %>
+   <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Remove from garden</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure?
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Remove", pot_path(@pot), class: "button button-delete", method: :delete %>
+          <button type="button" class="button button-cancel" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
