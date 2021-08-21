@@ -10,7 +10,7 @@
   <div class="container">
     <div class="extra-margin">
       <div class="rotation">
-        <% if @pot.birthday.present? %>
+        <% if @pot.birthday %>
           <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
             <%= image_tag "cake_icon/cake_icon.svg", class: "cake" %>
           <% end %>
@@ -26,11 +26,13 @@
       <% else %>
         <div class="pot-info scientific-name"><%= @pot.plant.scientific_name %></div>
       <% end %>
-      <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
-        <div class="birthday-text">Today's my birthday! </div>
-      <% else %>
-        <div class="pot-info">Birthday: <%= @pot.birthday || "not added yet" %></div>
-      <% end  %>
+      <% if @pot.birthday %>
+        <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
+          <div class="birthday-text">Today's my birthday! </div>
+        <% else %>
+          <div class="pot-info">Birthday: <%= @pot.birthday || "not added yet" %></div>
+        <% end  %>
+      <% end %>
       <div>
         <%= link_to edit_pot_path do %>
           <% if @pot.nickname? %>
