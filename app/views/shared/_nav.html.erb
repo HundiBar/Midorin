@@ -19,7 +19,13 @@
     <% end %>
   <% end %>
   <%= link_to chatrooms_path, class: "nav-link" do %>
-    <%= image_tag 'chat_icon/inactive.svg', width: "56", height: "56", alt: "Chat icon" %>
+    <% if current_page == 'chatrooms_index' %>
+        <%= image_tag 'chat_icon/active.svg', width: "56", height: "56", alt: "Chat icon" %>
+    <% elsif current_page == 'chatrooms_show' %>
+      <%= image_tag 'chat_icon/active.svg', width: "56", height: "56", alt: "Chat icon" %>
+    <% else %>
+        <%= image_tag 'chat_icon/inactive.svg', width: "56", height: "56", alt: "Chat icon" %>
+    <% end %>
   <% end %>
   <%= link_to plants_path, class: "nav-link" do %>
     <%= image_tag 'profile_icon/inactive.svg', width: "56", height: "56", alt: "Profile icon" %>

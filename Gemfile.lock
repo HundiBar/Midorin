@@ -76,6 +76,9 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
+    chronic (0.10.2)
+    chronic_duration (0.10.6)
+      numerizer (~> 0.1.1)
     cloudinary (1.20.0)
       aws_cf_signer
       rest-client (>= 2.0.0)
@@ -130,6 +133,10 @@ GEM
       racc (~> 1.4)
     nokogiri (1.12.3-x86_64-linux)
       racc (~> 1.4)
+    numerizer (0.1.1)
+    origin (2.3.1)
+    origin-selectable_ext (0.1.1)
+      origin
     orm_adapter (0.5.0)
     pg (1.2.3)
     pg_search (2.3.5)
@@ -211,6 +218,7 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    spanner (0.0.4)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -222,9 +230,18 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sugar-high (0.7.3)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    timespan (0.6.0)
+      activesupport (>= 3.0)
+      chronic
+      chronic_duration
+      origin-selectable_ext
+      spanner
+      sugar-high (>= 0.7.3)
+      xduration (>= 3.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -251,6 +268,9 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    xduration (3.0.0)
+      activesupport (>= 3.0.0)
+      i18n (>= 0.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -285,6 +305,7 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  timespan (~> 0.6.0)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

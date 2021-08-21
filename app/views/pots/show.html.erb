@@ -1,133 +1,103 @@
 <% content_for :current_page, 'pots_show' %>
-<% if @pot.photos.attached? %>
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <% @pot.photos.each_with_index do |photo, index| %>
-        <% if index == 0 %>
-          <div id="pot-caro-img" class="carousel-item active">
-            <%= cl_image_tag photo.key, height: 300, crop: :fill %>
-          </div>
-        <% else %>
-          <div id="pot-caro-img" class="carousel-item">
-            <%= cl_image_tag photo.key, height: 300, crop: :fill %>
-          </div>
-        <% end %>
-      <% end %>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="color:black;">
-        <span class="carousel-control-prev-icon" aria-hidden="true" style="color:black;"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-<% else %>
-  <div id="pot-caro-img">
-    <%= image_tag @pot.plant.cover_picture %>
-  </div>
-<% end %>
+<%= render 'pots/carousel' %>
 <div class="picture-button">
-  <%= simple_form_for @pot, html: {id: "picture_upload"} do |f| %>
+  <%= simple_form_for @pot, html: {id: "picture_upload"}, remote: true do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
     <%= f.submit %>
   <% end %>
 </div>
-<div class="container">
-  <div class="edit">
-    <%= link_to edit_pot_path do %>
-      <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
-    <% end %>
-  </div>
-  <div class="top">
-    <div class="left">
-      <div class="cake">
-        <% if @pot.birthday == Date.today %>
-          <%= image_tag "cake_icon/cake_icon.svg" %>
+<div class="backing-card">
+  <div class="container">
+    <div class="extra-margin">
+      <div class="rotation">
+        <% if @pot.birthday %>
+          <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
+            <%= image_tag "cake_icon/cake_icon.svg", class: "cake" %>
+          <% end %>
         <% end %>
       </div>
-      <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname || "name?"%></span></h1>
-      <h5>Birthday: <%= @pot.birthday || "birthday?" %></h5>
-      <div class="botanical_name">
-        <div class="header">Botanical name:</div>
-        <div class="text"><%= @pot.plant.scientific_name %></div>
+      <% if @pot.nickname %>
+        <h1 class="plant_name">It's me, <span class="pot_name"><%= @pot.nickname %></span></h1>
+      <% else %>
+        <h1 class="plant_name">My <span class="pot_name"><%= @pot.plant.name %></span></h1>
+      <% end %>
+      <% if @pot.nickname? %>
+        <div class="pot-info"><%= @pot.plant.name %></div>
+      <% else %>
+        <div class="pot-info scientific-name"><%= @pot.plant.scientific_name %></div>
+      <% end %>
+      <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
+        <div class="birthday-text">Today's my birthday! </div>
+      <% else %>
+        <div class="pot-info">Birthday: <%= @pot.birthday || "not added yet" %></div>
+      <% end  %>
+      <div>
+      <%= link_to edit_pot_path do %>
+        <% if @pot.nickname? %>
+          <p class="profile-edit"><i class="fas fa-edit"></i> Edit <%= @pot.nickname %>'s profile</p>
+        <% else %>
+          <p class="profile-edit"><i class="fas fa-edit"></i> Edit your plant's profile</p>
+        <% end %>
+      <% end %>
       </div>
     </div>
+    <div class="info-group">
+      <%= render 'shared/toggle-switch' %>
+      <%= render 'basics.html.erb' %>
+      <%= render 'details.html.erb' %>
+    </div>
   </div>
-  <div class="category description">
+</div>
+
+<!--   <div class="category description">
     <div class="header">Description:</div>
-    <div class="text"><%= @pot.plant.description %></div>
+    <div class="text"><#%= @pot.plant.description %></div>
   </div>
   <div class="category watering">
     <div class="header">Watering schedule:</div>
     <div class="text">
-      <% if @pot.plant.biweekly? %>
-        <%= "Once every two weeks" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-      <% elsif @pot.plant.weekly? %>
-        <%= "Once a week" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-      <% elsif %>
-        <%= "Once every two days" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-        <%= image_tag "watering_icon/water_icon.svg" %>
-      <% end %>
+      <#% if @pot.plant.biweekly? %>
+        <#%= "Once every two weeks" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+      <v% elsif @pot.plant.weekly? %>
+        <#%= "Once a week" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+      <#% elsif %>
+        <#%= "Once every two days" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+        <#%= image_tag "watering_icon/water_icon.svg" %>
+      <#% end %>
     </div>
   </div>
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
     <div class="text">
-      <% if @pot.plant.low? %>
-        <%= @pot.plant.light %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-      <% elsif @pot.plant.weekly? %>
-        <%= @pot.plant.light %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-      <% elsif %>
-        <%= @pot.plant.light %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-        <%= image_tag "sun_icon/full_sun.svg" %>
-      <% end %>
+      <#% if @pot.plant.low? %>
+        <#%= @pot.plant.light %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+      <#% elsif @pot.plant.weekly? %>
+        <#%= @pot.plant.light %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+      <#% elsif %>
+        <#%= @pot.plant.light %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+        <#%= image_tag "sun_icon/full_sun.svg" %>
+      <#% end %>
     </div>
   </div>
   <div class="category temperature">
     <div class="header">Temperature:</div>
-    <div class="text"><%= @pot.plant.temperature %></div>
+    <div class="text"><#%= @pot.plant.temperature %></div>
   </div>
   <div class="category care">
     <div class="header">Care tips:</div>
-    <div class="text"><%= @pot.plant.care %></div>
+    <div class="text"><#%= @pot.plant.care %></div>
   </div>
   <div class="category toxicity">
     <div class="header">Toxicity:</div>
-    <div class="text"><%= @pot.plant.toxicity %></div>
-  </div>
-  <!-- Button trigger modal -->
-  <button type="button" class="button button-primary remove" data-toggle="modal" data-target="#exampleModal">
-    Remove from garden
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Delete this plant</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Are you sure?
-        </div>
-        <div class="modal-footer">
-          <button type="button"  class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <%= link_to "Delete", pot_path(@pot), class: "button button-primary remove", method: :delete %>
-        </div>
-      </div>
-    </div>
-  </div>
+    <div class="text"><#%= @pot.plant.toxicity %></div>
+  </div> -->
