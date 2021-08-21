@@ -3,9 +3,16 @@ require "net/http"
 require "uri"
 require "tempfile"
 
-class LinebotController < ApplicationController
+class LineBot
 
   protect_from_forgery except: :callback
+
+  def share
+    pot = Pot.find(params[:id])
+    LinebotNotificationJob.perform_now(pot, client, current_user)
+
+    redirect_to pots_path
+  end
 
   def callback
     body = request.body.read
@@ -69,9 +76,45 @@ class LinebotController < ApplicationController
       "I am fine, " + user_name
     elsif a_question.end_with?('?')
       "Good question, " + user_name + "!"
+    elsif a_question.match?("#{Pot.nickname}")
+      "#{Pot.nickname} is doing well."
     else
       ["I couldn't agree more.", "Great to hear that.", "Kinda makes sense."].sample
     end
   end
 
+  def get_ids(events)
+    # assumes that user will log in with their LINE account (that lets us know their LINE user ID)
+    # when they sign up with LINE, Pantry LINE messaging bot will be automatically added as a friend
+    # when an individual user commands Pantry bot, we use the LINE user ID from their message to find our user's web account
+    # when they (presumably as a household head) add and talk to Pantry bot in a family chat group , we will update LINE group ID for their household
+    # or create their household
+    # every time there is a call back request from the group, we find the household with group ID, find the household head
+    # (for now assuming only household head has account on Pantry app) and its head user, and make changes to the pantry of that head user
+
+    events.each do |event|
+      id = event['source']['userId']
+      unless User.exists?(line_id: id)
+        client.reply_message(event['replyToken'], { type: 'text', text: 'Please sign up with LINE on midorin.one'})
+      end
+      user = User.find_by(line_id: id)
+
+      case event.type
+      when Line::Bot::Event::MessageType::Text
+        # if
+          event['source']['groupId']
+          # group_line_id = event['source']['groupId']
+          # unless Household.exists?(line_id: group_line_id)
+          #   household = Household.create(line_id: group_line_id)
+          #   user.update(household_id: household.id)  # update household LINE ID everytime this user added Pantry bot to a new group
+          # end
+        # end
+      end
+
+      return user
+      'OK'
+    end
+  end
+
 end
+
