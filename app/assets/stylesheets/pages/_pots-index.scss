@@ -18,7 +18,7 @@
 }
 
 
-/*Card pick*/
+/*Pots card*/
 
 .card-pick {
     /*fixed*/
@@ -78,9 +78,11 @@
 
 // In case of no results
 .card-trip {
+    margin-top: 40px;
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
 }
 
 .card-trip>img {
@@ -90,21 +92,33 @@
 }
 
 .card-trip h2 {
-    font-size: 16px;
+    font-size: 35px;
     font-weight: bold;
-    margin: 0;
+    margin: 10px;
 }
 
 .card-trip p {
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.7;
-    margin: 0;
+    margin: 10px;
 }
 
 .card-trip .card-trip-infos {
-    padding: 16px;
+    padding: 27px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
+    text-align: center;
+}
+
+// Media queries for Ipad/ Desktop
+@media (min-width: 640px) {
+    .card-trip {
+        margin-top: 75px;
+    }
+    .card-trip .card-trip-infos {
+        padding: 16px;
+        background-color: red;
+    }
 }
