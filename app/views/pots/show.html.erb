@@ -1,4 +1,6 @@
 <% content_for :current_page, 'pots_show' %>
+
+<%# carousel %>
 <% if @pot.photos.attached? %>
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -28,18 +30,24 @@
     <%= image_tag @pot.plant.cover_picture %>
   </div>
 <% end %>
+
+<%# edit picture %>
 <div class="picture-button">
   <%= simple_form_for @pot, html: {id: "picture_upload"} do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
     <%= f.submit %>
   <% end %>
 </div>
+
+<%# edit profile %>
 <div class="container">
   <div class="edit">
     <%= link_to edit_pot_path do %>
       <p><i class="fas fa-edit"></i><i>Edit your plant's profile</i></p>
     <% end %>
   </div>
+
+<%# description of pot %>
   <div class="top">
     <div class="left">
       <div class="cake">
@@ -59,6 +67,8 @@
     <div class="header">Description:</div>
     <div class="text"><%= @pot.plant.description %></div>
   </div>
+
+  <%# pot watering schedule %>
   <div class="category watering">
     <div class="header">Watering schedule:</div>
     <div class="text">
@@ -77,6 +87,8 @@
       <% end %>
     </div>
   </div>
+
+  <%# pot lighting %>
   <div class="category sunlight">
     <div class="header">Sunlight:</div>
     <div class="text">
@@ -95,6 +107,7 @@
       <% end %>
     </div>
   </div>
+
   <div class="category temperature">
     <div class="header">Temperature:</div>
     <div class="text"><%= @pot.plant.temperature %></div>
@@ -107,16 +120,18 @@
     <div class="header">Toxicity:</div>
     <div class="text"><%= @pot.plant.toxicity %></div>
   </div>
+
+  <%# remove from garden button %>
   <!-- Button trigger modal -->
-  <button type="button" class="button button-primary remove" data-toggle="modal" data-target="#exampleModal">
+  <button type="button" class="button button-primary remove" data-toggle="modal" data-target="#exampleModalCenter">
     Remove from garden
   </button>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Delete this plant</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete this plant</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
