@@ -6,76 +6,79 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <style>
-        .background {
-            margin: 50px;
-            background-image: url("https://images.unsplash.com/photo-1538506392157-218c11f95129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=951&q=80");
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-            padding: 80px 0;
+        .page404-wraper {
+            background-image: url("https://images.unsplash.com/photo-1471086569966-db3eebc25a59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+            overflow: hidden;
+            background-position-x: -242px;
+        }
+        
+        #oopstitle {
+            /* padding-top: 30px; */
+        }
+        
+        .page404-content {
+            padding-left: 120px;
+            padding-top: 235px;
+            /* position: relative; */
+        }
+        
+        h1,
+        h2 {
+            font-family: "Helvetica";
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
         h1 {
-            /* font-family: $headers-font; */
-        }
-        
-        h4 {
-            /* font-family: $body-font; */
-            line-height: 1.6;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .wraper {
-            position: relative;
-        }
-        
-        #midorin-style {
-            font-family: "Poppins", "Helvetica", "sans-serif";
             font-size: 50px;
-            border-bottom: 12px solid #05ce91;
-            display: inline-block;
-            line-height: 0.4;
-            margin: 35px 2px 20px;
         }
         
-        h4 img {
-            filter: drop-shadow(3px 5px 2px #23f0b2);
+        #bordergreen {
+            border-bottom: 12px solid #05ce91;
+            /* position: absolute; */
         }
-        /* @media (max-width: 640px) {
-            .background {
-                background-position: 639px;
-                padding: 70px 0;
-                h1 {
-                    font-size: 2rem;
-                }
-                h2 {
-                    font-size: 1.2rem;
-                }
-                h4 {
-                    font-size: 1.1rem;
-                    padding: 5px 0;
-                    margin-left: -32px;
-                }
-            }
-        } */
+        
+        a {
+            background-color: #05ce91;
+            color: #fcfeff;
+            padding: 1rem 0;
+            width: 87vw;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 0 1em 0;
+            cursor: pointer;
+            border-radius: 2rem;
+            border-style: none;
+            transition-property: background-color, transform;
+            transition-duration: 200ms;
+            transition-timing-function: ease;
+        }
+        
+        a:hover {
+            text-decoration: none;
+            color: #fcfeff;
+            background-color: #08e6a3;
+        }
+        
+        .back-button {
+            display: flex;
+            align-items: center;
+            padding-top: 262px;
+            justify-content: center;
+        }
     </style>
 </head>
 
-<body class="rails-default-error-page">
-    <div class="background">
-        <div class="container">
-            <div class="title my-3">
-                <h1 id="midorin-style">404: page not found</h1>
-                <div class="wraper">
-                    <h4>Sorry, there is nothing here</h4>
-                </div>
-            </div>
-
-            <div>
-                <a href="https://www.midorin.one/"></a>
-            </div>
-        </div>
+<body class="page404-wraper">
+    <div id="oopstitle">
+        <h1>Oops...</h1>
+    </div>
+    <div class="page404-content">
+        <h2><span id="bordergreen">404: page not found</span id="bordergreen"></h2>
+        <h4>Sorry, there is nothing here</h4>
+    </div>
+    <div class="back-button">
+        <a href="https://www.midorin.one/">Back to Homepage</a>
     </div>
 </body>
 
