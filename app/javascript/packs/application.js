@@ -29,6 +29,7 @@ import { searchFire } from '../components/search_fire';
 import { picFire } from "../components/pic_upload";
 import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleSwitch } from '../components/toggle_switch';
+import { chatScroll } from '../components/chat_scroll';
 import { confetti } from '../components/confetti';
 
 document.addEventListener('turbolinks:load', () => {
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   picFire();
   initChatroomCable();
   toggleSwitch();
+  chatScroll();
   confetti();
 });

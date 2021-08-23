@@ -1,5 +1,6 @@
+<% content_for :current_page, 'chatroom_index' %>
 <div id="chat-display">
-  <h1>#<%= @chatroom.title %></h1>
+  <%= render 'shared/chatroom-nav'  %>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
