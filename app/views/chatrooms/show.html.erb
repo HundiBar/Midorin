@@ -1,12 +1,21 @@
 <% content_for :current_page, 'chatroom_index' %>
 <div id="chat-display">
-  <%= render 'shared/chatroom-nav'  %>
+  <div class="chatroom-header">
+    <span id="chat-back-arrow"><%= link_to '<', chatrooms_path %></span>
+    <span id="chat-title">
+      <h2># <strong><%= @chatroom.title.capitalize %></strong> </h2>
+    </span>
+    <div id="social-img">
+      <%= image_tag 'landing_icons/tips.svg', width: "40", height: "40", alt: "tips icon" %>
+    </div>
+  </div>
+  <div id="chat-border"></div>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
       <%= render 'messages/message', message: message %>
     <% end %>
   </div>
-  <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
+  <%= simple_form_for [ @chatroom, @message ], remote: true, html: {id: "chatroom-form"} do |f| %>
     <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.title}" %>
   <% end %>
 </div>
