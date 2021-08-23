@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <style>
+        body {
+            background-color: red;
+        }
+        
         .page404-wraper {
             background-image: url("https://images.unsplash.com/photo-1471086569966-db3eebc25a59?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
             overflow: hidden;
-            background-position-x: -242px;
+            background-position-x: -280px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
         }
         
         #oopstitle {
@@ -63,8 +70,30 @@
         .back-button {
             display: flex;
             align-items: center;
-            padding-top: 262px;
+            padding-top: 260px;
             justify-content: center;
+        }
+        /* desktop */
+        
+        @media (min-width: 600px) {
+            .page404-wraper {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+            #oopstitle {
+                padding: 30px 85px;
+            }
+            .page404-content {
+                padding-left: 800px;
+                padding-top: 235px;
+                /* position: relative; */
+            }
+            .back-button {
+                width: 20vw;
+                padding-top: 20px;
+                padding-left: 800px;
+            }
         }
     </style>
 </head>
