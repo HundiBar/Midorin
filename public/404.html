@@ -6,159 +6,77 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
 
     <style>
-        body {
-            background-color: #fafeff;
+        .background {
+            margin: 50px;
+            background-image: url("https://images.unsplash.com/photo-1538506392157-218c11f95129?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=951&q=80");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
         
-        svg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -250px;
-            margin-left: -400px;
+        h1 {
+            /* font-family: $headers-font; */
         }
         
-        .message-box {
-            height: 200px;
-            width: 380px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            margin-top: -100px;
-            margin-left: 50px;
-            color: #05ce91;
-            font-family: Roboto;
-            font-weight: 300;
+        h4 {
+            /* font-family: $body-font; */
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        .message-box h1 {
-            font-size: 60px;
-            line-height: 46px;
-            margin-bottom: 40px;
+        .wraper {
+            position: relative;
         }
         
-        .buttons-con {
-            background-color: $primary;
-            color: $light;
-            padding: 1rem 0;
-            width: 87vw; //NOGOOD!
-            text-align: center;
-            text-decoration: none;
+        #midorin-style {
+            font-family: "Poppins", "Helvetica", "sans-serif";
+            font-size: 50px;
+            border-bottom: 12px solid #05ce91;
             display: inline-block;
-            margin: 0 0 1em 0;
-            cursor: pointer;
-            border-radius: 2rem;
-            border-style: none;
-            transition-property: background-color, transform;
-            transition-duration: 200ms;
-            transition-timing-function: ease;
-            &:hover {
-                text-decoration: none;
-                color: $light;
-                background-color: $hover-clr;
-                // transform: scale(1.01);
+            line-height: 0.4;
+            margin: 35px 2px 20px;
+        }
+        
+        h4 img {
+            filter: drop-shadow(3px 5px 2px #23f0b2);
+        }
+        /* @media (max-width: 640px) {
+            .background {
+                background-position: 639px;
+                padding: 70px 0;
+                h1 {
+                    font-size: 2rem;
+                }
+                h2 {
+                    font-size: 1.2rem;
+                }
+                h4 {
+                    font-size: 1.1rem;
+                    padding: 5px 0;
+                    margin-left: -32px;
+                }
             }
-        }
-        
-        #Polygon-1,
-        #Polygon-2,
-        #Polygon-3,
-        #Polygon-4,
-        #Polygon-4,
-        #Polygon-5 {
-            animation: float 1s infinite ease-in-out alternate;
-        }
-        
-        #Polygon-2 {
-            animation-delay: 0.2s;
-        }
-        
-        #Polygon-3 {
-            animation-delay: 0.4s;
-        }
-        
-        #Polygon-4 {
-            animation-delay: 0.6s;
-        }
-        
-        #Polygon-5 {
-            animation-delay: 0.8s;
-        }
-        
-        @keyframes float {
-            100% {
-                transform: translateY(20px);
-            }
-        }
-        
-        @media (max-width: 450px) {
-            svg {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                margin-top: -250px;
-                margin-left: -190px;
-            }
-            .message-box {
-                top: 50%;
-                left: 50%;
-                margin-top: -100px;
-                margin-left: -190px;
-                text-align: center;
-            }
-        }
+        } */
     </style>
 </head>
 
 <body class="rails-default-error-page">
-    <svg width="380px" height="500px" viewBox="0 0 837 1045" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-      <g
-        id="Page-1"
-        stroke="none"
-        stroke-width="1"
-        fill="none"
-        fill-rule="evenodd"
-        sketch:type="MSPage"
-      >
-        <path
-          d="M353,9 L626.664028,170 L626.664028,487 L353,642 L79.3359724,487 L79.3359724,170 L353,9 Z"
-          id="Polygon-1"
-          stroke="#007FB2"
-          stroke-width="6"
-          sketch:type="MSShapeGroup"
-        ></path>
+    <div class="background">
+        <div class="container">
+            <div class="title my-3">
+                <h1 id="midorin-style">404: page not found</h1>
+                <div class="wraper">
+                    <h4>Sorry, there is nothing here</h4>
+                </div>
+            </div>
 
-        <path
-          d="M78.5,529 L147,569.186414 L147,648.311216 L78.5,687 L10,648.311216 L10,569.186414 L78.5,529 Z"
-          id="Polygon-2"
-          stroke="#EF4A5B"
-          stroke-width="6"
-          sketch:type="MSShapeGroup"
-        ></path>
-
-        <path
-          d="M773,186 L827,217.538705 L827,279.636651 L773,310 L719,279.636651 L719,217.538705 L773,186 Z"
-          id="Polygon-3"
-          stroke="#795D9C"
-          stroke-width="6"
-          sketch:type="MSShapeGroup"
-        ></path>
-        <path
-          d="M639,529 L773,607.846761 L773,763.091627 L639,839 L505,763.091627 L505,607.846761 L639,529 Z"
-          id="Polygon-4"
-          stroke="#F2773F"
-          stroke-width="6"
-          sketch:type="MSShapeGroup"
-        ></path>
-        <path
-          d="M281,801 L383,861.025276 L383,979.21169 L281,1037 L179,979.21169 L179,861.025276 L281,801 Z"
-          id="Polygon-5"
-          stroke="#36B455"
-          stroke-width="6"
-          sketch:type="MSShapeGroup"
-        ></path>
-      </g>
-    </svg>
+            <div>
+                <a href="https://www.midorin.one/"></a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
