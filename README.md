@@ -29,6 +29,8 @@ This app was the final project from Le Wagon Tokyo #batch 587 (part-time session
 
 * [LINE Login](https://developers.line.biz/en/services/line-login/)
 * [LINE Messaging API](https://developers.line.biz/en/services/messaging-api/)
+* [Scanner feature](https://plant.id/)
+* [Plants API](https://plant.id/)
 
 ## Demo
 [Watch](#) Midorin demo from Le Wagon Tokyo's Demo Day in September 2021. 
