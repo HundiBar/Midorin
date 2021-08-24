@@ -10,6 +10,7 @@ class ChatroomsController < ApplicationController
   end
 
   def new
+    @chatname = Chatroom.chatroom_refresh
     @chatroom = Chatroom.new
     authorize @chatroom
   end

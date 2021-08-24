@@ -18,6 +18,6 @@
       <p>Find your channel</p>
     </div>
     <%= simple_form_for @chatroom, remote: true do |f| %>
-      <%= f.input :title, collection: Chatroom::CHATNAME , input_html: { class: 'select2' }  %>
+      <%= f.input :title, collection: @chatname, input_html: { class: 'select2' }  %>
       <%= f.submit "Add Channel", class: "button-primary" %>
     <% end %>
