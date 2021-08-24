@@ -20,7 +20,7 @@
     <div id="chat-border-channel"></div>
     <% @chatrooms.each do |chatroom| %>
       <div>
-        <p>#<%= link_to chatroom.title.capitalize, chatroom_path(chatroom) %></p>
+        <p>#<%= link_to chatroom.title.titleize, chatroom_path(chatroom) %></p>
       </div>
     <% end %>
   </div>
