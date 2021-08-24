@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 2021_08_16_083012) do
     t.string "temperature"
     t.string "light"
     t.string "toxicity"
+    t.integer "hours_to_water"
     t.integer "days_until_water"
   end
 
