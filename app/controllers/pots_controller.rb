@@ -2,7 +2,6 @@ class PotsController < ApplicationController
 
   before_action :set_pot, only: [:show, :edit, :update, :destroy, :water, :picture]
 
-
   def index
     @pots = policy_scope(Pot).order(created_at: :desc)
   end
@@ -26,8 +25,7 @@ class PotsController < ApplicationController
     redirect_to pots_path
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @pot.update(pot_params)
