@@ -13,15 +13,11 @@
   </div>
   <div id="chat-border"></div>
   <div class="chatroom-links">
-    <div class="channel-form-link">
-      <p>Channels</p>
-      <%= link_to '+', new_chatroom_path %>
+    <div>
+      <%= link_to '<', chatrooms_path %>
+      <p>Find your channel</p>
     </div>
-    <div id="chat-border-channel"></div>
-    <% @chatrooms.each do |chatroom| %>
-      <div>
-        <p>#<%= link_to chatroom.title.titleize, chatroom_path(chatroom) %></p>
-      </div>
+    <%= simple_form_for @chatroom, remote: true do |f| %>
+      <%= f.input :title, collection: @chatname, input_html: { class: 'select2' }  %>
+      <%= f.submit "Add Channel", class: "button-primary" %>
     <% end %>
-  </div>
-</div>
