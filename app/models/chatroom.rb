@@ -12,5 +12,4 @@ class Chatroom < ApplicationRecord
   Plant.all.each do |plant|
     CHATNAME << plant.name unless chatroom_names.include? plant.name
   end
-  p CHATNAME
 end

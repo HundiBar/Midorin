@@ -11,8 +11,12 @@
   </div>
   <div id="chat-border"></div>
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
-    <% @chatroom.messages.each do |message| %>
-      <%= render 'messages/message', message: message %>
+    <% if @chatroom.messages.blank? %>
+      <p>Admin: Be the first...</p>
+    <% else %>
+      <% @chatroom.messages.each do |message| %>
+        <%= render 'messages/message', message: message %>
+      <% end %>
     <% end %>
   </div>
   <%= simple_form_for [ @chatroom, @message ], remote: true, html: {id: "chatroom-form"} do |f| %>
