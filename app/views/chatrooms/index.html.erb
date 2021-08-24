@@ -12,13 +12,18 @@
   </div>
   <div id="chat-border"></div>
   <div class="chatroom-links">
+    <div>
+      <p>Channels</p>
+      <%= simple_form_for @chatroom, remote: true do |f| %>
+        <%= f.input :title %>
+        <%#= f.association :plant, collection: @chatroom_name, input_html: { class: 'select2' } %>
+        <%= f.submit %>
+      <% end %>
+    </div>
     <% @chatrooms.each do |chatroom| %>
       <div>
         <p>#<%= link_to chatroom.title.capitalize, chatroom_path(chatroom) %></p>
       </div>
-    <% end %>
-    <% @plants.each do |plant| %>
-      <p><%= plant.name %></p>
     <% end %>
   </div>
 </div>

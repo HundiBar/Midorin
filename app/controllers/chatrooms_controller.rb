@@ -12,7 +12,11 @@ class ChatroomsController < ApplicationController
   def create
     @chatroom = Chatroom.new(chatroom_params)
     authorize @chatroom
-    redirect_to chatrooms_path
+    if @chatroom.save
+      redirect_to chatrooms_path
+    else
+      render "chatrooms"
+    end
   end
 
   private
