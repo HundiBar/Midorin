@@ -9,6 +9,7 @@
       <%= image_tag 'pots_icon/inactive.svg', width: "56", height: "56", alt: "My garden icon" %>
     <% end %>
   <% end %>
+
   <%= link_to plants_path, class: "nav-link" do %>
     <% if current_page == 'plants_index'  %>
       <%= image_tag 'scan_icon/active.svg', width: "56", height: "56", alt: "Scan icon" %>
@@ -18,6 +19,7 @@
       <%= image_tag 'scan_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
     <% end %>
   <% end %>
+
   <%= link_to chatrooms_path, class: "nav-link" do %>
     <% if current_page == 'chatroom_index'  %>
       <%= image_tag 'chat_icon/active.svg', width: "56", height: "56", alt: "Scan icon" %>
@@ -27,7 +29,14 @@
       <%= image_tag 'chat_icon/inactive.svg', width: "56", height: "56", alt: "Scan icon" %>
     <% end %>
   <% end %>
+
   <%= link_to edit_user_registration_path, class: "nav-link" do %>
-    <%= image_tag 'profile_icon/inactive.svg', width: "56", height: "56", alt: "Profile icon" %>
+    <% if current_page == 'devise_registration_edit'  %>
+        <%= image_tag 'profile_icon/active.svg', width: "56", height: "56", alt: "Profile icon" %>
+    <% elsif current_page == 'devise_registration_new' %>
+        <%= image_tag 'profile_icon/active.svg', width: "56", height: "56", alt: "Profile icon" %>
+    <% else %>
+        <%= image_tag 'profile_icon/inactive.svg', width: "56", height: "56", alt: "Profile icon" %>
+    <% end %>
   <% end %>
 </nav>
