@@ -1,0 +1,5 @@
+class LinebotListGardenJob < ApplicationJob
+
+
+
+end
