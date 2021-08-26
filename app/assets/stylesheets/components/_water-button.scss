@@ -21,16 +21,19 @@
   opacity: 0;
   font-size: 40px;
   line-height: 1em;
-  width: 56px
+  width: 50px;
+  z-index: 99999;
+  height: 50px;
+  margin-top: -36%;
+  margin-left: 12%;
 }
 
 //css for water image
 .water-button {
   position: absolute;
-  z-index: 10;
-  transform: scale(0.27);
-  bottom: 62%;
-  left: 29%;
+  z-index: 0;
+  bottom: 83%;
+  left: 67%;
 }
 
 // .water-button-pot-show {

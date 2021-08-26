@@ -36,19 +36,21 @@
   
   <body>
     <div class="page-frame-content">
-      <% if  current_user %>
+      <% if current_user %>
         <div class="page-frame-header"> 
         <%# navbar for desktop %>
           <% if device == "desktop" %>
             <%= render 'shared/navDesktop' %>
           <% end %>
         </div>
+      <% end %>
 
         <div class="page-frame-body">
           <%= render 'shared/flashes' %>
           <%= yield %>
         </div>
 
+      <% if current_user %>
         <div class="page-frame-footer">
         <%# navbar for mobile %>
           <% if device != "desktop" %>
