@@ -1,7 +1,9 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.name %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+<div id="<%= current_user.id == message.user_id ? 'my-message-right' : 'other-message-left' %>">
+  <div class="message-container" id="message-<%= message.id %>">
+    <i class="author">
+      <span><%= message.user.name %></span>
+      <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+    </i>
+    <p><%= message.content %></p>
+  </div>
 </div>
