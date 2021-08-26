@@ -5,13 +5,12 @@
     <div class="form-inputs">
         <%= f.input :nickname, placeholder: 'What is my name?' %>
         <%= f.input :birthday, as: :date, html5: true, placeholder: 'How old am I?' %>
-        <div class="button-group" style="margin-bottom: 0">
+        <div class="button-group" style="margin-top: 1em">
           <%= f.submit "Edit your plant", class: "button-primary" %>
-
-        <!-- Button trigger modal -->
-        <button type="button" class="button button-delete-secondary remove" data-toggle="modal" data-target="#exampleModal">
-          Remove from garden
-        </button>
+              <!-- Button trigger modal -->
+          <button type="button" class="button button-delete-secondary remove" data-toggle="modal" data-target="#exampleModal">
+            Remove from garden
+          </button>
         </div>
     </div>
   <% end %>
