@@ -16,6 +16,7 @@
         <p>Admin: Be the first...</p>
       </div>
     <% else %>
+      <%# binding.pry %>
       <% @chatroom.messages.each do |message| %>
         <%= render 'messages/message', message: message %>
       <% end %>
