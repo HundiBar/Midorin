@@ -1,4 +1,4 @@
-class LinebotListGardenJob < ApplicationJob
+class LinebotListGardenJob < ActiveJob::Base
 
 
 
