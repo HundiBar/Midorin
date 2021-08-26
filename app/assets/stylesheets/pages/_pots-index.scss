@@ -1,4 +1,24 @@
-/*Card pick*/
+// My garden title
+.title-pots {
+    display: flex;
+    align-items: center;
+    font-size: 45px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-family: $headers-font;
+    img {
+        width: 1.5em;
+    }
+    #title-my {
+        margin-right: 4px;
+        border-bottom: 12px solid #05ce91;
+    }
+    #title-body {
+        border-bottom: 12px solid #05ce91;
+    }
+}
+
+
+/*Pots card*/
 
 .card-pick {
     /*fixed*/
@@ -49,19 +69,20 @@
     margin-bottom: 5px;
 }
 
-
-// .card-pick:hover {
-//     /*customizable*/
-//     transition: 0.2s ease-out;
-//     transform: translateY(-8px);
-//     box-shadow: 0 8px 16px rgb(209, 236, 201);
-// }
+.card-pick:hover {
+    /*customizable*/
+    transition: 0.2s ease-out;
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgb(209, 236, 201);
+}
 
 // In case of no results
 .card-trip {
+    margin-top: 40px;
     overflow: hidden;
     background: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 7px;
 }
 
 .card-trip>img {
@@ -71,21 +92,41 @@
 }
 
 .card-trip h2 {
-    font-size: 16px;
+    font-size: 35px;
     font-weight: bold;
-    margin: 0;
+    margin: 10px;
 }
 
 .card-trip p {
-    font-size: 12px;
+    font-size: 14px;
     opacity: 0.7;
-    margin: 0;
+    margin: 10px;
 }
 
 .card-trip .card-trip-infos {
-    padding: 16px;
+    padding: 27px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     position: relative;
+    text-align: center;
+}
+
+// Media queries for Ipad/ Desktop
+@media (min-width: 640px) {
+    .card-trip {
+        margin-top: 15px;
+    }
+    .card-trip .card-trip-infos {
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+    }
+    .card-trip>img {
+        height: 300px;
+    }
+    .title {
+        font-size: 65px;
+    }
 }

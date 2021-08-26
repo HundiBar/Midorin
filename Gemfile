@@ -41,6 +41,7 @@ gem 'omniauth-line', '~> 0.1.0'
 # Gem for Midorin bot
 gem 'line-bot-api'
 
+gem 'timespan', '~> 0.6.0'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'

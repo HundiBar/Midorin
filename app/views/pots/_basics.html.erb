@@ -1,0 +1,32 @@
+<div class="basic-info-group">
+  <div class="basic-card">
+    <% if @pot.water_in_days <= 0 %>
+      <%= image_tag "watering_icon/Water_#{@pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button-pot-show' %>
+      <div class="title"><%= @pot.water_in_days.zero? ? 'Water today' : 'Water Overdue' %></div>
+      <div class="text"><%= @pot.water_in_days.zero? ? "It's watering time!" : "#{(@pot.water_in_days) * (-1) } days" %></div>
+      <%= simple_form_for @pot, html: {id: "water-pot-show"} do |f| %>
+        <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
+        <%= f.submit 'water plant' %>
+      <% end %>
+    <% else %>
+      <div class="emoji"><%= "⏳" %></div>
+      <div class="title">"Next Watering"</div>
+      <div class="text"><%= @pot.water_in_days %> days</div>
+    <% end %>
+  </div>
+  <div class="basic-card">
+    <% if @pot.plant.low? %>
+      <div class="emoji"><%= "⛅️" %></div>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Low sun" %></div>
+    <% elsif @pot.plant.medium? %>
+      <%= content_tag(:div, "🌤", class: "emoji") %>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Medium sun" %></div>
+    <% elsif %>
+      <div class="emoji"><%= "☀️" %></div>
+      <div class="title"><%= "Sun" %></div>
+      <div class="text"><%= "Full sun" %></div>
+    <% end %>
+  </div>
+</div>

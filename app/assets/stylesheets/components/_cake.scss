@@ -1,0 +1,28 @@
+.rotation {
+  transform: rotate(335deg);
+}
+
+.cake {
+  transition-duration: 1000ms;
+  animation: shake-animation 4.72s ease infinite;
+  transform-origin: 50% 50%;
+  position: absolute;
+  top: 17px;
+  left: 116px;
+  cursor: pointer;
+}
+
+@keyframes shake-animation {
+   0% { transform: translate(0,0) }
+  1.78571% { transform: translate(3px,0) }
+  3.57143% { transform: rotate(5deg) }
+  5.35714% { transform: translate(3px,0) }
+  7.14286% { transform: rotate(355deg) }
+  8.92857% { transform: translate(3px,0) }
+  10.71429% { transform: translate(0,0) }
+  100% { transform: translate(0,0) }
+}
+
+.cake-fadeout {
+  opacity: 0;
+}

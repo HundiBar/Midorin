@@ -26,3 +26,27 @@
   margin-top: 16px;
   margin-right: 24px;
 }
+
+#water-pot-show {
+  background-size: cover;
+  height: 32px;
+  width: 32px;
+  color: white;
+  cursor: pointer;
+}
+
+#water-pot-show input[type="submit" ] {
+  opacity: 0;
+  font-size: 40px;
+  line-height: 1em;
+  width: 56px;
+  left: 23%;
+  position: absolute;
+  top: 71%;
+}
+
+.water-button-pot-show {
+  padding-top: 0.2rem;
+  height: 2.5em;
+  margin: .3em;
+}
