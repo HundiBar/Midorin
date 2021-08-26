@@ -37,6 +37,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'pundit'
 gem 'cloudinary'
 gem 'timespan', '~> 0.6.0'
+gem 'gravatar_image_tag'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
