@@ -1,35 +1,109 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+<% content_for :current_page, 'devise_registration_edit' %>
+<div class="container mx my-3">
+  <h2>Hi <%= @user.name %>,</h2>
+   <% if resource.avatar.attached? %>
+      <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+    <% else %>
+      <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, widht: 100, class: "rounded-circle" %>
     <% end %>
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+  <%# Edit your profile modal %>
+  <!-- Button trigger modal -->
+   <div class="d-flex justify-content-center align-items-center "> 
+  <button type="button" class="button button-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+    Edit your profile
+  </button>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">My information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+              <div class="form-inputs">
+
+            <%# <%= image_tag user_avatar(resource, 100), class: "rounded-circle" %> 
+            <% if resource.avatar.attached? %>
+              <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, widht: 100, class: "rounded-circle" %>
+            <% end %>
+
+              <%= f.file_field :avatar %>
+
+                <%= f.input :name,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "name" }%>
+                <%= f.input :email, required: true, autofocus: true %>
+
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+
+                <%= f.input :password,
+                            hint: "leave it blank if you don't want to change it",
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :current_password,
+                            hint: "we need your current password to confirm your changes",
+                            required: true,
+                            input_html: { autocomplete: "current-password" } %>
+              </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Update", class: "btn btn-info" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+  <%# Sign out btn %>
+  <div class="d-flex justify-content-center align-items-center "> 
+      <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
+  </div>
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  <%# Cancel modal %>
+  <!-- Button trigger modal -->
+  <h5>Not happy with us anymore?</h5>
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+  Delete my account
+</button>
 
-<%= link_to "Back", :back %>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete my account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+        This action is irreversible
+      </div>
+      <div class="modal-footer">
+       <%= link_to "Cancel my account", registration_path(resource_name), class: "button button-delete", method: :delete %>
+      <button type="button" class="button button-cancel" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
