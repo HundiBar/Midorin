@@ -92,81 +92,8 @@ body {
 .birthday-text {
   font-weight: 600;
   color: #ff5d3a;
+  margin-top: -.2em;
 }
-
-// .watering::before {
-//   content: '💧';
-//   font-size: 20px;
-//   height: 25px;
-//   width: 25px;
-//   background-color: transparent;
-//   border-radius: 50%;
-//   display: inline-block;
-//   z-index: -1;
-//   position: absolute;
-//   top: -0.6em;
-//   left: -0.6em;
-// }
-
-// .sunlight::before {
-//   content: '🌞';
-//   font-size: 20px;
-//   height: 25px;
-//   width: 25px;
-//   background-color: transparent;
-//   border-radius: 50%;
-//   display: inline-block;
-//   z-index: -1;
-//   position: absolute;
-//   top: -0.6em;
-//   left: -0.6em;
-// }
-
-// .temperature::before {
-//   content: '🌡';
-//   font-size: 20px;
-//   height: 25px;
-//   width: 25px;
-//   background-color: transparent;
-//   border-radius: 50%;
-//   display: inline-block;
-//   z-index: -1;
-//   position: absolute;
-//   top: -0.6em;
-//   left: -0.6em;
-// }
-
-// .care::before {
-//   content: '💁‍♀️';
-//   font-size: 20px;
-//   height: 25px;
-//   width: 25px;
-//   background-color: transparent;
-//   border-radius: 50%;
-//   display: inline-block;
-//   z-index: -1;
-//   position: absolute;
-//   top: -0.6em;
-//   left: -0.6em;
-// }
-
-// .toxicity::before {
-//   content: '☠️';
-//   font-size: 20px;
-//   height: 25px;
-//   width: 25px;
-//   background-color: transparent;
-//   border-radius: 50%;
-//   display: inline-block;
-//   z-index: -1;
-//   position: absolute;
-//   top: -0.6em;
-//   left: -0.6em;
-// }
-
-// .toxicity {
-//     margin-bottom: 1.5em;
-// }
 
 .button-group {
   // position: absolute;
