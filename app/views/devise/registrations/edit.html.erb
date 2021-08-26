@@ -1,11 +1,11 @@
 <div class="container mx my-3">
   <h2>Hi <%= @user.name %>,</h2>
    <% if resource.avatar.attached? %>
-      <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
-    <% else %>
-      <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, width: 100, class: "rounded-circle" %>
-    <% end %>
-   
+              <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+            <% else %>
+              <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, widht: 100, class: "rounded-circle" %>
+            <% end %>
+
   <%# Edit your profile modal %>
   <!-- Button trigger modal -->
    <div class="d-flex justify-content-center align-items-center "> 
@@ -29,12 +29,13 @@
             <%= f.error_notification %>
               <div class="form-inputs">
 
+            <%# <%= image_tag user_avatar(resource, 100), class: "rounded-circle" %> 
             <% if resource.avatar.attached? %>
               <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
             <% else %>
-              <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, width: 100, class: "rounded-circle" %>
+              <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, widht: 100, class: "rounded-circle" %>
             <% end %>
-            
+
               <%= f.file_field :avatar %>
 
                 <%= f.input :name,
