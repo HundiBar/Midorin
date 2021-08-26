@@ -1,133 +1,183 @@
 // My garden title
 .title-pots {
-    display: flex;
-    align-items: center;
-    font-size: 45px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    font-family: $headers-font;
-    img {
-        width: 1.5em;
-    }
-    #title-my {
-        margin-right: 4px;
-        border-bottom: 12px solid #05ce91;
-    }
-    #title-body {
-        border-bottom: 12px solid #05ce91;
-    }
+  display: flex;
+  align-items: center;
+  font-size: 45px;
+  margin: 2rem 0rem 2rem 0rem;
+  // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-family: $headers-font;
+  img {
+    width: 1.5em;
+  }
+  #title-my {
+    margin-right: 4px;
+    border-bottom: 8px solid $primary;
+    padding-bottom: 0.2rem;
+  }
+  #title-body {
+    border-bottom: 8px solid $primary;
+    padding-bottom: 0.2rem;
+  }
 }
 
+.pots-index {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -3.5vw;
+}
+
+.pots-index-page-margin-bottom {
+  margin-bottom: 6em;
+}
 
 /*Pots card*/
 
 .card-pick {
-    /*fixed*/
-    display: flex;
-    flex-direction: column;
-    /*customizable*/
-    height: 300px;
-    border-radius: 4px;
-    background-color: white;
-    box-shadow: 0 0px 16px rgb(168, 166, 166);
-    border-radius: 20px;
-}
+  /*fixed*/
+  // display: flex;
+  // flex-direction: column;
+  /*customizable*/
+  height: 288px;
+  width: 160px;
+  // border-radius: 4px;
+  background-color: white;
+  border-radius: 1rem;
+  // outline: 1px solid red;
+  box-shadow: 0 0 8px hsla(240, 10%, 59%, 0.2);
+  margin-bottom: 2em;
+  transition: 0.2s ease-out;
+    }
 
 .card-pick img {
-    /*fixed*/
-    width: 100%;
-    min-height: 100px;
-    flex-grow: 0;
-    object-fit: cover;
-    /*customizable*/
-    object-position: 50% 50%;
-    border-radius: 4px 4px 0 0;
+  /*fixed*/
+  width: 100%;
+  min-height: 100px;
+  flex-grow: 0;
+  object-fit: cover;
+  /*customizable*/
+  object-position: 50% 50%;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .card-pick-info {
-    /*customizable*/
-    padding: 16px;
-    color: $text;
+  /*customizable*/
+  padding: 16px;
+  color: $text;
 }
 
-.card-pick-info h3 {
-    /*customizable*/
-    font-size: 15px;
-    line-height: 1.4;
-    opacity: 0.7;
-    margin-bottom: 0;
-    margin-top: 8px;
-    margin: 16px 0;
-    color: $primary;
+// .card-pick-info h3 {
+//     /*customizable*/
+//     font-size: 15px;
+//     line-height: 1.4;
+//     opacity: 0.7;
+//     margin-bottom: 0;
+//     margin-top: 8px;
+//     margin: 16px 0;
+//     color: $primary;
+// }
+
+// .card-pick-info p {
+//     /*customizable*/
+//     margin: 16px 0;
+//     font-size: 12px;
+//     line-height: 1.4;
+//     margin-top: 15px;
+//     margin-bottom: 5px;
+// }
+
+.index-plant-name {
+  font-size: 13px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: -.8em;
+  color: $text;
 }
 
-.card-pick-info p {
-    /*customizable*/
-    margin: 16px 0;
-    font-size: 12px;
-    line-height: 1.4;
-    margin-top: 15px;
-    margin-bottom: 5px;
+.index-pot-nickname {
+  font-size: 20px;
+  font-weight: 600;
+  color: $text;
+  line-height: 1em;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+}
+
+.index-watering-report-ok {
+
+}
+
+.index-watering-report-today {
+
+}
+
+.index-watering-report-overdue {
+
 }
 
 .card-pick:hover {
-    /*customizable*/
-    transition: 0.2s ease-out;
-    transform: translateY(-8px);
-    box-shadow: 0 8px 16px rgb(209, 236, 201);
+  /*customizable*/
+  // box-shadow: 0 8px 16px rgb(209, 236, 201);
+  transform: translateY(-4px);
+  box-shadow: 0 0px 16px rgba(40, 54, 63, 0.5);
 }
 
 
 // In case of no results
 .card-trip {
-    margin-top: 40px;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    border-radius: 7px;
+  margin-top: 40px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
 }
 
 .card-trip>img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .card-trip h2 {
-    font-size: 35px;
-    font-weight: bold;
-    margin: 10px;
+  font-size: 35px;
+  font-weight: bold;
+  margin: 10px;
 }
 
 .card-trip p {
-    font-size: 14px;
-    opacity: 0.7;
-    margin: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+  margin: 10px;
 }
 
 .card-trip .card-trip-infos {
-    padding: 27px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
-    text-align: center;
+  padding: 27px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  text-align: center;
+}
+
+.pots-index-watering-info {
+  line-height: 1.4em;
+  color: $text;
 }
 
 // Media queries for Ipad/ Desktop
 @media (min-width: 640px) {
-    .card-trip {
-        margin-top: 15px;
-    }
-    .card-trip .card-trip-infos {
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        justify-content: space-around;
-    }
-    .card-trip>img {
-        height: 300px;
-    }
-    .title {
-        font-size: 65px;
-    }
+  .card-trip {
+      margin-top: 15px;
+  }
+  .card-trip .card-trip-infos {
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+  }
+  .card-trip>img {
+      height: 300px;
+  }
+  .title-pots {
+      font-size: 65px;
+  }
 }
