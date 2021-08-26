@@ -1,15 +1,20 @@
 // css for simple form
 #water_pot {
-  background-size: cover;
-  height: 32px;
-  width: 32px;
-  color: white;
-  cursor: pointer;
-  // margin-bottom: 0px;
-  right: 0px;
+  // background-size: cover;
+  // height: 32px;
+  // width: 32px;
+  // color: white;
+  // cursor: pointer;
+  // // margin-bottom: 0px;
+  // right: 0px;
+  // position: absolute;
+  // margin-top: 16px;
+  // margin-right: 40px;
   position: absolute;
-  margin-top: 16px;
-  margin-right: 40px;
+  top: 8px;
+  left: 114px;
+  z-index: 10;
+  // background-color: red;
 }
 
 #water_pot input[type="submit" ] {
@@ -22,18 +27,19 @@
 //css for water image
 .water-button {
   position: absolute;
-  right: 0px;
-  margin-top: 16px;
-  margin-right: 24px;
+  z-index: 10;
+  transform: scale(0.27);
+  bottom: 62%;
+  left: 29%;
 }
 
-#water-pot-show {
-  background-size: cover;
-  height: 32px;
-  width: 32px;
-  color: white;
-  cursor: pointer;
-}
+// .water-button-pot-show {
+//   background-size: cover;
+//   height: 32px;
+//   width: 32px;
+//   color: white;
+//   cursor: pointer;
+// }
 
 #water-pot-show input[type="submit" ] {
   opacity: 0;
@@ -49,4 +55,9 @@
   padding-top: 0.2rem;
   height: 2.5em;
   margin: .3em;
+  cursor: pointer;
+}
+
+.pot-show-basics-water-icon {
+  height: 2.3em;
 }
