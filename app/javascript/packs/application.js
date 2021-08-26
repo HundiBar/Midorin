@@ -24,7 +24,7 @@ require("channels");
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initSelect2 } from '../components/init_select2';
 import { searchFire } from '../components/search_fire';
 import { picFire } from "../components/pic_upload";
 import { initChatroomCable } from "../channels/chatroom_channel";
@@ -34,7 +34,7 @@ import { confetti } from '../components/confetti';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initSelect2();
   searchFire();
   picFire();
   initChatroomCable();

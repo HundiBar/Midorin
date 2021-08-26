@@ -26,19 +26,21 @@
       <% else %>
         <div class="pot-info scientific-name"><%= @pot.plant.scientific_name %></div>
       <% end %>
-      <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
-        <div class="birthday-text">Today's my birthday! </div>
-      <% else %>
-        <div class="pot-info">Birthday: <%= @pot.birthday || "not added yet" %></div>
-      <% end  %>
-      <div>
-      <%= link_to edit_pot_path do %>
-        <% if @pot.nickname? %>
-          <p class="profile-edit"><i class="fas fa-edit"></i> Edit <%= @pot.nickname %>'s profile</p>
+      <% if @pot.birthday %>
+        <% if @pot.birthday.month == Date.today.month && @pot.birthday.day == Date.today.day %>
+          <div class="birthday-text">Today's my birthday! </div>
         <% else %>
-          <p class="profile-edit"><i class="fas fa-edit"></i> Edit your plant's profile</p>
-        <% end %>
+          <div class="pot-info">Birthday: <%= @pot.birthday || "not added yet" %></div>
+        <% end  %>
       <% end %>
+      <div>
+        <%= link_to edit_pot_path do %>
+          <% if @pot.nickname? %>
+            <p class="profile-edit"><i class="fas fa-edit"></i> Edit <%= @pot.nickname %>'s profile</p>
+          <% else %>
+            <p class="profile-edit"><i class="fas fa-edit"></i> Edit your plant's profile</p>
+          <% end %>
+        <% end %>
       </div>
     </div>
     <div class="info-group">
@@ -48,7 +50,6 @@
     </div>
   </div>
 </div>
-
 <!--   <div class="category description">
     <div class="header">Description:</div>
     <div class="text"><#%= @pot.plant.description %></div>
