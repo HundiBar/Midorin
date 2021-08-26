@@ -6,7 +6,7 @@ const searchFire = () => {
     input.addEventListener('change', (event) => {
       const fire =  document.querySelector('#new_plant');
       const submit = document.querySelector("#new_plant input[type=submit]")
-      document.querySelector("#wifi-loader").style.display = 'flex';
+      document.querySelector(".center").style.display = 'flex';
       submit.click()
     });
   }
