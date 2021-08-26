@@ -1,0 +1,5 @@
+meta_product_name: "Midorin"
+meta_title: "Midorin - Become better at gardening"
+meta_description: "An all-in-one stop app to become better at caring for plants. Watering scheduler, chatrooms to ask for help to your community and even a scanner to recognize plants and get details about them."
+meta_image: "FBimage.png" # should exist in `app/assets/images/`
+twitter_account: "@lewagontokyo" # required for Twitter Cards
