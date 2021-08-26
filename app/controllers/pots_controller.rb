@@ -1,5 +1,4 @@
 class PotsController < ApplicationController
-
   before_action :set_pot, only: [:show, :edit, :update, :destroy, :water, :picture]
 
   def index
@@ -13,7 +12,6 @@ class PotsController < ApplicationController
     redirect_to pot_path
   end
 
-
   def create
     @pot = Pot.new(pot_params)
     @plant = Plant.find(params[:pot][:plant_id])
@@ -25,12 +23,13 @@ class PotsController < ApplicationController
     redirect_to pots_path
   end
 
-  def edit; end
+  def edit
+  end
 
   def update
     @pot.update(pot_params)
     @pot.photos.attach(photos_params["photos"]) if photos_params["photos"]
-    redirect_to pot_path(@pot)
+    redirect_back fallback_location: pot_path(@pot)
   end
 
   def destroy
@@ -52,5 +51,4 @@ class PotsController < ApplicationController
   def photos_params
     params.require(:pot).permit(photos: [])
   end
-
 end
