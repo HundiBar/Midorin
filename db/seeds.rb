@@ -30,6 +30,7 @@ spencer = User.create!(
   name: "Spencer",
   email: "spencer@me.org",
   password: "spencerlife",
+  line_id: "supenchan"
 )
 
 dean = User.create!(
@@ -37,7 +38,6 @@ dean = User.create!(
   email: "dean@me.org",
   password: "deanlife",
 )
-
 
 Plant.create!(
   name: "Coral Cactus",

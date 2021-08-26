@@ -16,16 +16,9 @@
         <p>Admin: Be the first...</p>
       </div>
     <% else %>
+      <%# binding.pry %>
       <% @chatroom.messages.each do |message| %>
-        <% if current_user.id == message.user_id %>
-          <div id="my-message-right">
-            <%= render 'messages/message', message: message %>
-          </div>
-        <% else %>
-          <div id="other-message-left">
-            <%= render 'messages/message', message: message %>
-          </div>
-        <% end %>
+        <%= render 'messages/message', message: message %>
       <% end %>
     <% end %>
   </div>
