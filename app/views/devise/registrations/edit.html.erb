@@ -1,43 +1,92 @@
 <div class="container mx my-3">
   <h2>Hi <%= @user.name %></h2>
-    <h3>Edit your profile</h3>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= f.error_notification %>
+   
+  <%# Edit your profile modal %>
+  <!-- Button trigger modal -->
+  <button type="button" class="buttonbutton-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+    Edit your profile
+  </button>
 
-      <div class="form-inputs">
-        <%= f.input :name,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "name" }%>
-        <%= f.input :email, required: true, autofocus: true %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit your profile</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= f.error_notification %>
+              <div class="form-inputs">
+                <%= f.input :name,
+                              required: true,
+                              autofocus: true,
+                              input_html: { autocomplete: "name" }%>
+                <%= f.input :email, required: true, autofocus: true %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-        <% end %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
 
-        <%= f.input :password,
-                    hint: "leave it blank if you don't want to change it",
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-                    required: false,
-                    input_html: { autocomplete: "new-password" } %>
-        <%= f.input :current_password,
-                    hint: "we need your current password to confirm your changes",
-                    required: true,
-                    input_html: { autocomplete: "current-password" } %>
+                <%= f.input :password,
+                            hint: "leave it blank if you don't want to change it",
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            required: false,
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :current_password,
+                            hint: "we need your current password to confirm your changes",
+                            required: true,
+                            input_html: { autocomplete: "current-password" } %>
+              </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Update", class: "btn btn-outline-success" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
       </div>
+    </div>
+  </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Update", class: "button-secondary" %>
+  <%# Sign out btn %>
+  <div class="d-flex justify-content-center align-items-center "> 
+      <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
+  </div>
+
+  <%# Cancel modal %>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Delete account
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Delete your account</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure? 
+          This action is irreversible
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning">Delete account</button>
+        </div>
       </div>
-    <% end %>
-
-    <div class="d-flex justify-content-center align-items-center mx my-5 ">
-        <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
-      </div>
-
-
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete</p> %>
-
+    </div>
+  </div>
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete%> </p> 
 </div>
