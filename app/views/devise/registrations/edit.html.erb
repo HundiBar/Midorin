@@ -1,18 +1,20 @@
 <div class="container mx my-3">
-  <h2>Hi <%= @user.name %></h2>
+  <h2>Hi <%= @user.name %>,</h2>
    
   <%# Edit your profile modal %>
   <!-- Button trigger modal -->
-  <button type="button" class="buttonbutton-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+   <div class="d-flex justify-content-center align-items-center "> 
+  <button type="button" class="button button-secondary" data-toggle="modal" data-target="#exampleModalCenter">
     Edit your profile
   </button>
+  </div>
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Edit your profile</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">My information</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -44,13 +46,12 @@
                             input_html: { autocomplete: "current-password" } %>
               </div>
             <div class="form-actions">
-              <%= f.button :submit, "Update", class: "btn btn-outline-success" %>
+              <%= f.button :submit, "Update", class: "btn btn-info" %>
             </div>
           <% end %>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -63,30 +64,30 @@
 
   <%# Cancel modal %>
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Delete account
-  </button>
+  <h5>Not happy with us anymore?</h5>
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+  Delete my account
+</button>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Delete your account</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          Are you sure? 
-          This action is irreversible
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-warning">Delete account</button>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete my account</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+        This action is irreversible
+      </div>
+      <div class="modal-footer">
+       <%= link_to "Cancel my account", registration_path(resource_name), class: "button button-delete", method: :delete %>
+      <button type="button" class="button button-cancel" data-dismiss="modal">Cancel</button>
       </div>
     </div>
   </div>
-  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete%> </p> 
+</div>
 </div>
