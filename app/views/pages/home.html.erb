@@ -1,4 +1,3 @@
-<%= link_to "sign out", destroy_user_session_path,:method => :delete %>
 <div class="background">
   <div class="container">
     <div class="title my-3" >
@@ -18,11 +17,20 @@
       <h4><%= image_tag 'landing_icons/tips.svg', width: "40", height: "40", alt: "tips icon" %>  Get tips and advice</h4>
       <h4><%= image_tag 'landing_icons/winner.svg', width: "40", height: "30", alt: "winner icon" %>  Become a plant master</h4>
     </div>
+
+    <%# Buttons sign out, sign in, login%>
+    <% if user_signed_in? %>
+    <div class="d-flex justify-content-center align-items-center mx my-5 ">
+      <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
+    </div>
+    <% else %>
     <div class="d-flex justify-content-center align-items-center mx my-3">
       <%= link_to "Sign Up", new_user_registration_path, class:'button button-secondary'%>
     </div>
     <div class="d-flex justify-content-center align-items-center ">
       <%= link_to "Login", user_session_path, class:'button button-primary'%>
     </div>
+    <% end %>
+
   </div>
 </div>
