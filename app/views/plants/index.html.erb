@@ -17,14 +17,15 @@
     <div class="plants-list justify-content-center">
       <div class="row g-5">
         <% @plants.each do |plant|  %>
-        <div class="wraper mb-3 col-lg-6">
-          <div class="card-product">
-            <%= image_tag plant.cover_picture %>
-            <div class="card-product-infos">
-              <%= link_to plant_path(plant) do  %>
-                <h1><%= plant.name %></h1>
-                <h4><%= plant.scientific_name %></h4>
-              <% end %>
+          <div class="wraper mb-3 col-lg-6">
+            <div class="card-product">
+              <%= image_tag plant.cover_picture %>
+              <div class="card-product-infos">
+                <%= link_to plant_path(plant) do  %>
+                  <h1><%= plant.name %></h1>
+                  <h4><%= plant.scientific_name %></h4>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>

@@ -1,0 +1,20 @@
+.wraper {
+    position: relative;
+    #dot-profile {
+        left: 225px;
+        position: absolute;
+        top: 10px;
+    }
+    #profile-style {
+        font-family: "Poppins", "Helvetica", "sans-serif";
+        font-size: 60px;
+        border-bottom: 12px solid #05ce91;
+        display: inline-block;
+        line-height: 0.4;
+        margin: 35px 2px 20px;
+    }
+}
+
+h3 {
+    padding-left: 20px;
+}
