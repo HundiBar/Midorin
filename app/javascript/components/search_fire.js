@@ -5,7 +5,7 @@ const searchFire = () => {
   if (input) {
     input.addEventListener('change', (event) => {
       const submit = document.querySelector("#new_plant input[type=submit]")
-      document.querySelector(".spinner").style.display = 'inline-block';
+      document.querySelector(".spinner").style.display = 'flex';
       submit.click()
     });
   }
