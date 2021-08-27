@@ -16,18 +16,16 @@ class Pot < ApplicationRecord
   end
 
   def notification
-    return nil if self.user.line_id.nil?
 
     if water_in_days == 0
-      message = "You need to water #{nickname} today."
+      message = "You need to water #{nickname? ? nickname : plant.name} today."
     elsif water_in_days <= -1
-      message = "It has been #{water_in_days * -1} days since #{nickname} has been watered"
+      message = "It has been #{water_in_days * -1} days since #{nickname? ? nickname : plant.name} has been watered"
     elsif water_in_days == 1
-      message = "You need to water #{nickname} tomorrow."
+      message = "You need to water #{nickname? ? nickname : plant.name} tomorrow."
     else
-      message = "#{nickname} doesn't need to be watered today!"
+      message = "#{nickname? ? nickname : plant.name} doesn't need to be watered today!"
     end
-    line_bot_service = LineBot.new(self.user.line_id)
-    line_bot_service.send_message(message)
+
   end
 end
