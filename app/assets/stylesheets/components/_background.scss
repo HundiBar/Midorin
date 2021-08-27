@@ -9,7 +9,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    padding: 40px 0;
+    padding: 10px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     h1 {
         font-family: $headers-font;
@@ -45,7 +45,7 @@ h4 img {
 @media (max-width: 640px) {
     .background {
         background-position: 639px;
-        padding: 30px 0;
+        padding: 60px 0;
         h1 {
             font-size: 2rem;
         }
