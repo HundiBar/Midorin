@@ -22,7 +22,7 @@ gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use Active Storage variant
-# gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -42,6 +42,7 @@ gem 'omniauth-line', '~> 0.1.0'
 gem 'line-bot-api'
 
 gem 'timespan', '~> 0.6.0'
+gem 'gravatar_image_tag'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
@@ -58,6 +59,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'dotenv-rails'
 end
 
 group :test do

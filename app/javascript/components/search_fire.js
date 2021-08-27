@@ -4,9 +4,8 @@ const searchFire = () => {
   const input = document.querySelector('#plant_image')
   if (input) {
     input.addEventListener('change', (event) => {
-      const fire =  document.querySelector('#new_plant');
       const submit = document.querySelector("#new_plant input[type=submit]")
-      document.querySelector(".center").style.display = 'flex';
+      document.querySelector(".spinner").style.display = 'flex';
       submit.click()
     });
   }

@@ -24,21 +24,28 @@
     <div class="pots-index">
       <% @pots.each do |pot|  %>
         <div class="col-6 col-lg-4">
+          <% if pot.water_in_days <= 0 %>
+           <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
+          <% end %>
+          <%= simple_form_for pot, html: {id: "water_pot"} do |f| %>
+            <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
+            <%= f.submit 'water plant' %>
+          <% end %>
           <%= link_to pot_path(pot) do %>
             <div class="card-pick">
               <%= image_tag pot.plant.cover_picture %>
               <div class="card-pick-info">
-                <div class="index-plant-name"><%= pot.plant.name %></div>
-                <div class="index-pot-nickname"><%= pot.nickname %></div>
+                <% if pot.nickname == nil %>
+                  <div class="index-pot-name-no-nickname"><%= pot.plant.name %></div>
+                  <div class="index-pot-nickname"><%= pot.nickname %></div>
+                <% else %>
+                  <div class="index-plant-name"><%= pot.plant.name %></div>
+                  <div class="index-pot-nickname"><%= pot.nickname %></div>
+                <% end %>
                 <%# watering schedule %>
                 <div>
                   <% if pot.water_in_days <= 0 %>
                     <div class="pots-index-watering-info"><%= pot.water_in_days.zero? ? 'Water <b>today</b>'.html_safe : "Water <b style='color: #ff3002'>#{(pot.water_in_days) * (-1) }</b> days overdue".html_safe %></div>
-                    <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
-                    <%= simple_form_for pot, html: {id: "water_pot"} do |f| %>
-                      <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
-                      <%= f.submit 'water plant' %>
-                    <% end %>
                   <% else %>
                     <div class="pots-index-watering-info">Water in <%= "<b>#{pot.water_in_days}</b>".html_safe %> days</div>
                   <% end %>
