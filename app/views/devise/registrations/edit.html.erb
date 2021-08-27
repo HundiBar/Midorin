@@ -3,28 +3,25 @@
   <div class="wraper">
     <h2 id="profile-style">My profile</h2>
     <svg id="dot-profile" width="22" height="22" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
+      <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
     </svg>
   </div>
-
   <%# avatar %>
   <div class="d-flex justify-content-center align-items-center my-5">
     <% if resource.avatar.attached? %>
-        <%= image_tag resource.avatar.variant(resize: "130x130!"), class: "rounded-circle" %>
-      <% else %>
-        <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, widht: 130, class: "rounded-circle" %>
-      <% end %>
-      <h3 id="Hi-padding">Hi <%= @user.name %>,</h3>
+      <%= image_tag resource.avatar.variant(resize: "130x130!"), class: "rounded-circle" %>
+    <% else %>
+      <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
+    <% end %>
+    <h3 id="Hi-padding">Hi <%= @user.name %>,</h3>
   </div>
-
   <%# Edit your profile modal %>
   <!-- Button trigger modal -->
-   <div class="d-flex justify-content-center align-items-center my-5"> 
-  <button type="button" class="button button-secondary" data-toggle="modal" data-target="#exampleModalCenter">
-    Edit your profile
-  </button>
+  <div class="d-flex justify-content-center align-items-center my-5">
+    <button type="button" class="button button-secondary" data-toggle="modal" data-target="#exampleModalCenter">
+      Edit your profile
+    </button>
   </div>
-
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -38,40 +35,35 @@
         <div class="modal-body">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <%= f.error_notification %>
-              <div class="form-inputs">
-  
-            <%# avatar %>
-            <% if resource.avatar.attached? %>
-              <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
-            <% else %>
-              <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, widht: 100, class: "rounded-circle" %>
-            <% end %>
-
-            <%# form %>
+            <div class="form-inputs">
+              <%# avatar %>
+              <% if resource.avatar.attached? %>
+                <%= image_tag resource.avatar.variant(resize: "100x100!"), class: "rounded-circle" %>
+              <% else %>
+                <%= image_tag gravatar_image_url(current_user.email, size: 100), height: 100, width: 100, class: "rounded-circle" %>
+              <% end %>
+              <%# form %>
               <%= f.file_field :avatar %>
-
-                <%= f.input :name,
+              <%= f.input :name,
                               required: true,
                               autofocus: true,
                               input_html: { autocomplete: "name" }%>
-                <%= f.input :email, required: true, autofocus: true %>
-
-                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-                <% end %>
-
-                <%= f.input :password,
+              <%= f.input :email, required: true, autofocus: true %>
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+              <% end %>
+              <%= f.input :password,
                             hint: "leave it blank if you don't want to change it",
                             required: false,
                             input_html: { autocomplete: "new-password" } %>
-                <%= f.input :password_confirmation,
+              <%= f.input :password_confirmation,
                             required: false,
                             input_html: { autocomplete: "new-password" } %>
-                <%= f.input :current_password,
+              <%= f.input :current_password,
                             hint: "we need your current password to confirm your changes",
                             required: true,
                             input_html: { autocomplete: "current-password" } %>
-              </div>
+            </div>
             <div class="form-actions">
               <%= f.button :submit, "Update", class: "btn btn-info" %>
             </div>
@@ -83,20 +75,17 @@
       </div>
     </div>
   </div>
-
   <%# Sign out btn %>
-  <div class="d-flex justify-content-center align-items-center "> 
-      <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
+  <div class="d-flex justify-content-center align-items-center ">
+    <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
   </div>
-
   <%# Cancel modal %>
   <!-- Button trigger modal -->
-  <div class="container mx my-5"> 
+  <div class="container mx my-5">
     <h6>Not happy with us anymore?</h6>
     <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
       Delete my account
     </button>
-
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -112,12 +101,11 @@
             This action is irreversible
           </div>
           <div class="modal-footer">
-          <%= link_to "Cancel my account", registration_path(resource_name), class: "button button-delete", method: :delete %>
-          <button type="button" class="button button-cancel" data-dismiss="modal">Cancel</button>
+            <%= link_to "Cancel my account", registration_path(resource_name), class: "button button-delete", method: :delete %>
+            <button type="button" class="button button-cancel" data-dismiss="modal">Cancel</button>
           </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
