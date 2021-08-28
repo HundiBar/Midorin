@@ -9,19 +9,11 @@
   <%# avatar %>
   <div class="d-flex justify-content-center align-items-center my-5">
     <% if resource.avatar.attached? %>
-<<<<<<< HEAD
-        <%= image_tag resource.avatar.variant(resize: "130x130!"), class: "rounded-circle" %>
-      <% else %>
-        <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
-      <% end %>
-      <h3 id="Hi-padding">Hi <%= @user.name %>,</h3>
-=======
       <%= image_tag resource.avatar.variant(resize: "130x130!"), class: "rounded-circle" %>
     <% else %>
       <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
     <% end %>
     <h3 id="Hi-padding">Hi <%= @user.name %>,</h3>
->>>>>>> 9ac8ffe969b316a5ff1f73b7f8007c7ff701a256
   </div>
   <%# Edit your profile modal %>
   <!-- Button trigger modal -->
