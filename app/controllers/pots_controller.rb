@@ -29,8 +29,11 @@ class PotsController < ApplicationController
   def update
     @pot.update(pot_params)
     @pot.photos.attach(photos_params["photos"]) if photos_params["photos"]
-    # redirect_back fallback_location: pot_path(@pot)
-    redirect_to pot_path(@pot)
+    if pot_params[:last_watered].present?
+      redirect_back fallback_location: pot_path(@pot)
+    else
+      redirect_to pot_path(@pot)
+    end
   end
 
   def destroy
