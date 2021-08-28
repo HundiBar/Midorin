@@ -9,7 +9,16 @@ const initChatroomCable = () => {
       received(data) {
         console.log("111111");
         console.log(data); // called when data is broadcast in the cable
-        messagesContainer.insertAdjacentHTML('beforeend', data);
+        let messageDiv = document.createElement("div");
+        messageDiv.innerHTML = data;
+        messageDiv = messageDiv.firstChild;
+        if (messageDiv.dataset.authorId === messagesContainer.dataset.currentUserId) {
+          messageDiv.classList.add("author")
+        } else {
+          messageDiv.classList.remove("author")
+        }
+        messagesContainer.appendChild(messageDiv);
+        messageDiv.scrollIntoView();
       },
     });
   }
