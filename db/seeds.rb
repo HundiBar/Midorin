@@ -7,37 +7,37 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Destroying plants && users"
 
-Pot.destroy_all
+# Pot.destroy_all
 Plant.destroy_all
-User.destroy_all
+# User.destroy_all
 
 puts "creating seeds"
 
-mylene = User.create!(
-  name: "Mylene",
-  email: "mylene@me.org",
-  password: "mylenelife",
-)
+# mylene = User.create!(
+#   name: "Mylene",
+#   email: "mylene@me.org",
+#   password: "mylenelife",
+# )
 
-troy = User.create!(
-  name: "Troy",
-  email: "troy@me.org",
-  password: "troylife",
+# troy = User.create!(
+#   name: "Troy",
+#   email: "troy@me.org",
+#   password: "troylife",
 
-)
+# )
 
-spencer = User.create!(
-  name: "Spencer",
-  email: "spencer@me.org",
-  password: "spencerlife",
-  line_id: "supenchan"
-)
+# spencer = User.create!(
+#   name: "Spencer",
+#   email: "spencer@me.org",
+#   password: "spencerlife",
+#   line_id: "supenchan"
+# )
 
-dean = User.create!(
-  name: "Dean",
-  email: "dean@me.org",
-  password: "deanlife",
-)
+# dean = User.create!(
+#   name: "Dean",
+#   email: "dean@me.org",
+#   password: "deanlife",
+# )
 
 Plant.create!(
   name: "Coral Cactus",
@@ -518,10 +518,45 @@ Plant.all.each do |plant|
       plant_names << plant.name
 end
 
-plant_names.all do |plant_name|
+Chatroom.create!(
+  title: 'General'
+)
+
+Chatroom.create!(
+  title: 'Potting'
+)
+
+Chatroom.create!(
+  title: 'Composting'
+)
+
+Chatroom.create!(
+  title: 'Irrigation'
+)
+
+Chatroom.create!(
+  title: 'Fertilizer'
+)
+
+Chatroom.create!(
+  title: 'Disease'
+)
+
+Chatroom.create!(
+  title: 'Bedding'
+)
+
+Chatroom.create!(
+  title: 'Duking'
+)
+
+
+plant_names.each do |plant_name|
   Chatroom.create!(
-    name: plant_name,
+    title: plant_name,
   )
 end
+
+
 
 puts "seeds created"
