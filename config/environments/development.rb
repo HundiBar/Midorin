@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
-  config.hosts << "d08c-153-179-145-75.ngrok.io"  # In the development environment your application's code is reloaded on
+  # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
@@ -53,7 +53,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-config.assets.check_precompiled_asset = false
+  config.assets.check_precompiled_asset = false
 
 
   # Raises error for missing translations.
@@ -64,5 +64,7 @@ config.assets.check_precompiled_asset = false
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   # Local host on phone with ngrok
+  config.hosts << "2a3e-153-179-145-75.ngrok.io"
   config.hosts << /[a-z0-9]+\.ngrok\.io/
+
 end

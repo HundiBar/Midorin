@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-  post '/callback' => 'line#call_back'
+  post '/callback' => 'line#callback'
 
 end
