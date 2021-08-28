@@ -34,7 +34,7 @@
           <%= link_to pot_path(pot) do %>
             <div class="card-pick">
               <% if pot.photos.attached? %>
-                <%= cl_image_tag pot.photos.first.key, crop: :fill %>
+                <%= cl_image_tag pot.photos.first.key, height: 160, width: 160 %>
               <% else %>
                 <%= image_tag pot.plant.cover_picture %>
               <% end %>
