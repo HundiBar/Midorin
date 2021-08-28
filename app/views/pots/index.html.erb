@@ -1,10 +1,12 @@
 <% content_for :current_page, 'pots_index' %>
 <div class="container">
+
   <h2 class="title-pots">
     <span id="title-my">My</span>
     <%= image_tag 'gardenLogo.png', width: "100", alt: "garden logo"%>
     <span id="title-body" >arden</span>
   </h2>
+  
   <%# if no pots in the garden %>
   <% if !@pots.nil? && @pots.count == 0 %>
     <div class="card-trip">
