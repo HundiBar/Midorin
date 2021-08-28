@@ -4,7 +4,7 @@
     align-items: center;
     font-size: 55px;
     margin: 2rem 0rem 2rem 0rem;
-    // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     font-family: $headers-font;
     img {
         width: 1.5em;
@@ -143,8 +143,14 @@
     text-align: center;
 }
 
+// #svg-img {
+//     // filter: drop-shadow(3px 5px 2px #23f0b2);
+//     width: 28px;
+//     min-height: 28px;
+// }
 .pots-index-watering-info {
     line-height: 1.2em;
+    // font-size: 13px;
     color: $text;
 }
 
