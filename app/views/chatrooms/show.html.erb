@@ -10,7 +10,7 @@
     </div>
   </div>
   <div id="chat-border"></div>
-  <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
+  <div id="messages" data-chatroom-id="<%= @chatroom.id %>" data-current-user-id="<%= current_user.id %>">
     <% if @chatroom.messages.blank? %>
       <div>
         <p>Admin: Be the first...</p>

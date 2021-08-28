@@ -93,19 +93,14 @@
   margin-bottom: 0px;
 }
 
-#my-message-right {
-  border-radius: 25px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  padding: 9px 17px;
+.message-container.author {
   margin-right: 16px;
   margin-left: auto;
-  margin-bottom: 16px;
   background: #09c783;
-  width: fit-content;
   color: white;
 }
 
-#other-message-left {
+.message-container {
   border-radius: 25px;
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
   padding: 9px 17px;
