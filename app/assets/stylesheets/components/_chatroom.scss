@@ -85,6 +85,12 @@
 .channel-form-link {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.channel-form-link p {
+  margin-bottom: 0px;
 }
 
 #my-message-right {
@@ -110,4 +116,12 @@
   width: fit-content;
 }
 
+.chatroom-search-button {
+  display: none;
+}
+
+.form-control.chatroom-search-field {
+  border-radius: 50px;
+  padding: 0 24px;
+}
 

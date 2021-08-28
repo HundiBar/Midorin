@@ -1,6 +1,11 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = policy_scope(Chatroom).order(created_at: :asc)
+    @query = params[:query]
+    if @query && @query.present?
+      @chatrooms = policy_scope(Chatroom).search_chatroom(params[:query]).order(created_at: :asc)
+    else
+      @chatrooms = policy_scope(Chatroom).order(created_at: :asc)
+    end
   end
 
   def show

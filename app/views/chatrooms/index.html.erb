@@ -15,7 +15,13 @@
   <div class="chatroom-links">
     <div class="channel-form-link">
       <p>Channels</p>
-      <%= link_to '+', new_chatroom_path %>
+      <%= form_tag chatrooms_path, method: :get do %>
+        <%= text_field_tag :query,
+    params[:query],
+        class: "form-control chatroom-search-field",
+    placeholder: "Jump to ... "%>
+        <%= submit_tag "Search", class: "chatroom-search-button"  %>
+      <% end %>
     </div>
     <div id="chat-border-channel"></div>
     <% @chatrooms.each do |chatroom| %>
