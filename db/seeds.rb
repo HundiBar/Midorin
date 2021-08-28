@@ -509,4 +509,19 @@ Plant.create!(
   days_until_water: 14,
 )
 
+puts "destroying old chatrooms"
+Chatroom.destroy_all
+puts "creating Chatrooms"
+
+plant_names = []
+Plant.all.each do |plant|
+      plant_names << plant.name
+end
+
+plant_names.all do |plant_name|
+  Chatroom.create!(
+    name: plant_name,
+  )
+end
+
 puts "seeds created"
