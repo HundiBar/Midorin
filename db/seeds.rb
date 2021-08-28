@@ -510,7 +510,7 @@ puts "creating seeds"
 # )
 
 puts "destroying old chatrooms"
-# Chatroom.destroy_all
+Chatroom.destroy_all
 puts "creating Chatrooms"
 
 plant_names = []
