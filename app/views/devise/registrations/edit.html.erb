@@ -12,7 +12,7 @@
     <% if resource.avatar.attached? %>
         <%= image_tag resource.avatar.variant(resize: "130x130!"), class: "rounded-circle" %>
       <% else %>
-        <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, widht: 130, class: "rounded-circle" %>
+        <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
       <% end %>
       <h3 id="Hi-padding">Hi <%= @user.name %>,</h3>
   </div>
