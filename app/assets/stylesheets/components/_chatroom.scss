@@ -85,21 +85,22 @@
 .channel-form-link {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-#my-message-right {
-  border-radius: 25px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-  padding: 9px 17px;
+.channel-form-link p {
+  margin-bottom: 0px;
+}
+
+.message-container.author {
   margin-right: 16px;
   margin-left: auto;
-  margin-bottom: 16px;
   background: #09c783;
-  width: fit-content;
   color: white;
 }
 
-#other-message-left {
+.message-container {
   border-radius: 25px;
   box-shadow: 0 0 8px rgba(0,0,0,0.3);
   padding: 9px 17px;
@@ -110,4 +111,12 @@
   width: fit-content;
 }
 
+.chatroom-search-button {
+  display: none;
+}
+
+.form-control.chatroom-search-field {
+  border-radius: 50px;
+  padding: 0 24px;
+}
 

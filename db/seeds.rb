@@ -1,11 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
+
 # Examples:
-#
+
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts "Destroying plants && users"
+# puts "Destroying plants && users"
 
 Pot.destroy_all
 Plant.destroy_all
@@ -508,5 +508,55 @@ Plant.create!(
   watering_schedule: 1,
   days_until_water: 14,
 )
+
+puts "destroying old chatrooms"
+Chatroom.destroy_all
+puts "creating Chatrooms"
+
+plant_names = []
+Plant.all.each do |plant|
+      plant_names << plant.name
+end
+
+Chatroom.create!(
+  title: 'General'
+)
+
+Chatroom.create!(
+  title: 'Potting'
+)
+
+Chatroom.create!(
+  title: 'Composting'
+)
+
+Chatroom.create!(
+  title: 'Irrigation'
+)
+
+Chatroom.create!(
+  title: 'Fertilizer'
+)
+
+Chatroom.create!(
+  title: 'Disease'
+)
+
+Chatroom.create!(
+  title: 'Bedding'
+)
+
+Chatroom.create!(
+  title: 'Duking'
+)
+
+
+plant_names.each do |plant_name|
+  Chatroom.create!(
+    title: plant_name,
+  )
+end
+
+
 
 puts "seeds created"
