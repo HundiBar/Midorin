@@ -5,6 +5,8 @@
         <span>
           <% if current_user.avatar.attached? %>
             <%= image_tag current_user.avatar.variant(resize: "25x25!"), class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
           <% end %>
         </span>
         <span><%= message.user.name %></span>
@@ -17,6 +19,11 @@
   <div id= "other-message-left">
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar.variant(resize: "25x25!"), class: "rounded-circle" %>
+        <% else %>
+          <%= image_tag gravatar_image_url(current_user.email, size: 130), height: 130, width: 130, class: "rounded-circle" %>
+        <% end %>
         <span><%= message.user.name %></span>
         <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
