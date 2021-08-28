@@ -1,6 +1,7 @@
 <% content_for :current_page, 'plants_index' %>
 <div class="container mx my-5">
   <%= render 'shared/search-bar' %>
+  <%= render 'shared/filter-search' %>
   <%= render 'shared/spinner' %>
   <div class="search-center">
     <% if @api_scan %>

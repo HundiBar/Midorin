@@ -22,6 +22,7 @@ class PlantsController < ApplicationController
     elsif params[:query].present?
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
+      raise
 
     elsif @api_scan
       api_call = ApiCall.new(params[:plant][:image])
@@ -33,6 +34,23 @@ class PlantsController < ApplicationController
 
   def show
     @pot = Pot.new
+  end
+
+  def filter
+    @plant = Plant.new
+    @water = params[:watering_schedule]
+    @light = params[:light]
+    if @water.present? && @light.present?
+      @plants = policy_scope(Plant).where(watering_schedule: @water, light:@light)
+    elsif @water.present?
+      @plants = policy_scope(Plant).where(watering_schedule: @water)
+    elsif @light.present?
+      @plants = policy_scope(Plant).where(light:@light)
+      # @plants = policy_scope(Plant).where("watering_schedule LIKE ? AND light LIKE ?", @water, @light)
+    else
+      @plants = policy_scope(Plant).order(created_at: :asc)
+    end
+    render :index
   end
 
 

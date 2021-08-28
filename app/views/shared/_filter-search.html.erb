@@ -1,0 +1,15 @@
+<div class="search-bar row justify-content-center align-items-center mb-3">
+  <div class="form-inline">
+    <%= form_tag plants_filter_path, id: "search-filter", method: :get do %>
+      <%= select_tag :watering_schedule,
+                    options_for_select(Plant::WATER),
+                    class: "form-control"
+                    %>
+      <%= select_tag :light,
+                    options_for_select(Plant::LIGHT),
+                    class: "form-control"
+      %>
+      <%= submit_tag "Search"  %>
+    <% end %>
+  </div>
+</div>
