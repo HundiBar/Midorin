@@ -1,3 +1,21 @@
+// Page title
+#plants-title {
+    font-family: "Poppins", "Helvetica", "sans-serif";
+    font-size: 52px;
+    border-bottom: 12px solid #05ce91;
+    display: inline-block;
+    line-height: 0.4;
+    margin: 35px 2px 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+// Search bar
+.form-control {
+    border-radius: 50px;
+    padding: 0 24px;
+}
+
+// Card of plants
 .card-product {
     overflow: hidden;
     height: 120px;

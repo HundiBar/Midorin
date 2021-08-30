@@ -1,6 +1,8 @@
 <h1 align="center">Midorin 🌱 </h1>
 <h3 align="center">Become better at gardening</h3>
-<!-- <img align='center' src="https://media.giphy.com/media/iGqEXTSFZb29gb46bj/giphy.gif" width="230">   -->
+
+![Midorin logo](https://github.com/HundiBar/Midorin/blob/master/app/assets/images/FBimage.png)
+
 
 ## Table of contents
 * [Introduction](#introduction)
