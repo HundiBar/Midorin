@@ -1,19 +1,10 @@
 <div class="message-container <%='author' if current_user == message.user %>" id="message-<%= message.id %>" data-author-id="<%= message.user.id %>">
   <i class="author">
     <span>
-      <% if !current_user %>
-        <% if message.user.avatar.attached? %>
-          <%= image_tag message.user.avatar.variant(resize: "25x25!"), class: "rounded-circle" %>
-        <% else %>
-          <%= image_tag gravatar_image_url(current_user.email, size: 25), height: 25, width: 25, class: "rounded-circle" %>
-        <% end %>
-      <% end %>
-      <% if current_user %>
-        <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar.variant(resize: "25x25!"), class: "rounded-circle" %>
-        <% else %>
-          <%= image_tag gravatar_image_url(current_user.email, size: 25), height: 25, width: 25, class: "rounded-circle" %>
-        <% end %>
+      <% if message.user.avatar.attached? %>
+        <%= image_tag message.user.avatar.variant(resize: "25x25!"), class: "rounded-circle" %>
+      <% else %>
+        <%= image_tag gravatar_image_url(current_user.email, size: 25), height: 25, width: 25, class: "rounded-circle" %>
       <% end %>
     </span>
     <span><%= message.user.name %></span>
