@@ -1,5 +1,12 @@
 <% content_for :current_page, 'plants_index' %>
 <div class="container mx my-5">
+  <div class="wraper mb-3">
+    <h2 id="plants-title">Search, Scan</h2>
+    <%# <svg id="dot-pots" width="22" height="22" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
+    </svg> %>
+  </div>
+
   <%= render 'shared/search-bar' %>
   <%= render 'shared/spinner' %>
   <div class="search-center">
@@ -14,6 +21,7 @@
     <% end %>
   </div>
 </div>
+
 <div class="container ">
   <div class="plants-list justify-content-center">
     <div class="row g-5">
