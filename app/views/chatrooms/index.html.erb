@@ -1,35 +1,36 @@
 <% content_for :current_page, 'chatroom_index' %>
 <div class="container mx my-5">
-<div id="chat-display">
-  <div class="chatrooms-header-index">
-    <div class="wraper">
-      <h2 id="midorin-style">Midorin </h2>
-      <svg id="dot" width="22" height="22" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
-      </svg>
+  <div id="chat-display">
+    <div class="chatrooms-header-index">
+      <div class="wraper">
+        <h2 id="midorin-style">Midorin </h2>
+        <svg id="dot" width="22" height="22" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
+        </svg>
+      </div>
+      <div id="social-img">
+        <%= image_tag 'landing_icons/tips.svg', width: "60", height: "60", alt: "tips icon" %>
+      </div>
     </div>
-    <div id="social-img">
-      <%= image_tag 'landing_icons/tips.svg', width: "60", height: "60", alt: "tips icon" %>
-    </div>
-  </div>
-  <div id="chat-border"></div>
-  <div class="chatroom-links">
-    <div class="channel-form-link">
-      <p>Channels</p>
-      <%= form_tag chatrooms_path, method: :get do %>
-        <%= text_field_tag :query,
+    <div id="chat-border"></div>
+    <div class="chatroom-links">
+      <div class="channel-form-link">
+        <p>Channels</p>
+        <%= form_tag chatrooms_path, method: :get do %>
+          <%= text_field_tag :query,
     params[:query],
+    autocomplete: 'off',
         class: "form-control chatroom-search-field",
     placeholder: "Jump to ... "%>
-        <%= submit_tag "Search", class: "chatroom-search-button"  %>
+          <%= submit_tag "Search", class: "chatroom-search-button"  %>
+        <% end %>
+      </div>
+      <div id="chat-border-channel"></div>
+      <% @chatrooms.each do |chatroom| %>
+        <div>
+          <p>#<%= link_to chatroom.title.titleize, chatroom_path(chatroom) %></p>
+        </div>
       <% end %>
     </div>
-    <div id="chat-border-channel"></div>
-    <% @chatrooms.each do |chatroom| %>
-      <div>
-        <p>#<%= link_to chatroom.title.titleize, chatroom_path(chatroom) %></p>
-      </div>
-    <% end %>
   </div>
-</div>
 </div>

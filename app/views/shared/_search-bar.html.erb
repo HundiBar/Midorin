@@ -1,8 +1,9 @@
 <div class="search-bar row justify-content-center align-items-center mb-3">
   <div class="form-inline">
-    <%= form_tag plants_path, method: :get do %>
+    <%= form_tag plants_path, method: :get, html: { autocomplete: 'off' } do %>
       <%= text_field_tag :query,
                     params[:query],
+                    autocomplete: 'off',
                     class: "form-control",
                     placeholder: "Search"
                     %>

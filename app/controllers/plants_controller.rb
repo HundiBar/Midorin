@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
     elsif params[:query].present?
       @query = params[:query]
       @plants = policy_scope(Plant).search_by_name(params[:query]).order(created_at: :desc)
-      raise
+
 
     elsif @api_scan
       api_call = ApiCall.new(params[:plant][:image])
