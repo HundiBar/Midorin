@@ -25,7 +25,7 @@
     <%# Buttons sign out, sign in, login%>
     <% if user_signed_in? %>
       <div class="d-flex justify-content-center align-items-center mx my-3">
-        <%= link_to "Sign out", destroy_user_session_path,:method => :delete, class:'button button-primary'%>
+        <%= link_to "My garden", pots_path, class:'button button-primary'%>
       </div>
     <% else %>
       <div class="d-flex justify-content-center align-items-center mx my-3">

@@ -1,0 +1,33 @@
+<div class="search-bar row justify-content-center align-items-center mb-3">
+  <button class="btn btn-primary btn-custom collapsed border-0" type="button" data-toggle="collapse" data-target="#content" aria-expanded="false" aria-controls="content">
+    <span class="filter">
+      <span class="rotate"></span>
+    </span>
+    <span class="filter-text">Filter</span>
+  </button>
+  <div class="content collapse bg-white shadow-lg py-4" id="content">
+    <div class="container">
+      <%= form_tag plants_filter_path, id: "search-filter", method: :get do %>
+        <div id="radio-button-center">
+          <p style="color: #09c783">Water</p>
+          <%= radio_button_tag 'watering_schedule','biweekly', class: "form-control" %>
+          <%= label_tag "Fortnightly" %>
+          <%= radio_button_tag 'watering_schedule', 'weekly', class: "form-control" %>
+          <%= label_tag "Weekly" %>
+          <%= radio_button_tag 'watering_schedule', 'daily', class: "form-control" %>
+          <%= label_tag "Daily" %>
+          <br>
+          <p style="color: #09c783">Light</p>
+          <%= radio_button_tag 'light','low', class: "form-control" %>
+          <%= label_tag "Low" %>
+          <%= radio_button_tag 'light', 'medium', class: "form-control" %>
+          <%= label_tag "Medium" %>
+          <%= radio_button_tag 'light', 'high', class: "form-control" %>
+          <%= label_tag "High" %>
+        </div>
+        <br>
+        <%= submit_tag "Filter", class: "button-primary"  %>
+      <% end %>
+    </div>
+  </div>
+</div>

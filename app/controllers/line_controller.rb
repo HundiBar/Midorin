@@ -1,21 +1,36 @@
 class LineController < ApplicationController
 
-  def call_back
+  skip_before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
 
+  def callback
+
+    skip_authorization
+
+    linebot = LineBot.new(line_params[:line][:destination])
     body = request.body.read
-    events = client.parse_events_from(body)
+    events = linebot.client.parse_events_from(body)
     user = get_ids(events)
 
     events.each do |event|
       case event.type
         # when receive a text message
       when Line::Bot::Event::MessageType::Text
-        response = "I don't understand!"
+
+        if event.message['text'].downcase.include?('hello')
+          response = "Hello"
+        elsif event.message['text'].downcase.include?('garden')
+          response = LinebotGardenJob.perform_now(linebot.client, user)
+        elsif event.message['text'].downcase == "#{user.name.downcase}"
+          response = "Here is #{user.pots.first.nickname}'s information."
+        else
+          response = "I don't understand!"
+        end
         message_hash = {
           type: 'text',
           text: response
         }
-        client.reply_message(event['replyToken'], message_hash)
+        linebot.client.reply_message(event['replyToken'], message_hash)
         'OK'
       end
     end
@@ -35,4 +50,7 @@ class LineController < ApplicationController
     end
   end
 
+  def line_params
+    params.permit(line: [:destination, :events])
+  end
 end

@@ -13,11 +13,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
   end
 
-  after_action :verify_authorized, except: :index, unless: :skip_pundit?
-  after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  after_action :verify_authorized, except: [:index, :filter], unless: :skip_pundit?
+  after_action :verify_policy_scoped, only: [:index, :filter], unless: :skip_pundit?
 
   protect_from_forgery with: :exception
-
 
   private
 

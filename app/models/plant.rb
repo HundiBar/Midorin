@@ -3,7 +3,8 @@ class Plant < ApplicationRecord
   enum light: { low: "low", medium: "medium", high: "high" }
   enum watering_schedule: { biweekly: 1, weekly: 2, daily: 3 }
 
-
+  LIGHT =["low", "medium", "high"]
+  WATER = ["biweekly","weekly","daily"]
   # validates :name, :description, :cover_picture, :watering_schedule, :care, presence: true
 
   include PgSearch::Model

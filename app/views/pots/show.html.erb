@@ -6,7 +6,8 @@
   <div class="drop5-no"></div>
   <div class="drop3-no"></div>
 </div>
-<%= render 'pots/carousel' %>
+<%= render 'pots/modal-carousel' %>
+<%#= render 'pots/carousel' %>
 <div class="picture-button">
   <%= simple_form_for @pot, html: {id: "picture_upload"}, remote: true do |f| %>
     <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
