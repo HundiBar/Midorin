@@ -66,13 +66,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <div class="picture-button">
-          <%= simple_form_for @pot, html: {id: "picture_upload"}, remote: true do |f| %>
-            <%= f.input :photos, as: :file, input_html: { multiple: true }, label: false %>
-            <%= f.submit %>
-          </div>
-        </div>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
