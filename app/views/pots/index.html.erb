@@ -25,7 +25,7 @@
     <%# pots cards %>
     <div class="pots-index">
       <% @pots.each do |pot|  %>
-        <div class="col-6 col-lg-4">
+        <div class="col-6 col-lg-3">
           <% if pot.water_in_days <= 0 %>
             <%= image_tag "watering_icon/Water_#{pot.water_in_days.zero? ? 'needed' : 'overdue'}.svg", class: 'water-button' %>
           <% end %>
