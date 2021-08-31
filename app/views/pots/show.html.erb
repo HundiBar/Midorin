@@ -1,4 +1,11 @@
 <% content_for :current_page, 'pots_show' %>
+<div class="waterdrops">
+  <div class="drop2-no"></div>
+  <div class="drop4-no"></div>
+  <div class="drop1-no"></div>
+  <div class="drop5-no"></div>
+  <div class="drop3-no"></div>
+</div>
 <%= render 'pots/carousel' %>
 <div class="picture-button">
   <%= simple_form_for @pot, html: {id: "picture_upload"}, remote: true do |f| %>
@@ -50,4 +57,3 @@
     </div>
   </div>
 </div>
-s

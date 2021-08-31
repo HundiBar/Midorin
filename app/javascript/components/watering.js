@@ -4,4 +4,3 @@ water.addEventListener('onclick', (event) => {
   list.innerHTML = '';
   const input = document.querySelector('#search-input');
 });
-

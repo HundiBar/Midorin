@@ -31,6 +31,7 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { toggleSwitch } from '../components/toggle_switch';
 import { chatScroll } from '../components/chat_scroll';
 import { confetti } from '../components/confetti';
+import { waterAnimation } from '../components/water_animation';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -41,4 +42,5 @@ document.addEventListener('turbolinks:load', () => {
   toggleSwitch();
   chatScroll();
   confetti();
+  waterAnimation();
 });
