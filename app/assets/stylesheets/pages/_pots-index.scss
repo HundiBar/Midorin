@@ -31,7 +31,7 @@
 .pots-index {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -3.5vw;
+    // margin-left: -3.5vw;
 }
 
 .pots-index-page-margin-bottom {
@@ -46,8 +46,8 @@
     // display: flex;
     // flex-direction: column;
     /*customizable*/
-    height: 288px;
-    width: 160px;
+    // height: 288px;
+    // width: 160px;
     // border-radius: 4px;
     background-color: white;
     border-radius: 1rem;
@@ -72,6 +72,7 @@
     /*customizable*/
     padding: 16px;
     color: $text;
+    min-height: 155px;
 }
 
 .index-plant-name {
@@ -144,7 +145,6 @@
 }
 
 // #svg-img {
-//     // filter: drop-shadow(3px 5px 2px #23f0b2);
 //     width: 28px;
 //     min-height: 28px;
 // }
@@ -167,8 +167,5 @@
     }
     .card-trip>img {
         height: 300px;
-    }
-    .title-pots {
-        font-size: 65px;
     }
 }
