@@ -6,8 +6,10 @@
       <path d="M0.00805664 6.03266C0.00805664 2.94438 2.53209 0.440826 5.62038 0.440826C8.68612 0.440826 11.1917 2.9261 11.1917 5.99185C11.1917 9.05759 8.70645 11.5429 5.64071 11.5429H0.00805664V6.03266Z" fill="#05CE91"/>
     </svg> %>
   </div>
-
-  <%= render 'shared/search-bar' %>
+  <div >
+    <%= render 'shared/search-bar' %>
+    <%= render 'shared/filter-search' %>
+  </div>
   <%= render 'shared/spinner' %>
   <div class="search-center">
     <% if @api_scan %>
@@ -21,7 +23,6 @@
     <% end %>
   </div>
 </div>
-
 <div class="container ">
   <div class="plants-list justify-content-center">
     <div class="row g-5">

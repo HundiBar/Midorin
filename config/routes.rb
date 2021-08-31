@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   get '/plants/filter', to: 'plants#filter'
   patch '/pots', to: 'pots#picture'
 
-
-
   resources :plants, only: [:index, :show]
   resources :pots, only: [:index, :new, :create, :show, :destroy, :edit, :update, :water]
   resources :chatrooms, only:[:index, :show, :new, :create] do
