@@ -28,4 +28,5 @@ class Pot < ApplicationRecord
     end
 
   end
+
 end
