@@ -1,4 +1,4 @@
-<div class="message-container <%='author' if current_user == message.user %>" id="message-<%= message.id %>" data-author-id="<%= message.user.id %>">
+<div class="message-container <%='author' if current_user == message.user %>" id="message-<%= message.id %>" data-author-id="<%= message.user.id %>" style="width: 75%;">
   <i class="author">
     <span>
       <% if message.user.avatar.attached? %>

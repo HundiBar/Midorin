@@ -42,7 +42,7 @@
         <% end  %>
       <% end %>
       <div>
-        <%= link_to edit_pot_path, html: {class: "watering"} do %>
+        <%= link_to edit_pot_path do %>
           <% if @pot.nickname? %>
             <p class="profile-edit"><i class="fas fa-edit"></i> Edit <%= @pot.nickname %>'s profile</p>
           <% else %>
