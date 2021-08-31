@@ -12,7 +12,7 @@
     <%= image_tag 'gardenLogo.png', width: "100", alt: "garden logo"%>
     <span id="title-body" >arden</span>
   </h2>
-  
+
   <%# if no pots in the garden %>
   <% if !@pots.nil? && @pots.count == 0 %>
     <div class="card-trip">
@@ -57,7 +57,7 @@
                 <%# watering schedule %>
                 <div>
                   <% if pot.water_in_days <= 0 %>
-                    <div class="pots-index-watering-info"><%= pot.water_in_days.zero? ? 'Water <b>today</b>'.html_safe : "Water <b style='color: #ff3002'>#{(pot.water_in_days) * (-1) }</b> days overdue".html_safe %></div>
+                    <div class="pots-index-watering-info"><%= pot.water_in_days.zero? ? 'Water <b>today</b>'.html_safe : "Water <b style='color: #ff3002'>#{(pot.water_in_days) * (-1) }</b> #{pot.water_in_days == -1 ? "day" : "days"} overdue".html_safe %></div>
                   <% else %>
                     <div class="pots-index-watering-info">Water in <%= "<b>#{pot.water_in_days}</b>".html_safe %> days</div>
                   <% end %>
