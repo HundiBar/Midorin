@@ -20,7 +20,8 @@ class Pot < ApplicationRecord
     if water_in_days == 0
       message = "You need to water #{nickname? ? nickname : plant.name} today."
     elsif water_in_days <= -1
-      message = "It has been #{water_in_days * -1} #{water_in_days == -1 ? "day" : "days"} since #{nickname? ? nickname : plant.name} has needed watered"
+      message = "#{nickname? ? nickname : plant.name} needs to be watered!
+                It has been #{water_in_days * -1} #{water_in_days == -1 ? "day" : "days"} overdue"
     elsif water_in_days == 1
       message = "You need to water #{nickname? ? nickname : plant.name} tomorrow."
     else
