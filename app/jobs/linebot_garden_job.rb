@@ -15,7 +15,7 @@ class LinebotGardenJob < ApplicationJob
 
   def load_pots(pots)
     pots.map do |pot|
-      "#{pot.nickname || pot.plant.name} is doing good. \n#{pot.notification}#{pot[-1] ? "" : "\n"}"
+      "#{pot.notification}#{pot[-1] ? "" : "\n"}"
     end
   end
 
