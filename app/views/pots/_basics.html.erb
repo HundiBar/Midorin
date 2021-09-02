@@ -6,7 +6,7 @@
       </div>
       <div class="title"><%= @pot.water_in_days.zero? ? 'Water today' : 'Water Overdue' %></div>
       <div class="text"><%= @pot.water_in_days.zero? ? "It's watering time!" : "#{(@pot.water_in_days) * (-1) } #{@pot.water_in_days == -1 ? "day" : "days"}" %></div>
-      <%= simple_form_for @pot, html: {id: "water-pot-show"} do |f| %>
+      <%= simple_form_for @pot, html: {class: "drops", id: "water-pot-show"} do |f| %>
         <%= f.input :last_watered, input_html: {value: Time.now }, as: :hidden %>
         <%= f.submit 'water plant' %>
       <% end %>
