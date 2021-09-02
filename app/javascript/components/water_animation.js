@@ -1,9 +1,9 @@
 const waterAnimation = () => {
-  let forms = document.querySelectorAll('.edit_pot');
+  let forms = document.querySelectorAll('.simple_form.drops');
   console.log(forms);
   if (forms && forms.length === 0) {
     console.log("inside of if")
-    let forms = document.querySelectorAll('.edit_pot');
+    let forms = document.querySelectorAll('.simple_form.drops');
   }
   console.log(forms);
   // const waterButton = document.querySelector('.pot-show-basics-water-icon');
