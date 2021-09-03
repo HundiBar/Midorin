@@ -37,6 +37,7 @@ import { showCircle} from '../components/yann';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  showCircle();
   initSelect2();
   searchFire();
   picFire();
@@ -45,6 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   chatScroll();
   confetti();
   waterAnimation();
-  showCircle();
   // carouselModal();
 });
