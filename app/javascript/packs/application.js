@@ -32,6 +32,7 @@ import { toggleSwitch } from '../components/toggle_switch';
 import { chatScroll } from '../components/chat_scroll';
 import { confetti } from '../components/confetti';
 import { waterAnimation } from '../components/water_animation';
+import { showCircle} from '../components/yann';
 // import { carouselModal } from '../components/carousel_modal';
 
 document.addEventListener('turbolinks:load', () => {
@@ -44,5 +45,6 @@ document.addEventListener('turbolinks:load', () => {
   chatScroll();
   confetti();
   waterAnimation();
+  showCircle();
   // carouselModal();
 });
