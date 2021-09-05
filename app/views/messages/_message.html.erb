@@ -1,4 +1,4 @@
-<div class="message-container <%='author' if current_user == message.user %>" id="message-<%= message.id %>" data-author-id="<%= message.user.id %>" style="width: 75%;">
+<div class="message-container <%='author' if current_user == message.user %>" id="message-<%= message.id %>" data-author-id="<%= message.user.id %>">
   <i class="author">
     <span>
       <% if message.user.avatar.attached? %>
@@ -10,5 +10,5 @@
     <span><%= message.user.name %></span>
     <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
   </i>
-  <p><%= message.content %></p>
+  <p id="message-text"><%= message.content %></p>
 </div>
