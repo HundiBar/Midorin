@@ -17,7 +17,7 @@ Our mobile application aims to be an all-in-one stop to become better at caring 
 
 On top of a watering scheduler and a chatroom to ask for help to your community, there is a scanner feature to recognize plants and get details about them.
 
-With Midorin, you can keep your plants healthy and happy and make better choices when bying new ones, fitting your skills and lifestyle.
+With Midorin, you can keep your plants healthy and happy and make better choices when buying new ones, fitting your skills and lifestyle.
 
 This app was the final project from Le Wagon Tokyo #batch 587 (part-time session), made with love by [Dean](https://github.com/HundiBar), [Spencer](https://github.com/Smattison0830), [Troy ](https://github.com/troyruss) and [Mylene ](https://github.com/Ren33000).
 
