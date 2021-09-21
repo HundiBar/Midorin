@@ -39,7 +39,7 @@ This app was the final project from Le Wagon Tokyo #batch 587 (part-time session
 Available soon
 	
 ## URL
-Midorin's website: https://www.midorin.one/
+[Midorin's website](https://www.midorin.one/)
 Final version available soon.
 
 
