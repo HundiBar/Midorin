@@ -36,7 +36,7 @@ This app was the final project from Le Wagon Tokyo #batch 587 (part-time session
 
 ## Demo
 [Watch](https://youtu.be/z-8DkUq4SyA?t=2305) Midorin demo from Le Wagon Tokyo's Demo Day in September 2021. 
-Available soon
+
 	
 ## URL
 [Midorin's website](https://www.midorin.one/)
